@@ -6,10 +6,13 @@ echo 'Hello!';
 
 
 require_once( 'Facebook/FacebookSession.php' );
+echo 'Hello1a!';
 require_once( 'Facebook/FacebookRequest.php' );
+echo 'Hello1b!';
 require_once( 'Facebook/FacebookRequestException.php' );
+echo 'Hello1c!';
 require_once( 'Facebook/GraphUser.php' );
-
+echo 'Hello1d!';
 use Facebook\FacebookSession;
 use Facebook\FacebookRequest;
 use Facebook\GraphUser;
