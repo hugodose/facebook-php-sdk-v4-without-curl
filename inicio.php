@@ -7,11 +7,11 @@ echo 'Hello!';
 
 require_once( 'src/Facebook/FacebookSession.php' );
 echo 'Hello1a!';
-require_once( 'Facebook/FacebookRequest.php' );
+require_once( 'src/Facebook/FacebookRequest.php' );
 echo 'Hello1b!';
-require_once( 'Facebook/FacebookRequestException.php' );
+require_once( 'src/Facebook/FacebookRequestException.php' );
 echo 'Hello1c!';
-require_once( 'Facebook/GraphUser.php' );
+require_once( 'src/Facebook/GraphUser.php' );
 echo 'Hello1d!';
 use Facebook\FacebookSession;
 use Facebook\FacebookRequest;
