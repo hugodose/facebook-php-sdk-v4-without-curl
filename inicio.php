@@ -5,7 +5,7 @@
 echo 'Hello!';
 
 
-require_once( 'Facebook/FacebookSession.php' );
+require_once( 'src/Facebook/FacebookSession.php' );
 echo 'Hello1a!';
 require_once( 'Facebook/FacebookRequest.php' );
 echo 'Hello1b!';
