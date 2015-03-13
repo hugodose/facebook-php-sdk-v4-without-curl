@@ -4,7 +4,7 @@
 
 echo 'Hello! ';
 
-define('FACEBOOK_SDK_V4_SRC_DIR','/src/Facebook/');
+//define('FACEBOOK_SDK_V4_SRC_DIR','/src/Facebook/');
 
 require_once("autoload.php");
 use src\Facebook\FacebookSession;
