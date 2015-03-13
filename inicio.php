@@ -2,41 +2,26 @@
 
 <?php
 
-echo 'Hello!';
-
+echo 'Hello! ';
 
 require_once( 'src/Facebook/FacebookSession.php' );
-echo 'Hello1a!';
-require_once( 'src/Facebook/FacebookRequest.php' );
-echo 'Hello1b!';
-//require_once( 'src/Facebook/FacebookRequestException.php' );
-echo 'Hello1c!';
-//require_once( 'src/Facebook/GraphUser.php' );
-echo 'Hello1d!';
-use Facebook\FacebookSession;
-use Facebook\FacebookRequest;
-use Facebook\GraphUser;
-use Facebook\FacebookRequestException;
-echo 'Hello2!';
+
+echo 'Hello!2 ';
+use src\Facebook\FacebookSession;
+use src\Facebook\FacebookRequest;
+use src\Facebook\GraphUser;
+use src\Facebook\FacebookRequestException;
+
+echo 'Hello!3 ';
+
 FacebookSession::setDefaultApplication('1560115454240194','e9b7a69cc961d012592996b2dd540e3a');
-echo 'Hello!3';
-// Use one of the helper classes to get a FacebookSession object.
-//   FacebookRedirectLoginHelper
-//   FacebookCanvasLoginHelper
-//   FacebookJavaScriptLoginHelper
-// or create a FacebookSession with a valid access token:
-$session = new FacebookSession('access-token-here');
-echo 'Hello!4';
-// Get the GraphUser object for the current user:
 
-try {
-  $me = (new FacebookRequest(
-    $session, 'GET', '/me'
-  ))->execute()->getGraphObject(GraphUser::className());
-  echo $me->getName();
-} 
 
-echo 'Hello!5';
+$helper = new FacebookRedirectLoginHelper('http://globo.com');
+$loginUrl = $helper->getLoginUrl();
+// Use the login url on a link or button to redirect to Facebook for authentication
+
+echo 'Hello!4 ';
 
 
 ?>
