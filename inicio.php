@@ -16,7 +16,7 @@ use src\Facebook\FacebookRedirectLoginHelper;
 
 echo 'Hello!3 ';
 
-FacebookSession::setDefaultApplication('1560115454240194','e9b7a69cc961d012592996b2dd540e3a');
+//FacebookSession::setDefaultApplication('1560115454240194','e9b7a69cc961d012592996b2dd540e3a');
 echo 'Hello!4 ';
 
 $helper = new FacebookRedirectLoginHelper('http://globo.com');
