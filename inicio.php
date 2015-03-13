@@ -9,16 +9,16 @@ use Facebook\FacebookSession;
 use Facebook\FacebookRequest;
 use Facebook\GraphUser;
 use Facebook\FacebookRequestException;
-
+echo 'Hello2!';
 FacebookSession::setDefaultApplication('1560115454240194','e9b7a69cc961d012592996b2dd540e3a');
-
+echo 'Hello!3';
 // Use one of the helper classes to get a FacebookSession object.
 //   FacebookRedirectLoginHelper
 //   FacebookCanvasLoginHelper
 //   FacebookJavaScriptLoginHelper
 // or create a FacebookSession with a valid access token:
 $session = new FacebookSession('access-token-here');
-
+echo 'Hello!4';
 // Get the GraphUser object for the current user:
 
 try {
@@ -32,7 +32,7 @@ try {
   echo 'Some other error occurred';
 }
 
-
+echo 'Hello!5';
 
 
 ?>
