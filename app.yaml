@@ -1,0 +1,7 @@
+application: hazel-proxy-88217
+version: 1
+runtime: php
+api_version: 1
+handlers:
+- url: /
+  script: inicio.php
