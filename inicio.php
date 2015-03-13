@@ -5,10 +5,15 @@
 echo 'Hello!';
 
 
-//use src\Facebook\FacebookSession;
-//use src\Facebook\FacebookRequest;
-//use src\Facebook\GraphUser;
-//use src\Facebook\FacebookRequestException;
+require_once( 'Facebook/FacebookSession.php' );
+require_once( 'Facebook/FacebookRequest.php' );
+require_once( 'Facebook/FacebookRequestException.php' );
+require_once( 'Facebook/GraphUser.php' );
+
+use Facebook\FacebookSession;
+use Facebook\FacebookRequest;
+use Facebook\GraphUser;
+use Facebook\FacebookRequestException;
 echo 'Hello2!';
 FacebookSession::setDefaultApplication('1560115454240194','e9b7a69cc961d012592996b2dd540e3a');
 echo 'Hello!3';
