@@ -1,4 +1,8 @@
+
+
 <?php
+
+echo 'Hello!'
 
 use Facebook\FacebookSession;
 use Facebook\FacebookRequest;
