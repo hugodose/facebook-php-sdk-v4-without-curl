@@ -11,7 +11,7 @@ require_once( 'src/Facebook/FacebookRequest.php' );
 echo 'Hello1b!';
 //require_once( 'src/Facebook/FacebookRequestException.php' );
 echo 'Hello1c!';
-require_once( 'src/Facebook/GraphUser.php' );
+//require_once( 'src/Facebook/GraphUser.php' );
 echo 'Hello1d!';
 use Facebook\FacebookSession;
 use Facebook\FacebookRequest;
