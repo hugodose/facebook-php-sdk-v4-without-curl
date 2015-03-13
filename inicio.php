@@ -27,9 +27,9 @@ try {
   ))->execute()->getGraphObject(GraphUser::className());
   echo $me->getName();
 } catch (FacebookRequestException $e) {
-  // The Graph API returned an error
+  echo 'The Graph API returned an error';
 } catch (\Exception $e) {
-  // Some other error occurred
+  echo 'Some other error occurred';
 }
 
 
