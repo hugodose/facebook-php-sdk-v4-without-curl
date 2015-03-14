@@ -1,5 +1,6 @@
  <?php
-
+class minhaclasse {
+ 
 function consultadb(){
 
 $db = null;
@@ -58,6 +59,7 @@ try {
 $db = null;
 
 return $row;
+}
 }
 
 ?>
