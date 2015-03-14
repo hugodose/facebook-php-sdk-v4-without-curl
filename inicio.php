@@ -2,18 +2,21 @@
 
 <?php
 
-echo 'antes $_SESSION: '.$_SESSION;
-echo 'antes $session: '.$session;
-
+echo 'antes $_SESSION: '.$_SESSION.'<br>';
+echo 'antes $session: '.$session.'<br>';
+print_r($_SESSION);
+print_r($session);
 
 session_start();
 
 
-echo 'depois $_SESSION: '.$_SESSION;
-echo 'depois $session: '.$session;
+echo 'antes $_SESSION: '.$_SESSION.'<br>';
+echo 'antes $session: '.$session.'<br>';
+print_r($_SESSION);
+print_r($session);
 
 
-echo 'Hello! ';
+echo 'Hello! <br>;
 
 
 require_once( 'autoload.php' );
