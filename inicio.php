@@ -52,7 +52,7 @@ if ( isset( $_SESSION ) && isset( $_SESSION['fb_token'] ) ) {
   echo '// create new session from saved access_token';
   $session = new FacebookSession( $_SESSION['fb_token'] );
 
-  echo '// validate the access_token to make sure it's still valid'';
+  echo '// validate the access_token to make sure it s still valid';
   try {
     if ( !$session->validate() ) {
       echo 'validate';
