@@ -45,7 +45,7 @@ echo 'Hello!4 ';
 
 
 // login helper with redirect_uri
-$helper = new FacebookRedirectLoginHelper( 'http://hazel-proxy-88217.appspot.com/inicio' );
+$helper = new FacebookRedirectLoginHelper( 'http://hazel-proxy-88217.appspot.com/inicio.php' );
 try {
   $session = $helper->getSessionFromRedirect();
 } catch( FacebookRequestException $ex ) {
