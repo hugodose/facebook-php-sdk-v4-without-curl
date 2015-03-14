@@ -56,10 +56,10 @@ try {
 
 // see if we have a session
 if ( isset( $session ) ) {
-    echo "<script>
-          window.close();
-          window.opener.location.reload();
-          </script>";
+    //echo "<script>
+    //      window.close();
+    //      window.opener.location.reload();
+    //      </script>";
   // graph api request for user data
   $request = new FacebookRequest( $session, 'GET', '/me' );
   $response = $request->execute();
