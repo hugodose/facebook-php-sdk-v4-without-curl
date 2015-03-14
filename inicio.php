@@ -74,8 +74,6 @@ if ( isset( $session ) ) {
     
     $login_params = array(
         'display' => 'popup',
-        'next' => 'http://hazel-proxy-88217.appspot.com/',
-        'redirect_uri' => 'http://hazel-proxy-88217.appspot.com/',
         'scope' =>'publish_actions',
                  'email',
                  'user_location',
