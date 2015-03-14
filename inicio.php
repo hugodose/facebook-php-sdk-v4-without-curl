@@ -1,12 +1,20 @@
 
 
 <?php
+session_start();
 
 echo 'Hello! ';
 
-//define('FACEBOOK_SDK_V4_SRC_DIR','/src/Facebook/');
 
-require_once("autoload.php");
+require_once( 'src/Facebook/FacebookSession.php' );
+require_once( 'src/Facebook/FacebookRedirectLoginHelper.php' );
+require_once( 'src/Facebook/FacebookRequest.php' );
+require_once( 'src/Facebook/FacebookResponse.php' );
+require_once( 'src/Facebook/FacebookSDKException.php' );
+require_once( 'src/Facebook/FacebookRequestException.php' );
+require_once( 'src/Facebook/FacebookAuthorizationException.php' );
+require_once( 'src/Facebook/GraphObject.php' );
+    
 use src\Facebook\FacebookSession;
 use src\Facebook\FacebookRequest;
 use src\Facebook\GraphUser;
