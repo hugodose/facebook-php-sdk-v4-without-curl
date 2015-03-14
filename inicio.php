@@ -46,62 +46,34 @@ echo 'Hello!4 ';
 
 // login helper with redirect_uri
 $helper = new FacebookRedirectLoginHelper( 'http://hazel-proxy-88217.appspot.com/' );
-
-// see if a existing session exists
-if ( isset( $_SESSION ) && isset( $_SESSION['fb_token'] ) ) {
-  echo '// create new session from saved access_token';
-  $session = new FacebookSession( $_SESSION['fb_token'] );
-
-  echo '// validate the access_token to make sure it s still valid';
-  try {
-    if ( !$session->validate() ) {
-      echo 'validate';
-      $session = null;
-    }
-  } catch ( Exception $e ) {
-    echo '// catch any exceptions';
-    $session = null;
-  }
-
-} else {
-  echo '// no session exists';
-
-  try {
-    $session = $helper->getSessionFromRedirect();
-    echo 'get session from redirect';
-  } catch( FacebookRequestException $ex ) {
-    echo '// When Facebook returns an error';
-  } catch( Exception $ex ) {
-    echo '// When validation fails or other local issues';
-    echo $ex->message;
-  }
-
+try {
+  $session = $helper->getSessionFromRedirect();
+} catch( FacebookRequestException $ex ) {
+  // When Facebook returns an error
+} catch( Exception $ex ) {
+  // When validation fails or other local issues
 }
-
-echo '// see if we have a session';
+// see if we have a session
 if ( isset( $session ) ) {
-
-  echo '// save the session';
-  $_SESSION['fb_token'] = $session->getToken();
-  echo '// create a session using saved token or the new one we generated at login';
-  $session = new FacebookSession( $session->getToken() );
-
-  echo '// graph api request for user data';
+  // graph api request for user data
   $request = new FacebookRequest( $session, 'GET', '/me' );
   $response = $request->execute();
-  echo '// get response';
-  $graphObject = $response->getGraphObject()->asArray();
-
-  echo '// print profile data';
-  echo '<pre>' . print_r( $graphObject, 1 ) . '</pre>';
-
-  echo '// print logout url using session and redirect_uri (logout.php page should destroy the session)';
-  echo '<a href="' . $helper->getLogoutUrl( $session, 'http://yourwebsite.com/app/logout.php' ) . '">Logout</a>';
-
+  // get response
+  $graphObject = $response->getGraphObject();
+     $fbid = $graphObject->getProperty('id');              // To Get Facebook ID
+    $fbfullname = $graphObject->getProperty('name'); // To Get Facebook full name
+    $femail = $graphObject->getProperty('email');    // To Get Facebook email ID
+/* ---- Session Variables -----*/
+    $_SESSION['FBID'] = $fbid;          
+        $_SESSION['FULLNAME'] = $fbfullname;
+    $_SESSION['EMAIL'] =  $femail;
+  //checkuser($fuid,$ffname,$femail);
+  header("Location: index.php");
 } else {
-  echo '// show login url';
-  echo '<a href="' . $helper->getLoginUrl( array( 'email', 'user_friends' ) ) . '">Login</a>';
-  }
+  $loginUrl = $helper->getLoginUrl();
+header("Location: ".$loginUrl);
+}
+
 
 echo 'Hello!5 ';
 
