@@ -15,15 +15,15 @@ echo 'Hello! ';
 //require_once( 'src/Facebook/FacebookAuthorizationException.php' );
 //require_once( 'src/Facebook/GraphObject.php' );
 
-require_once($_SERVER['DOCUMENT_ROOT'].'/sys/facebook/FacebookSession.php');
-require_once($_SERVER['DOCUMENT_ROOT'].'/sys/facebook/FacebookRequest.php');
-require_once($_SERVER['DOCUMENT_ROOT'].'/sys/facebook/GraphObject.php');
-require_once($_SERVER['DOCUMENT_ROOT'].'/sys/facebook/FacebookRequestException.php');
+//require_once($_SERVER['DOCUMENT_ROOT'].'/sys/facebook/FacebookSession.php');
+//require_once($_SERVER['DOCUMENT_ROOT'].'/sys/facebook/FacebookRequest.php');
+//require_once($_SERVER['DOCUMENT_ROOT'].'/sys/facebook/GraphObject.php');
+//require_once($_SERVER['DOCUMENT_ROOT'].'/sys/facebook/FacebookRequestException.php');
 
-use Facebook\FacebookSession;
-use Facebook\FacebookRequest;
-use Facebook\GraphObject;
-use Facebook\FacebookRequestException;
+//use Facebook\FacebookSession;
+//use Facebook\FacebookRequest;
+//use Facebook\GraphObject;
+//use Facebook\FacebookRequestException;
     
 //use src\Facebook\FacebookSession;
 //use src\Facebook\FacebookRequest;
