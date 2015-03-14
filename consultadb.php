@@ -1,4 +1,7 @@
  <?php
+
+
+
 $db = null;
 if (isset($_SERVER['SERVER_SOFTWARE']) && strpos($_SERVER['SERVER_SOFTWARE'],'Google App Engine') !== false) {
 // Connect from App Engine.
@@ -13,6 +16,22 @@ if (isset($_SERVER['SERVER_SOFTWARE']) && strpos($_SERVER['SERVER_SOFTWARE'],'Go
 } else {
   echo 'NOT connected from Google App Engine environment.';
 }
+
+
+
+try {
+    $sql = "UPDATE person SET FNAME='1560115454240194', LNAME='e9b7a69cc961d012592996b2dd540e3a' WHERE id=1";
+    // Prepare statement
+    $stmt = $db->prepare($sql);
+    // execute the query
+    $stmt->execute();
+    // echo a message to say the UPDATE succeeded
+    echo $stmt->rowCount() . " records UPDATED successfully";
+} catch(PDOException $e) {
+    echo $sql . "<br>" . $e->getMessage();
+}
+
+
 
 
 try {
