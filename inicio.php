@@ -56,6 +56,10 @@ try {
 
 // see if we have a session
 if ( isset( $session ) ) {
+    echo "<script>
+          window.close();
+          window.opener.location.reload();
+          </script>";
   // graph api request for user data
   $request = new FacebookRequest( $session, 'GET', '/me' );
   $response = $request->execute();
@@ -68,10 +72,11 @@ if ( isset( $session ) ) {
     // show login url
     //$helper = new FacebookRedirectLoginHelper('https://apps.facebook.com/yourappname/');
     $permissions = array(
-        scope =>'publish_actions',
-                'email',
-                'user_location',
-                'user_birthday'
+        'display' => 'popup',
+        'scope' =>'publish_actions',
+                 'email',
+                 'user_location',
+                 'user_birthday'
     );
     // Get login URL
     $auth_url = $helper->getLoginUrl($permissions);
@@ -79,8 +84,6 @@ if ( isset( $session ) ) {
     echo "<script>window.top.location.href='".$auth_url."'</script>";
 
 }
-
-
 
 
 
