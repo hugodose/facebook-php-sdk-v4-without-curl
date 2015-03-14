@@ -73,9 +73,13 @@ if ( isset( $session ) ) {
     //$helper = new FacebookRedirectLoginHelper('https://apps.facebook.com/yourappname/');
     
     $login_params = array(
+        'display' => 'popup',
         'next' => 'http://hazel-proxy-88217.appspot.com/',
         'redirect_uri' => 'http://hazel-proxy-88217.appspot.com/',
-        'scope' => 'email'
+        'scope' =>'publish_actions',
+                 'email',
+                 'user_location',
+                 'user_birthday'
             );
     //$permissions = array(
     //    'display' => 'popup',
@@ -88,7 +92,7 @@ if ( isset( $session ) ) {
     $loginUrl = $helper->getLoginUrl($login_params);
     //$auth_url = $helper->getLoginUrl(array('email'));
     ?>
-    <a href="<?php echo $loginUrl; ?>" onclick="javascript:void window.open('<?php echo $loginUrl; ?>','fb_popup','width=600,height=300,toolbar=0,menubar=0,location=0,status=0,scrollbars=0,resizable=0,left=0,top=0');return false;">Login with Facebook</a>
+    <a href="<?php echo $loginUrl; ?>" onclick="javascript:void window.open('<?php echo $loginUrl; ?>','fb_popup');return false;">Login with Facebook</a>
     <?php
 }
 
