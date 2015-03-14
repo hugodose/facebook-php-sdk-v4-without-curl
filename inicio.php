@@ -15,7 +15,7 @@ require_once( 'src/Facebook/FacebookRequestException.php' );
 require_once( 'src/Facebook/FacebookAuthorizationException.php' );
 require_once( 'src/Facebook/GraphObject.php' );
     
-use src\Facebook\FacebookSession;
+use FacebookSession;
 use src\Facebook\FacebookRequest;
 use src\Facebook\GraphUser;
 use src\Facebook\FacebookRequestException;
