@@ -5,3 +5,5 @@ api_version: 1
 handlers:
 - url: /
   script: inicio.php
+- url: /consultadb.php
+  script: consultadb.php
