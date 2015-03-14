@@ -66,7 +66,7 @@ if ( isset( $session ) ) {
   echo '<pre>' . print_r( $graphObject, 1 ) . '</pre>';
 } else {
     // show login url
-    $helper = new FacebookRedirectLoginHelper('https://apps.facebook.com/yourappname/');
+    //$helper = new FacebookRedirectLoginHelper('https://apps.facebook.com/yourappname/');
     $permissions = array(
         scope =>'publish_actions',
                 'email',
