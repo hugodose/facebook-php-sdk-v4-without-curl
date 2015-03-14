@@ -16,7 +16,7 @@ print_r($_SESSION);
 print_r($session);
 
 
-echo 'Hello! <br>;
+echo 'Hello! <br>';
 
 
 require_once( 'autoload.php' );
