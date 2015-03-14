@@ -37,7 +37,9 @@ use consultadb;
 echo 'Hello!2 ';
 echo 'Hello!3 ';
 
-$appid = consultadb();
+
+$appid = new minhaclasse();
+$appid->consultadb();
 
 FacebookSession::setDefaultApplication($appid['FNAME'],$appid['LNAME']);
 echo 'Hello!4 ';
