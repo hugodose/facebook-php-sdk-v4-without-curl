@@ -1,6 +1,6 @@
  <?php
 
-
+function consultadb(){
 
 $db = null;
 if (isset($_SERVER['SERVER_SOFTWARE']) && strpos($_SERVER['SERVER_SOFTWARE'],'Google App Engine') !== false) {
@@ -54,9 +54,10 @@ try {
   echo "An error occurred in reading or writing to db.";
 }
 
-echo $row;
-
 
 $db = null;
+
+return $row;
+}
 
 ?>
