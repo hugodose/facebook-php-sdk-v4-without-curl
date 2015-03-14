@@ -1,21 +1,17 @@
-<?php
-//if (isset($_GET['safarifix'])) {
-//    session_start();
-//    echo '<script type="text/javascript">top.location = \''.$_GET['safarifix'].'\'</script>';
-//    exit();
-//}
 
-//if (!isset($_COOKIE, $_COOKIE['PHPSESSID'])) {
-//    header('P3P: CP="CAO PSA OUR"');
-//    echo '<script type="text/javascript">top.location = document.URL + "?safarifix=" + encodeURIComponent(document.referrer)</script>';
-//    exit();
-//}
-?>
 
 <?php
 
-//header('P3P: CP="CAO PSA OUR"');
+echo 'antes $_SESSION: '.$_SESSION;
+echo 'antes $session: '.$session;
+
+
 session_start();
+
+
+echo 'depois $_SESSION: '.$_SESSION;
+echo 'depois $session: '.$session;
+
 
 echo 'Hello! ';
 
