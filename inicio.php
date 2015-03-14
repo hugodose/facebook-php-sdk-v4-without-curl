@@ -45,7 +45,7 @@ echo 'Hello!4 ';
 
 
 // login helper with redirect_uri
-$helper = new FacebookRedirectLoginHelper( 'http://hazel-proxy-88217.appspot.com/inicio.php' );
+$helper = new FacebookRedirectLoginHelper( 'http://hazel-proxy-88217.appspot.com/' );
 try {
   $session = $helper->getSessionFromRedirect();
 } catch( FacebookRequestException $ex ) {
@@ -53,27 +53,37 @@ try {
 } catch( Exception $ex ) {
   echo '// When validation fails or other local issues';
 }
-echo '// see if we have a session';
+
+// see if we have a session
 if ( isset( $session ) ) {
-  echo '// graph api request for user data';
+  // graph api request for user data
   $request = new FacebookRequest( $session, 'GET', '/me' );
   $response = $request->execute();
-  echo '// get response';
+  // get response
   $graphObject = $response->getGraphObject();
-  $fbid = $graphObject->getProperty('id');              // To Get Facebook ID
-  $fbfullname = $graphObject->getProperty('name'); // To Get Facebook full name
-  $femail = $graphObject->getProperty('email');    // To Get Facebook email ID
-/* ---- Session Variables -----*/
-  $_SESSION['FBID'] = $fbid;          
-  $_SESSION['FULLNAME'] = $fbfullname;
-  $_SESSION['EMAIL'] =  $femail;
-  //checkuser($fuid,$ffname,$femail);
-  header("Location: index.php");
+
+  // print data
+  echo '<pre>' . print_r( $graphObject, 1 ) . '</pre>';
 } else {
-  echo 'nao session';
-  $loginUrl = $helper->getLoginUrl();
-  header("Location: ".$loginUrl);
+    // show login url
+    $helper = new FacebookRedirectLoginHelper('https://apps.facebook.com/yourappname/');
+    $permissions = array(
+        scope =>'publish_actions',
+                'email',
+                'user_location',
+                'user_birthday'
+    );
+    // Get login URL
+    $auth_url = $helper->getLoginUrl($permissions);
+    //$auth_url = $helper->getLoginUrl(array('email'));
+    echo "<script>window.top.location.href='".$auth_url."'</script>";
+
 }
+
+
+
+
+
 
 echo 'Hello!5 ';
 
