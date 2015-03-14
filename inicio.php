@@ -1,6 +1,19 @@
+<?php
+if (isset($_GET['safarifix'])) {
+    session_start();
+    echo '<script type="text/javascript">top.location = \''.$_GET['safarifix'].'\'</script>';
+    exit();
+}
 
+if (!isset($_COOKIE, $_COOKIE['PHPSESSID'])) {
+    header('P3P: CP="CAO PSA OUR"');
+    echo '<script type="text/javascript">top.location = document.URL + "?safarifix=" + encodeURIComponent(document.referrer)</script>';
+    exit();
+}
+?>
 
 <?php
+
 session_start();
 
 echo 'Hello! ';
@@ -65,7 +78,6 @@ if ( isset( $session ) ) {
   $response = $request->execute();
   // get response
   $graphObject = $response->getGraphObject();
-
   // print data
   echo '<pre>' . print_r( $graphObject, 1 ) . '</pre>';
 } else {
