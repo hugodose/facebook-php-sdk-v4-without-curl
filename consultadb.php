@@ -18,11 +18,23 @@ if (isset($_SERVER['SERVER_SOFTWARE']) && strpos($_SERVER['SERVER_SOFTWARE'],'Go
 try {
   // Show existing guestbook entries.
   foreach($db->query('SELECT * from person') as $row) {
-  echo "<div><strong>" . $row['FNAME'] . "</strong> wrote <br> " . $row['LNAME'] . "</div>";
+  echo "<div>" . $row['FNAME'] . " " . $row['LNAME'] . "</div>";
   }
 } catch (PDOException $ex) {
   echo "An error occurred in reading or writing to db.";
 }
+
+
+try {
+  // Show existing guestbook entries.
+  foreach($db->query('SELECT TOP 1 from person') as $row) {
+  echo "<div>" . $row['FNAME'] . " " . $row['LNAME'] . "</div>";
+  }
+} catch (PDOException $ex) {
+  echo "An error occurred in reading or writing to db.";
+}
+
+
 
 $db = null;
 
