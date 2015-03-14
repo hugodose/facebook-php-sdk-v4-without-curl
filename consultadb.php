@@ -11,7 +11,7 @@ if (isset($_SERVER['SERVER_SOFTWARE']) && strpos($_SERVER['SERVER_SOFTWARE'],'Go
     );
   }
 } else {
-  echo 'NOT connected from Google App Engine environment.'
+  echo 'NOT connected from Google App Engine environment.';
 }
 
 
