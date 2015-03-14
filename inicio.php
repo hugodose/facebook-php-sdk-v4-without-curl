@@ -73,8 +73,10 @@ if ( isset( $session ) ) {
     //$helper = new FacebookRedirectLoginHelper('https://apps.facebook.com/yourappname/');
     
     $login_params = array(
-            'scope' => 'email',
-            'display' => 'popup'
+        'display' => 'popup',
+        'next' => 'http://hazel-proxy-88217.appspot.com/',
+        'redirect_uri' => 'http://hazel-proxy-88217.appspot.com/',
+        'scope' => 'email'
             );
     //$permissions = array(
     //    'display' => 'popup',
