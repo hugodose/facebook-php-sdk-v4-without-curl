@@ -1,4 +1,4 @@
-//<?php
+<?php
 //if (isset($_GET['safarifix'])) {
 //    session_start();
 //    echo '<script type="text/javascript">top.location = \''.$_GET['safarifix'].'\'</script>';
@@ -10,11 +10,11 @@
 //    echo '<script type="text/javascript">top.location = document.URL + "?safarifix=" + encodeURIComponent(document.referrer)</script>';
 //    exit();
 //}
-//?>
+?>
 
 <?php
 
-header('P3P: CP="CAO PSA OUR"');
+//header('P3P: CP="CAO PSA OUR"');
 session_start();
 
 echo 'Hello! ';
