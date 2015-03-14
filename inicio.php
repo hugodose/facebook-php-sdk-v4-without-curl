@@ -16,9 +16,9 @@ echo 'Hello! '.$_SERVER['DOCUMENT_ROOT'].'/src/Facebook/FacebookSession.php';
 //require_once( 'src/Facebook/GraphObject.php' );
 
 require_once($_SERVER['DOCUMENT_ROOT'].'/src/Facebook/FacebookSession.php');
-require_once($_SERVER['DOCUMENT_ROOT'].'/src/facebook/FacebookRequest.php');
-require_once($_SERVER['DOCUMENT_ROOT'].'/src/facebook/GraphObject.php');
-require_once($_SERVER['DOCUMENT_ROOT'].'/src/facebook/FacebookRequestException.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/src/Facebook/FacebookRequest.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/src/Facebook/GraphObject.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/src/Facebook/FacebookRequestException.php');
 
 use Facebook\FacebookSession;
 use Facebook\FacebookRequest;
