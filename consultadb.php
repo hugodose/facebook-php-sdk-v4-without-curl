@@ -20,7 +20,7 @@ if (isset($_SERVER['SERVER_SOFTWARE']) && strpos($_SERVER['SERVER_SOFTWARE'],'Go
 
 
 try {
-    $sql = "UPDATE person SET FNAME='1560115454240194', LNAME='e9b7a69cc961d012592996b2dd540e3a' WHERE id=1";
+    $sql = "UPDATE person SET FNAME='1560115454240194', LNAME='e9b7a69cc961d012592996b2dd540e3a' LIMIT 1";
     // Prepare statement
     $stmt = $db->prepare($sql);
     // execute the query
