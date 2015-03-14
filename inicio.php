@@ -2,11 +2,6 @@
 
 <?php
 
-echo 'antes $_SESSION: '.$_SESSION.'<br>';
-echo 'antes $session: '.$session.'<br>';
-print_r($_SESSION);
-print_r($session);
-
 session_start();
 
 
@@ -14,6 +9,7 @@ echo 'depois $_SESSION: '.$_SESSION.'<br>';
 echo 'depois $session: '.$session.'<br>';
 echo 'Print $_SESSION <br>';
 print_r($_SESSION);
+echo '<br>';
 echo 'Print $session <br>';
 print_r($session);
 echo '<br>';
@@ -56,10 +52,9 @@ try {
 
 // see if we have a session
 if ( isset( $session ) ) {
-    //echo "<script>
-    //      window.close();
-    //      window.opener.location.reload();
-    //      </script>";
+  echo 'isset $session: <br>';
+  print_r($session);
+  echo '<br>';
   // graph api request for user data
   $request = new FacebookRequest( $session, 'GET', '/me' );
   $response = $request->execute();
