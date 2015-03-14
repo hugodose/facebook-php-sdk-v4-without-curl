@@ -10,10 +10,13 @@ print_r($session);
 session_start();
 
 
-echo 'antes $_SESSION: '.$_SESSION.'<br>';
-echo 'antes $session: '.$session.'<br>';
+echo 'depois $_SESSION: '.$_SESSION.'<br>';
+echo 'depois $session: '.$session.'<br>';
+echo 'Print $_SESSION <br>';
 print_r($_SESSION);
+echo 'Print $session <br>';
 print_r($session);
+echo '<br>';
 
 
 echo 'Hello! <br>';
@@ -31,10 +34,7 @@ use Facebook\FacebookAuthorizationException;
 use Facebook\GraphObject;
 use Facebook\GraphUser;
 
-
-
 echo 'Hello!2 ';
-
 echo 'Hello!3 ';
 
 FacebookSession::setDefaultApplication('1560115454240194','e9b7a69cc961d012592996b2dd540e3a');
@@ -45,6 +45,9 @@ echo 'Hello!4 ';
 $helper = new FacebookRedirectLoginHelper( 'http://hazel-proxy-88217.appspot.com/' );
 try {
   $session = $helper->getSessionFromRedirect();
+  echo 'Try: <br> ';
+  print_r($session);
+  echo '<br>';
 } catch( FacebookRequestException $ex ) {
   echo '// When Facebook returns an error';
 } catch( Exception $ex ) {
