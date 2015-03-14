@@ -27,8 +27,8 @@ try {
 
 try {
   // Show existing guestbook entries.
-  foreach($db->query('SELECT TOP 1 from person') as $row) {
-  echo "<div>" . $row['FNAME'] . " " . $row['LNAME'] . "</div>";
+  $db->query('SELECT from person LIMIT 1');
+  echo "<div>" . $db['FNAME'] . " " . $db['LNAME'] . "</div>";
   }
 } catch (PDOException $ex) {
   echo "An error occurred in reading or writing to db.";
