@@ -73,7 +73,6 @@ if ( isset( $session ) ) {
     //$helper = new FacebookRedirectLoginHelper('https://apps.facebook.com/yourappname/');
     
     $login_params = array(
-        'display' => 'popup',
         'scope' =>'publish_actions',
                  'email',
                  'user_location',
