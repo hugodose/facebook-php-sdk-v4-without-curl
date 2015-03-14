@@ -54,6 +54,7 @@ try {
   echo "An error occurred in reading or writing to db.";
 }
 
+echo $row;
 
 
 $db = null;
