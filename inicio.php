@@ -29,8 +29,8 @@ use Facebook\FacebookRequestException;
 use Facebook\FacebookAuthorizationException;
 use Facebook\GraphObject;
 use Facebook\GraphUser;
-require_once($_SERVER['DOCUMENT_ROOT'].'/consultadb.php');
-use consultadb;
+//require_once($_SERVER['DOCUMENT_ROOT'].'/consultadb.php');
+//use consultadb;
 
 echo 'Hello!2 ';
 echo 'Hello!3 ';
