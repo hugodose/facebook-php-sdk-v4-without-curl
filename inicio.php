@@ -60,7 +60,7 @@ echo 'Hello!5 ';
  * DEALINGS IN THE SOFTWARE.
  *
  */
-namespace Facebook;
+//namespace Facebook;
 
 /**
  * Class FacebookSession
