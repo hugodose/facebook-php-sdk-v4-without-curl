@@ -6,12 +6,12 @@ echo 'Hello! ';
 
 //define('FACEBOOK_SDK_V4_SRC_DIR','/src/Facebook/');
 
-//require_once("autoload.php");
-//use src\Facebook\FacebookSession;
-//use src\Facebook\FacebookRequest;
-//use src\Facebook\GraphUser;
-//use src\Facebook\FacebookRequestException;
-//use src\Facebook\FacebookRedirectLoginHelper;
+require_once("autoload.php");
+use src\Facebook\FacebookSession;
+use src\Facebook\FacebookRequest;
+use src\Facebook\GraphUser;
+use src\Facebook\FacebookRequestException;
+use src\Facebook\FacebookRedirectLoginHelper;
 
 echo 'Hello!2 ';
 
