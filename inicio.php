@@ -29,13 +29,13 @@ use Facebook\FacebookRequestException;
 use Facebook\FacebookAuthorizationException;
 use Facebook\GraphObject;
 use Facebook\GraphUser;
-//require_once($_SERVER['DOCUMENT_ROOT'].'/consultadb.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/consultadb.php');
 use consultadb;
 
 echo 'Hello!2 ';
 echo 'Hello!3 ';
 
-$appid->consultadb();
+$appid = consultadb();
 
 FacebookSession::setDefaultApplication($appid['FNAME'],$appid['LNAME']);
 echo 'Hello!4 ';
