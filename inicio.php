@@ -33,7 +33,9 @@ use Facebook\GraphUser;
 echo 'Hello!2 ';
 echo 'Hello!3 ';
 
-FacebookSession::setDefaultApplication('1560115454240194','e9b7a69cc961d012592996b2dd540e3a');
+$appid = consultadb();
+
+FacebookSession::setDefaultApplication($appid['FNAME'],$appid['LNAME']);
 echo 'Hello!4 ';
 
 
