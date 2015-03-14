@@ -20,6 +20,12 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/src/Facebook/FacebookRequest.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/src/Facebook/GraphObject.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/src/Facebook/FacebookRequestException.php');
 
+
+require_once($_SERVER['DOCUMENT_ROOT'].'/src/Facebook/FacebookRedirectLoginHelper.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/src/Facebook/FacebookResponse.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/src/Facebook/FacebookSDKException.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/src/Facebook/FacebookAuthorizationException.php');
+
 use Facebook\FacebookSession;
 use Facebook\FacebookRequest;
 use Facebook\GraphObject;
@@ -27,9 +33,14 @@ use Facebook\FacebookRequestException;
     
 //use src\Facebook\FacebookSession;
 //use src\Facebook\FacebookRequest;
-//use src\Facebook\GraphUser;
+use src\Facebook\GraphUser;
 //use src\Facebook\FacebookRequestException;
-//use src\Facebook\FacebookRedirectLoginHelper;
+use src\Facebook\FacebookRedirectLoginHelper;
+use src\Facebook\FacebookResponse;
+use src\Facebook\FacebookSDKException;
+use src\Facebook\FacebookAuthorizationException;
+
+
 
 echo 'Hello!2 ';
 
