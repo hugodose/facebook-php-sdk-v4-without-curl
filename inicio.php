@@ -92,7 +92,7 @@ if ( isset( $session ) ) {
     $loginUrl = $helper->getLoginUrl($login_params);
     //$auth_url = $helper->getLoginUrl(array('email'));
     ?>
-    <a href="<?php echo $loginUrl; ?>" onclick="javascript:void window.open('<?php echo $loginUrl; ?>','fb_popup');return false;">Login with Facebook</a>
+    <a href="<?php echo $loginUrl; ?>">Login with Facebook</a>
     <?php
 }
 
