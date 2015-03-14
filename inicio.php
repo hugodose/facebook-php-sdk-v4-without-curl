@@ -3,7 +3,7 @@
 <?php
 session_start();
 
-echo 'Hello! '.$_SERVER['DOCUMENT_ROOT'].'/src/Facebook/FacebookSession.php';
+echo 'Hello! ';
 
 
 //require_once( 'src/Facebook/FacebookSession.php' );
@@ -45,37 +45,36 @@ echo 'Hello!4 ';
 
 
 // login helper with redirect_uri
-$helper = new FacebookRedirectLoginHelper( 'http://hazel-proxy-88217.appspot.com/' );
+$helper = new FacebookRedirectLoginHelper( 'http://hazel-proxy-88217.appspot.com/inicio' );
 try {
   $session = $helper->getSessionFromRedirect();
 } catch( FacebookRequestException $ex ) {
-  // When Facebook returns an error
+  echo '// When Facebook returns an error';
 } catch( Exception $ex ) {
-  // When validation fails or other local issues
+  echo '// When validation fails or other local issues';
 }
-// see if we have a session
+echo '// see if we have a session';
 if ( isset( $session ) ) {
-  // graph api request for user data
+  echo '// graph api request for user data';
   $request = new FacebookRequest( $session, 'GET', '/me' );
   $response = $request->execute();
-  // get response
+  echo '// get response';
   $graphObject = $response->getGraphObject();
-     $fbid = $graphObject->getProperty('id');              // To Get Facebook ID
-    $fbfullname = $graphObject->getProperty('name'); // To Get Facebook full name
-    $femail = $graphObject->getProperty('email');    // To Get Facebook email ID
+  $fbid = $graphObject->getProperty('id');              // To Get Facebook ID
+  $fbfullname = $graphObject->getProperty('name'); // To Get Facebook full name
+  $femail = $graphObject->getProperty('email');    // To Get Facebook email ID
 /* ---- Session Variables -----*/
-    $_SESSION['FBID'] = $fbid;          
-        $_SESSION['FULLNAME'] = $fbfullname;
-    $_SESSION['EMAIL'] =  $femail;
+  $_SESSION['FBID'] = $fbid;          
+  $_SESSION['FULLNAME'] = $fbfullname;
+  $_SESSION['EMAIL'] =  $femail;
   //checkuser($fuid,$ffname,$femail);
   header("Location: index.php");
 } else {
+  echo 'nao session';
   $loginUrl = $helper->getLoginUrl();
-header("Location: ".$loginUrl);
+  header("Location: ".$loginUrl);
 }
 
-
 echo 'Hello!5 ';
-
 
 ?>
