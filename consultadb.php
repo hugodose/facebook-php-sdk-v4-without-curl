@@ -27,7 +27,7 @@ try {
 
 try {
   // Show existing guestbook entries.
-  $query = $this->$db->query('SELECT from person LIMIT 1');
+  $query = $db->query('SELECT from person LIMIT 1');
   echo "<div>" . $query['FNAME'] . " " . $query['LNAME'] . "</div>";
 } catch (PDOException $ex) {
   echo "An error occurred in reading or writing to db.";
