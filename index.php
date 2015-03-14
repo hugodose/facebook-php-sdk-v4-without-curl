@@ -29,7 +29,7 @@ session_start();
 <h1>Login with Facebook</h1>
            Not Connected
 <div>
-      <a href=$_SERVER['DOCUMENT_ROOT'].'/inicio.php'>Login with Facebook</a></div>
+      <a href="/inicio">Login with Facebook</a></div>
       </div>
     <?php endif ?>
   </body>
