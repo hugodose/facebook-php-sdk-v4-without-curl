@@ -90,7 +90,8 @@ if ( isset( $session ) ) {
       
   }
   foreach ($taggable['data'] as $key => $value) {
-     echo '<img class="friendthumb" src = "',$value['picture']['data']['url'],'"/>';
+     //echo '<img class="friendthumb" src = "',$value['picture']['data']['url'],'"/>';
+     echo '<img class="friendthumb" src = "',$value->picture->data->url,'"/>';
      echo "<h4>", $value['name'],'</h4>';
   } //iterate through friends graph
   
