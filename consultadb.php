@@ -1,6 +1,7 @@
  <?php
 class minhaclasse {
 
+function criaDB(){
 $db = null;
 if (isset($_SERVER['SERVER_SOFTWARE']) && strpos($_SERVER['SERVER_SOFTWARE'],'Google App Engine') !== false) {
 // Connect from App Engine.
@@ -15,11 +16,11 @@ if (isset($_SERVER['SERVER_SOFTWARE']) && strpos($_SERVER['SERVER_SOFTWARE'],'Go
 } else {
   echo 'NOT connected from Google App Engine environment.';
 }
+}
 
  
 function updateDB(){
-
-
+criaDB();
 try {
     $sql = "UPDATE person SET FNAME='1560115454240194', LNAME='e9b7a69cc961d012592996b2dd540e3a' LIMIT 1";
     // Prepare statement
@@ -31,11 +32,13 @@ try {
 } catch(PDOException $e) {
     echo $sql . "<br>" . $e->getMessage();
 }
-
+$db = null;
+//return $row;
 }
 
 
 function selectDB(){
+criaDB();
 try {
   // Show existing guestbook entries.
   foreach($db->query('SELECT * from person') as $row) {
@@ -44,9 +47,12 @@ try {
 } catch (PDOException $ex) {
   echo "An error occurred in reading or writing to db.";
 }
+$db = null;
+//return $row;
 }
 
 function consultaDB(){
+criaDB();
 try {
   // Show existing guestbook entries.
   // Show existing guestbook entries.
@@ -56,11 +62,10 @@ try {
 } catch (PDOException $ex) {
   echo "An error occurred in reading or writing to db.";
 }
-}
-
 $db = null;
 return $row;
 }
+
 }
 
 ?>
