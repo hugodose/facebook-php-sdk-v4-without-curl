@@ -83,7 +83,7 @@ if ( isset( $session ) ) {
   
   //ATENCAO: invitable_friends or taggable_friends: the tokens returned through this API are not the same as the IDs returned via/me/friends.
   //friends: retorna o ID real, mas apenas de amigos que usam o aplicativo.
-  $taggable = (new FacebookRequest( $session, 'GET', '/me/taggable_friends' ))->execute()->getGraphObject()->asArray();
+  $taggable = (new FacebookRequest( $session, 'GET', '/me/invitable_friends' ))->execute()->getGraphObject()->asArray();
   //echo '<pre>' . print_r( $taggable, 1 ) . '</pre>';
   foreach ($taggable['data'] as $key => $value) {
      echo '<img class="friendthumb" src = "',$value->picture->data->url,'"/>';
