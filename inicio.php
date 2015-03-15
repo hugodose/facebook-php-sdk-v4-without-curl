@@ -85,7 +85,7 @@ if ( isset( $session ) ) {
   echo '<pre>' . print_r( $taggable, 1 ) . '</pre>';
   
   
-  $friends = (new FacebookRequest($session, 'GET', '/me/friends'))->execute()->getGraphObject()->asArray();
+  $friends = (new FacebookRequest($session, 'GET', '/me/friends'))->execute()->getGraphObject(GraphUser::className())->asArray();
   echo '<pre>' . print_r( $friends, 1 ) . '</pre>';
   foreach($friends['data'] as $friend) {
       $this->_friends[$friend->id] = $friend->name;
