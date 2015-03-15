@@ -19,6 +19,8 @@ echo 'Hello! <br>';
 
 
 require_once( 'autoload.php' );
+require_once($_SERVER['DOCUMENT_ROOT'].'/consultadb.php');
+
 
 use Facebook\FacebookSession;
 use Facebook\FacebookRedirectLoginHelper;
@@ -29,8 +31,6 @@ use Facebook\FacebookRequestException;
 use Facebook\FacebookAuthorizationException;
 use Facebook\GraphObject;
 use Facebook\GraphUser;
-//require_once($_SERVER['DOCUMENT_ROOT'].'/consultadb.php');
-use minhaclasse;
 
 
 echo 'Hello!2 ';
