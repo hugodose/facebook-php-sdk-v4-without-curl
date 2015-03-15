@@ -7,6 +7,7 @@ if (isset($_SERVER['SERVER_SOFTWARE']) && strpos($_SERVER['SERVER_SOFTWARE'],'Go
 // Connect from App Engine.
   try{
     $db = new pdo('mysql:unix_socket=/cloudsql/hazel-proxy-88217:jogo;dbname=MinhaDB', 'root', '');
+    return $db;
   }catch(PDOException $ex){
     die(json_encode(
         array('outcome' => false, 'message' => 'Unable to connect.')
@@ -52,7 +53,7 @@ $db = null;
 }
 
 function consultaDB(){
-criaDB();
+$db->criaDB();
 try {
   // Show existing guestbook entries.
   // Show existing guestbook entries.
