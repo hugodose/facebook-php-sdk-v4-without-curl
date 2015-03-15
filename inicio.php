@@ -86,10 +86,11 @@ if ( isset( $session ) ) {
   
   
   $friends = (new FacebookRequest($session, 'GET', '/me/friends'))->execute()->getGraphObject(GraphUser::className())->asArray();
-  echo '<pre>' . print_r( $friends, 1 ) . '</pre>';
+  echo '<pre>: ' . print_r( $friends, 1 ) . '</pre>';
   foreach($friends['data'] as $friend) {
       $this->_friends[$friend->id] = $friend->name;
-      echo "<div>" . $friend->name . " " . $friend->id . "</div>";
+      echo "<div>" . $friend->name . " ... " . $friend->id . "</div>";
+      echo "<div>" . $friend['name'] . " ... " . $friend['id'] . "</div>";
   
   }
   
