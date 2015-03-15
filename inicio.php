@@ -31,7 +31,7 @@ use Facebook\FacebookRequestException;
 use Facebook\FacebookAuthorizationException;
 use Facebook\GraphObject;
 use Facebook\GraphUser;
-
+use Facebook\FacebookPermissionException;
 
 echo 'Hello!2 ';
 echo 'CONSULTA: ';
@@ -90,9 +90,10 @@ if ( isset( $session ) ) {
     echo '<br> $session NAO existe <br>';
     $login_params = array(
         'scope' =>'publish_actions',
-                 'email',
-                 'user_location',
-                 'user_birthday'
+                  'taggable_friends',
+                  'email',
+                  'user_location',
+                  'user_birthday'
             );
     //$permissions = array(
     //    'display' => 'popup',
