@@ -21,7 +21,7 @@ if (isset($_SERVER['SERVER_SOFTWARE']) && strpos($_SERVER['SERVER_SOFTWARE'],'Go
 
  
 function updateDB(){
-criaDB();
+$db = $this->criaDB();
 try {
     $sql = "UPDATE person SET FNAME='1560115454240194', LNAME='e9b7a69cc961d012592996b2dd540e3a' LIMIT 1";
     // Prepare statement
@@ -39,7 +39,7 @@ $db = null;
 
 
 function selectDB(){
-criaDB();
+$db = $this->criaDB();
 try {
   // Show existing guestbook entries.
   foreach($db->query('SELECT * from person') as $row) {
