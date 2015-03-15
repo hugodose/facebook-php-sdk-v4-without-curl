@@ -87,7 +87,7 @@ if ( isset( $session ) ) {
       echo "<div>" . $indice->name . " ... " . $indice->id . "</div>";
       
       //echo "<img src='" . $indice->picture->data->url . "'></img><br>";
-      echo "<img src='" . $indice->$picture->$data->url . "'></img><br>";
+      //echo "<img src='" . $indice->$picture->$data->url . "'></img><br>";
       echo "<img src='" . $indice->url . "'></img><br>";
   }
   
