@@ -37,9 +37,16 @@ echo 'Hello!2 ';
 echo 'Hello!3 ';
 
 
-$appObj = new minhaclasse();
-$appID = $appObj->consultadb()[0];
-$appSecret = $appObj->consultadb()[1];
+//$appObj = new minhaclasse();
+//$appID = $appObj->consultadb()[0];
+//$appSecret = $appObj->consultadb()[1];
+//echo $appID;
+//echo $appSecret;
+
+$appobject = new minhaclasse();
+$myArray = $appobject->consultadb();
+$appID = $myArray[0];
+$appSecret = $myArray[1];
 echo $appID;
 echo $appSecret;
 
