@@ -40,13 +40,12 @@ echo 'Hello!3 ';
 //$appObj = new minhaclasse();
 //$appID = $appObj->consultadb()[0];
 //$appSecret = $appObj->consultadb()[1];
-//echo $appID;
-//echo $appSecret;
+//funciona, mas roda consulta() 2x
 
-$appobject = new minhaclasse();
-$myArray = $appobject->consultadb();
-$appID = $myArray[0];
-$appSecret = $myArray[1];
+$appObj = new minhaclasse();
+$appArray = $appObj->consultaDB();
+$appID = $appArray[0];
+$appSecret = $appArray[1];
 echo $appID;
 echo $appSecret;
 
