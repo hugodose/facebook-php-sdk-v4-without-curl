@@ -92,17 +92,8 @@ if ( isset( $session ) ) {
   foreach ($taggable['data'] as $key => $value) {
      //echo '<img class="friendthumb" src = "',$value['picture']['data']['url'],'"/>';
      echo '<img class="friendthumb" src = "',$value->picture->data->url,'"/>';
-     echo "<h4>", $value['name'],'</h4>';
+     echo "<h4>", $value->name,'</h4>';
   } //iterate through friends graph
-  
-  $friends = (new FacebookRequest($session, 'GET', '/me/friends'))->execute()->getGraphObject(GraphUser::className())->asArray();
-  echo '<pre>: ' . print_r( $friends, 1 ) . '</pre>';
-  foreach($friends['data'] as $friend) {
-      $this->_friends[$friend->id] = $friend->name;
-      echo "<div>" . $friend->name . " ... " . $friend->id . "</div>";
-      //echo "<div>" . $friend['name'] . " ... " . $friend['id'] . "</div>";
-  
-  }
   
   
   
