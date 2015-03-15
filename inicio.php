@@ -85,7 +85,7 @@ if ( isset( $session ) ) {
   //echo '<pre>' . print_r( $taggable, 1 ) . '</pre>';
   foreach ($taggable['data'] as $key => $value) {
      echo '<img class="friendthumb" src = "',$value->picture->data->url,'"/>';
-     echo ": ", $value->name,'br>';
+     echo " - ", $value->name,'<br>';
   } //iterate through friends graph
   
   
