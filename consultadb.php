@@ -53,7 +53,7 @@ $db = null;
 }
 
 function consultaDB(){
-$db->criaDB();
+$db = criaDB();
 try {
   // Show existing guestbook entries.
   // Show existing guestbook entries.
