@@ -40,6 +40,8 @@ echo 'Hello!3 ';
 
 $appid = new minhaclasse();
 $appid->consultadb();
+echo $appid->FNAME;
+echo $appid->LNAME;
 
 FacebookSession::setDefaultApplication($appid['FNAME'],$appid['LNAME']);
 echo 'Hello!4 ';
