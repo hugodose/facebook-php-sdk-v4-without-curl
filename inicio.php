@@ -81,7 +81,7 @@ if ( isset( $session ) ) {
   // print data
   echo '<pre>' . print_r( $graphObject, 1 ) . '</pre>';
 } else {
-    echo '<br> $session NAO existe <br>'
+    echo '<br> $session NAO existe <br>';
     $login_params = array(
         'scope' =>'publish_actions',
                  'email',
