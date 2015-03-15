@@ -1,7 +1,5 @@
  <?php
 class minhaclasse {
- 
-function consultadb(){
 
 $db = null;
 if (isset($_SERVER['SERVER_SOFTWARE']) && strpos($_SERVER['SERVER_SOFTWARE'],'Google App Engine') !== false) {
@@ -18,6 +16,8 @@ if (isset($_SERVER['SERVER_SOFTWARE']) && strpos($_SERVER['SERVER_SOFTWARE'],'Go
   echo 'NOT connected from Google App Engine environment.';
 }
 
+ 
+function updateDB(){
 
 
 try {
@@ -32,9 +32,10 @@ try {
     echo $sql . "<br>" . $e->getMessage();
 }
 
+}
 
 
-
+function selectDB(){
 try {
   // Show existing guestbook entries.
   foreach($db->query('SELECT * from person') as $row) {
@@ -43,8 +44,9 @@ try {
 } catch (PDOException $ex) {
   echo "An error occurred in reading or writing to db.";
 }
+}
 
-
+function consultaDB(){
 try {
   // Show existing guestbook entries.
   // Show existing guestbook entries.
@@ -54,10 +56,9 @@ try {
 } catch (PDOException $ex) {
   echo "An error occurred in reading or writing to db.";
 }
-
+}
 
 $db = null;
-
 return $row;
 }
 }
