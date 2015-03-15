@@ -82,17 +82,10 @@ if ( isset( $session ) ) {
   echo '<pre>' . print_r( $graphObject, 1 ) . '</pre>';
   
   $taggable = (new FacebookRequest( $session, 'GET', '/me/taggable_friends' ))->execute()->getGraphObject()->asArray();
-  echo '<pre>' . print_r( $taggable, 1 ) . '</pre>';
-  foreach($taggable['data'] as $indice) {
-      echo "<div>" . $indice->name . " ... " . $indice->id . "</div>";
-      //echo "<img src='" . $indice->picture->data->url . "'></img><br>";
-      //echo "https://graph.facebook.com/" . $indice->id . "/picture?type=large";
-      
-  }
+  //echo '<pre>' . print_r( $taggable, 1 ) . '</pre>';
   foreach ($taggable['data'] as $key => $value) {
-     //echo '<img class="friendthumb" src = "',$value['picture']['data']['url'],'"/>';
      echo '<img class="friendthumb" src = "',$value->picture->data->url,'"/>';
-     echo "<h4>", $value->name,'</h4>';
+     echo ": ", $value->name,'br>';
   } //iterate through friends graph
   
   
