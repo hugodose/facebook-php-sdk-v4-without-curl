@@ -45,9 +45,6 @@ echo $appID;
 echo $appSecret;
 
 
-$object = new MyObj();
-$myValue = $object->myFunction()['arrayIndex'];
-
 FacebookSession::setDefaultApplication($appID,$appSecret);
 echo 'Hello!4 ';
 
