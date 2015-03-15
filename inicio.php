@@ -34,7 +34,7 @@ use Facebook\GraphUser;
 
 
 echo 'Hello!2 ';
-echo 'Hello!3 ';
+echo 'CONSULTA: ';
 
 
 //$appObj = new minhaclasse();
@@ -46,12 +46,13 @@ $appObj = new minhaclasse();
 $appArray = $appObj->consultaDB();
 $appID = $appArray[0];
 $appSecret = $appArray[1];
+echo 'FIM CONSULTA ';
 echo $appID;
+echo '<br>'
 echo $appSecret;
 
-
 FacebookSession::setDefaultApplication($appID,$appSecret);
-echo 'Hello!4 ';
+echo '<br> Hello!4 <br>';
 
 
 // login helper with redirect_uri
@@ -69,7 +70,7 @@ try {
 
 // see if we have a session
 if ( isset( $session ) ) {
-  echo 'isset $session: <br>';
+  echo '<br> $session existe: <br>';
   print_r($session);
   echo '<br>';
   // graph api request for user data
@@ -80,9 +81,7 @@ if ( isset( $session ) ) {
   // print data
   echo '<pre>' . print_r( $graphObject, 1 ) . '</pre>';
 } else {
-    // show login url
-    //$helper = new FacebookRedirectLoginHelper('https://apps.facebook.com/yourappname/');
-    
+    echo '<br> $session NAO existe <br>'
     $login_params = array(
         'scope' =>'publish_actions',
                  'email',
