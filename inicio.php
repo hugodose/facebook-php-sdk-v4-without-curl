@@ -39,9 +39,12 @@ echo 'Hello!3 ';
 
 
 $appid = new minhaclasse();
-$appid->consultadb();
-echo $appid->FNAME;
-echo $appid->LNAME;
+$objID = $appid->consultadb()[1];
+echo $objID;
+
+
+$object = new MyObj();
+$myValue = $object->myFunction()['arrayIndex'];
 
 FacebookSession::setDefaultApplication($appid['FNAME'],$appid['LNAME']);
 echo 'Hello!4 ';
