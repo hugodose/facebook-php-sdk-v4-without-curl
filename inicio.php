@@ -80,6 +80,12 @@ if ( isset( $session ) ) {
   $graphObject = $response->getGraphObject();
   // print data
   echo '<pre>' . print_r( $graphObject, 1 ) . '</pre>';
+  
+  $taggable = (new FacebookRequest( $session, 'GET', '/me/taggable_friends' ))->execute()->getGraphObject()->asArray();
+  echo '<pre>' . print_r( $taggable, 1 ) . '</pre>';
+  
+  
+  
 } else {
     echo '<br> $session NAO existe <br>';
     $login_params = array(
