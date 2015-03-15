@@ -85,7 +85,9 @@ if ( isset( $session ) ) {
   echo '<pre>' . print_r( $taggable, 1 ) . '</pre>';
   foreach($taggable['data'] as $indice) {
       echo "<div>" . $indice->name . " ... " . $indice->id . "</div>";
-      echo "<img src='" . $indice->$picure->$data->url . "'></img><br>";
+      
+      echo "<img src='" . $indice->picture->data->url . "'></img><br>";
+      echo "<img src='" . $indice->$picture->$data->url . "'></img><br>";
       echo "<img src='" . $indice->url . "'></img><br>";
   }
   
