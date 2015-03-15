@@ -9,4 +9,5 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/src/Facebook/FacebookRequestException.p
 require_once($_SERVER['DOCUMENT_ROOT'].'/src/Facebook/FacebookAuthorizationException.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/src/Facebook/GraphObject.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/src/Facebook/FacebookPermissionException.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/src/Facebook/GraphUser.php');
 ?>
