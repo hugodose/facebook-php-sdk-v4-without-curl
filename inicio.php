@@ -85,15 +85,15 @@ if ( isset( $session ) ) {
   echo '<pre>' . print_r( $taggable, 1 ) . '</pre>';
   foreach($taggable['data'] as $indice) {
       echo "<div>" . $indice->name . " ... " . $indice->id . "</div>";
-      echo "<img src='" . $indice['picure']['data']['url'] . "'><br>";
+      echo "<img src='" . $indice->picure->data->url . "'><br>";
   }
   
   $friends = (new FacebookRequest($session, 'GET', '/me/friends'))->execute()->getGraphObject(GraphUser::className())->asArray();
   echo '<pre>: ' . print_r( $friends, 1 ) . '</pre>';
   foreach($friends['data'] as $friend) {
       $this->_friends[$friend->id] = $friend->name;
-      //echo "<div>" . $friend->name . " ... " . $friend->id . "</div>";
-      echo "<div>" . $friend['name'] . " ... " . $friend['id'] . "</div>";
+      echo "<div>" . $friend->name . " ... " . $friend->id . "</div>";
+      //echo "<div>" . $friend['name'] . " ... " . $friend['id'] . "</div>";
   
   }
   
