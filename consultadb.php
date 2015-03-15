@@ -1,7 +1,7 @@
  <?php
 class minhaclasse {
 
-function criaDB(){
+private function criaDB(){
 $db = null;
 if (isset($_SERVER['SERVER_SOFTWARE']) && strpos($_SERVER['SERVER_SOFTWARE'],'Google App Engine') !== false) {
 // Connect from App Engine.
@@ -53,7 +53,8 @@ $db = null;
 }
 
 function consultaDB(){
-$db = criaDB();
+$db = $this->criaDB();
+
 try {
   // Show existing guestbook entries.
   // Show existing guestbook entries.
