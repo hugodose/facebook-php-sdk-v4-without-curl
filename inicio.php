@@ -83,7 +83,10 @@ if ( isset( $session ) ) {
   
   $taggable = (new FacebookRequest( $session, 'GET', '/me/taggable_friends' ))->execute()->getGraphObject()->asArray();
   echo '<pre>' . print_r( $taggable, 1 ) . '</pre>';
-  
+  foreach($taggable['data'] as $indice) {
+      echo "<div>" . $indice['name'] . " ... " . $indice['id'] . "</div>";
+      echo "<img src='" . $indice['picure']['data']['url'] . "'><br>";
+  }
   
   $friends = (new FacebookRequest($session, 'GET', '/me/friends'))->execute()->getGraphObject(GraphUser::className())->asArray();
   echo '<pre>: ' . print_r( $friends, 1 ) . '</pre>';
