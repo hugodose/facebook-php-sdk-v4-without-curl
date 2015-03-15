@@ -23,7 +23,7 @@ if (isset($_SERVER['SERVER_SOFTWARE']) && strpos($_SERVER['SERVER_SOFTWARE'],'Go
 function updateDB(){
 $db = $this->criaDB();
 try {
-    $sql = "UPDATE person SET FNAME='1560115454240194', LNAME='e9b7a69cc961d012592996b2dd540e3a' LIMIT 1";
+    $sql = "UPDATE person SET FNAME='91560115454240194', LNAME='ze9b7a69cc961d012592996b2dd540e3a' LIMIT 1";
     // Prepare statement
     $stmt = $db->prepare($sql);
     // execute the query
