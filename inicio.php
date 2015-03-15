@@ -48,7 +48,7 @@ $appID = $appArray[0];
 $appSecret = $appArray[1];
 echo 'FIM CONSULTA ';
 echo $appID;
-echo '<br>'
+echo '<br>';
 echo $appSecret;
 
 FacebookSession::setDefaultApplication($appID,$appSecret);
