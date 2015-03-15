@@ -38,15 +38,17 @@ echo 'Hello!2 ';
 echo 'Hello!3 ';
 
 
-$appid = new minhaclasse();
-$objID = $appid->consultadb()[1];
-echo $objID;
+$appObj = new minhaclasse();
+$appID = $appObj->consultadb()[0];
+$appSecret = $appObj->consultadb()[1];
+echo $appID;
+echo $appSecret;
 
 
 $object = new MyObj();
 $myValue = $object->myFunction()['arrayIndex'];
 
-FacebookSession::setDefaultApplication($appid['FNAME'],$appid['LNAME']);
+FacebookSession::setDefaultApplication($appID,$appSecret);
 echo 'Hello!4 ';
 
 
