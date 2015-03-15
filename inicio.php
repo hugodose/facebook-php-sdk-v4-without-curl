@@ -29,7 +29,7 @@ use Facebook\FacebookRequestException;
 use Facebook\FacebookAuthorizationException;
 use Facebook\GraphObject;
 use Facebook\GraphUser;
-require_once($_SERVER['DOCUMENT_ROOT'].'/consultadb.php');
+//require_once($_SERVER['DOCUMENT_ROOT'].'/consultadb.php');
 //use minhaclasse;
 
 
