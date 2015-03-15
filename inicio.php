@@ -30,7 +30,7 @@ use Facebook\FacebookAuthorizationException;
 use Facebook\GraphObject;
 use Facebook\GraphUser;
 //require_once($_SERVER['DOCUMENT_ROOT'].'/consultadb.php');
-//use minhaclasse;
+use minhaclasse;
 
 
 echo 'Hello!2 ';
