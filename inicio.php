@@ -1,9 +1,5 @@
-
-
 <?php
-
 session_start();
-
 
 echo 'depois $_SESSION: '.$_SESSION.'<br>';
 echo 'depois $session: '.$session.'<br>';
