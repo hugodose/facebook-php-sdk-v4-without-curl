@@ -2,6 +2,8 @@
  <body>
   <h2>Entries</h2>
   <?php
+  require_once($_SERVER['DOCUMENT_ROOT'].'/consultadb.php');
+  
   $db = null;
   if (isset($_SERVER['SERVER_SOFTWARE']) &&
   strpos($_SERVER['SERVER_SOFTWARE'],'Google App Engine') !== false) {
