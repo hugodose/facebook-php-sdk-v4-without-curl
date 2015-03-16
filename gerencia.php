@@ -13,7 +13,7 @@
  
   $retorno = (new minhaclasse())->selectDB('SELECT * from person');
   foreach($retorno as $row) {
-  echo "<div>" . $row['FNAME'] . " " . $row['LNAME'] . "</div>";
+  echo "<div>" . $row['FNAME'] . " " . $row['LNAME'] . " " . $row['ID'] . "</div>";
   }
   
   $retorno = (new minhaclasse())->selectDB('SELECT * from person LIMIT 1');
