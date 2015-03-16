@@ -8,7 +8,7 @@
   
   $n1 = "oi1";
   $n2 = "oi2";
-  $retorno = (new minhaclasse())->selectDB('INSERT INTO person VALUES (' . $n1 . ',' . $n2 . '')' );
+  $retorno = (new minhaclasse())->selectDB('INSERT INTO person VALUES (' . $n1 . ',' . $n2 . ')' );
   foreach($retorno as $row) {
   echo "<div>" . $row['FNAME'] . " " . $row['LNAME'] . "</div>";
   }
