@@ -24,6 +24,9 @@
     echo "An error occurred in reading or writing to guestbook.";
   }
   $db = null;
+  
+  selectDB();
+  
   ?>
 
   <h2>Input</h2>
