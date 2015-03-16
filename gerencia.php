@@ -7,7 +7,9 @@
   $varum = $_POST['name'];
   $vardois = $_POST['content'];
   
-  $sqltodo = "INSERT INTO person (FNAME, LNAME) VALUES ('um','dois')";
+  //$sqltodo = "INSERT INTO person (FNAME, LNAME) VALUES ('um','dois')";
+  $sqltodo = $_POST['name'];;
+  
   echo $sqltodo;
   //funciona: $retorno = (new minhaclasse())->selectDB('ALTER TABLE person add column Id INT NOT NULL AUTO_INCREMENT FIRST, ADD primary KEY Id(Id)');
   //funciona: $retorno = (new minhaclasse())->usaDB("UPDATE person SET FNAME='91560115454240194', LNAME='ze9b7a69cc961d012592996b2dd540e3a' LIMIT 1" );
