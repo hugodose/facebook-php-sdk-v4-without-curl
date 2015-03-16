@@ -24,7 +24,7 @@ function updateDB($SQLquery){
 $db = $this->criaDB();
 try {
     //$sql = "UPDATE person SET FNAME='zzz91560115454240194', LNAME='ze9b7a69cc961d012592996b2dd540e3a' LIMIT 1";
-    $sql = "INSERT INTO person VALUES ('opa','oma')";
+    $sql = "INSERT INTO person (FNAME, LNAME) VALUES ('opa','oma')";
     
     //echo $SQLquery;
     //$sql = $SQLquery;
