@@ -41,7 +41,7 @@ $db = null;
 function selectDB($SQLquery){
 $db = $this->criaDB();
 try {
-  // Show existing guestbook entries.
+  echo $SQLquery;
   $retorno = $db->query($SQLquery);
 } catch (PDOException $ex) {
   echo "An error occurred in reading or writing to db.";
