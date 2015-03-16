@@ -5,6 +5,10 @@
   require_once($_SERVER['DOCUMENT_ROOT'].'/consultadb.php');
   $appObj = new minhaclasse();
   $appArray = $appObj->selectDB();
+  
+  $appObj2 = new minhaclasse()->selectDB();
+  
+  
   ?>
 
   <h2>Input</h2>
