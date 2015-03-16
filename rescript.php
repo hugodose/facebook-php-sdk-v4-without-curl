@@ -1,13 +1,13 @@
 <?php
 
-if (count($argv) != 3) {
-    echo 'usage: php -f rescript.php AppKey SessionToken';
-    exit(-1);
-}
+//if (count($argv) != 3) {
+//    echo 'usage: php -f rescript.php AppKey SessionToken';
+//    exit(-1);
+//}
 
 
-$APP_KEY = $argv[1];
-$SESSION_TOKEN = $argv[2];
+$APP_KEY = 'sZriuL6oyjHAgzvB';
+$SESSION_TOKEN = 'g1Spk8vzMgWWrRZNg6Ir8zGYaTj+d9J336k4yHeVrWE=';
 
 // Setting DEBUG to true will output all request / responses to api-ng.
 $DEBUG = False;
