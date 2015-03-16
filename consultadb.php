@@ -42,7 +42,7 @@ function selectDB($SQLquery){
 $db = $this->criaDB();
 try {
   echo $SQLquery;
-  $retorno = $db->query($SQLquery);
+  $retorno = $db->query($SQLquery)->execute();
 } catch (PDOException $ex) {
   echo "An error occurred in reading or writing to db.";
 }
