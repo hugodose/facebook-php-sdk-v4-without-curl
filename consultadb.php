@@ -34,12 +34,12 @@ try {
     // execute the query
     $stmt->execute();
     // echo a message to say the UPDATE succeeded
-    echo $stmt->rowCount() . " records UPDATED successfully";
+    echo $stmt->rowCount() . " rows successfully";
 } catch(PDOException $e) {
     echo $sql . "<br>" . $e->getMessage();
 }
 $db = null;
-//return $row;
+return $stmt;
 }
 
 
