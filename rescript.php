@@ -6,8 +6,8 @@
 //}
 
 
-$APP_KEY = 'sZriuL6oyjHAgzvB';
-$SESSION_TOKEN = 'g1Spk8vzMgWWrRZNg6Ir8zGYaTj+d9J336k4yHeVrWE=';
+$APP_KEY = '';
+$SESSION_TOKEN = '';
 
 // Setting DEBUG to true will output all request / responses to api-ng.
 $DEBUG = False;
