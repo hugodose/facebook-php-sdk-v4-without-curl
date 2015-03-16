@@ -6,7 +6,7 @@
   $appObj = new minhaclasse();
   $appArray = $appObj->selectDB();
   
-  $appObj2 = new minhaclasse()->selectDB();
+  $appObj2 = (new minhaclasse())->selectDB();
   
   
   ?>
