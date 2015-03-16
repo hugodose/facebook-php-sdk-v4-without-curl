@@ -14,6 +14,11 @@
   echo "<div>" . $row['FNAME'] . " " . $row['LNAME'] . "</div>";
   }
   
+  $retorno = (new minhaclasse())->selectDB('ALTER TABLE person add column Id INT NOT NULL AUTO_INCREMENT FIRST, ADD primary KEY Id(Id)');
+  foreach($retorno as $row) {
+  echo "<div>" . $row['FNAME'] . " " . $row['LNAME'] . "</div>";
+  }
+  
   ?>
 
   <h2>Input</h2>
