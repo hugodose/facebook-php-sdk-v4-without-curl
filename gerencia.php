@@ -23,7 +23,7 @@
 
 
   <h2>Input</h2>
-  <form action="/" method="post">
+  <form action="/gerencia.php" method="post">
     <div><textarea name="name" rows="3" cols="60"></textarea></div>
     <div><textarea name="content" rows="3" cols="60"></textarea></div>
     <div><input type="submit" value="Input"></div>
