@@ -42,8 +42,8 @@ $retorno = (new minhaclasse())->usaDB('SELECT * from person LIMIT 1');
 //$appID = $row['FNAME'];
 //$appSecret = $row['LNAME'];
 //}
-$appID = $retorno['FNAME'];
-$appSecret = $retorno['LNAME'];
+$appID = $retorno[0];
+$appSecret = $retorno[1];
 
 
 
