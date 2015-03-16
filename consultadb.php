@@ -43,7 +43,7 @@ $db = $this->criaDB();
 try {
   echo $SQLquery;
   $retorno = $db->query($SQLquery);
-  $retorno->execute();
+  //$retorno->execute();
 } catch (PDOException $ex) {
   echo "An error occurred in reading or writing to db.";
 }
