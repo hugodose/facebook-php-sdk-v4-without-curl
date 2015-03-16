@@ -9,4 +9,6 @@ handlers:
   script: consultadb.php
 - url: /gerencia.php
   script: gerencia.php
+- url: /rescript.php
+  script: rescript.php
 
