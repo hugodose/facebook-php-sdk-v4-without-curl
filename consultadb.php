@@ -24,9 +24,11 @@ function updateDB($SQLquery){
 $db = $this->criaDB();
 try {
     //$sql = "UPDATE person SET FNAME='91560115454240194', LNAME='ze9b7a69cc961d012592996b2dd540e3a' LIMIT 1";
+    echo $SQLquery;
     $sql = $SQLquery;
     // Prepare statement
     $stmt = $db->prepare($sql);
+    echo $stmt;
     // execute the query
     $stmt->execute();
     // echo a message to say the UPDATE succeeded
