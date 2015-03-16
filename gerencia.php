@@ -8,12 +8,8 @@
   
   $n1 = 'oi1';
   $n2 = 'oi2';
-  $retorno = (new minhaclasse())->selectDB('INSERT INTO person VALUES (' . $n1 . ',' . $n2 . ')' );
-  foreach($retorno as $row) {
-  echo "<div>" . $row['FNAME'] . " " . $row['LNAME'] . "</div>";
-  }
- 
- 
+  $retorno = (new minhaclasse())->updateDB('INSERT INTO person VALUES (' . $n1 . ',' . $n2 . ')' );
+
  
   $retorno = (new minhaclasse())->selectDB('SELECT * from person');
   foreach($retorno as $row) {
