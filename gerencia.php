@@ -6,9 +6,9 @@
  
   //$retorno = (new minhaclasse())->selectDB('ALTER TABLE person add column Id INT NOT NULL AUTO_INCREMENT FIRST, ADD primary KEY Id(Id)');
   
-  $n1 = 'oi1';
-  $n2 = 'oi2';
-  $retorno = (new minhaclasse())->updateDB('INSERT INTO person (FNAME, LNAME) VALUES (' . $n1 . ',' . $n2 . ')' );
+  //$n1 = 'oi1';
+  //$n2 = 'oi2';
+  $retorno = (new minhaclasse())->updateDB('INSERT INTO person (FNAME, LNAME) VALUES ('oi','oi2')' );
 
  
   $retorno = (new minhaclasse())->selectDB('SELECT * from person');
