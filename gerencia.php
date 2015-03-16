@@ -27,7 +27,8 @@
   }
   $db = null;
   
-  selectDB();
+  $appObj = new minhaclasse();
+  $appArray = $appObj->consultaDB();
   
   ?>
 
