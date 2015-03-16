@@ -5,7 +5,9 @@
   require_once($_SERVER['DOCUMENT_ROOT'].'/consultadb.php');
  
   $retorno = (new minhaclasse())->selectDB('SELECT * from person');
-  
+  foreach($retorno as $row) {
+  echo "<div> 2:" . $row['FNAME'] . " " . $row['LNAME'] . "</div>";
+  }
   
   ?>
 
