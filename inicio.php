@@ -38,10 +38,15 @@ echo 'CONSULTA: ';
 //$appSecret = $appObj->consultadb()[1];
 //funciona, mas roda consulta() 2x
 $retorno = (new minhaclasse())->usaDB('SELECT * from person LIMIT 1');
-foreach($retorno as $row) {
-$appID = $row['FNAME'];
-$appSecret = $row['LNAME'];
-}
+//foreach($retorno as $row) {
+//$appID = $row['FNAME'];
+//$appSecret = $row['LNAME'];
+//}
+$appID = $retorno['FNAME'];
+$appSecret = $retorno['LNAME'];
+
+
+
 
 //$appObj = new minhaclasse();
 //$appArray = $appObj->consultaDB();
