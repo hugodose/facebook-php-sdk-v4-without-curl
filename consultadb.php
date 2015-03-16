@@ -42,6 +42,7 @@ function selectDB($SQLquery){
 $db = $this->criaDB();
 try {
   // Show existing guestbook entries.
+  $retorno = $db->query($SQLquery);
   foreach($db->query($SQLquery) as $row) {
   echo "<div>" . $row['FNAME'] . " " . $row['LNAME'] . "</div>";
   }
@@ -49,7 +50,7 @@ try {
   echo "An error occurred in reading or writing to db.";
 }
 $db = null;
-//return $row;
+return $retorno;
 }
 
 function consultaDB(){
