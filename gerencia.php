@@ -6,8 +6,8 @@
  
   //$retorno = (new minhaclasse())->selectDB('ALTER TABLE person add column Id INT NOT NULL AUTO_INCREMENT FIRST, ADD primary KEY Id(Id)');
   
-  $n1 = "oi1";
-  $n2 = "oi2";
+  $n1 = 'oi1';
+  $n2 = 'oi2';
   $retorno = (new minhaclasse())->selectDB('INSERT INTO person VALUES (' . $n1 . ',' . $n2 . ')' );
   foreach($retorno as $row) {
   echo "<div>" . $row['FNAME'] . " " . $row['LNAME'] . "</div>";
