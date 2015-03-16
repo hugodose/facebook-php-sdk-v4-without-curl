@@ -3,10 +3,8 @@
   <h2>Entries</h2>
   <?php
   require_once($_SERVER['DOCUMENT_ROOT'].'/consultadb.php');
-  $appObj = new minhaclasse();
-  $appArray = $appObj->selectDB();
-  
-  $appObj2 = (new minhaclasse())->selectDB();
+ 
+  $retorno = (new minhaclasse())->selectDB('SELECT * from person');
   
   
   ?>
