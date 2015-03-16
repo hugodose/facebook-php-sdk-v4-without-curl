@@ -4,7 +4,7 @@
   <?php
   require_once($_SERVER['DOCUMENT_ROOT'].'/consultadb.php');
  
-  $retorno = (new minhaclasse())->selectDB('ALTER TABLE person add column Id INT NOT NULL AUTO_INCREMENT FIRST, ADD primary KEY Id(Id)');
+  //$retorno = (new minhaclasse())->selectDB('ALTER TABLE person add column Id INT NOT NULL AUTO_INCREMENT FIRST, ADD primary KEY Id(Id)');
   
   //$n1 = 'oi1';
   //$n2 = 'oi2';
