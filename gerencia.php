@@ -6,7 +6,12 @@
  
   $retorno = (new minhaclasse())->selectDB('SELECT * from person');
   foreach($retorno as $row) {
-  echo "<div> 2:" . $row['FNAME'] . " " . $row['LNAME'] . "</div>";
+  echo "<div>" . $row['FNAME'] . " " . $row['LNAME'] . "</div>";
+  }
+  
+  $retorno = (new minhaclasse())->selectDB('SELECT * from person LIMIT 1');
+  foreach($retorno as $row) {
+  echo "<div>" . $row['FNAME'] . " " . $row['LNAME'] . "</div>";
   }
   
   ?>
