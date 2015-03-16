@@ -28,7 +28,7 @@ try {
     $sql = $SQLquery;
     // Prepare statement
     $stmt = $db->prepare($sql);
-    echo $stmt;
+    //echo $stmt;
     // execute the query
     $stmt->execute();
     // echo a message to say the UPDATE succeeded
