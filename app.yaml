@@ -7,3 +7,6 @@ handlers:
   script: inicio.php
 - url: /consultadb.php
   script: consultadb.php
+- url: /gerencia.php
+  script: gerencia.php
+
