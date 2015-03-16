@@ -1,7 +1,7 @@
  <?php
 class minhaclasse {
 
- private function criaDB(){
+ private function connDB(){
   $db = null;
   if (isset($_SERVER['SERVER_SOFTWARE']) && strpos($_SERVER['SERVER_SOFTWARE'],'Google App Engine') !== false) {
   // Connect from App Engine.
@@ -20,8 +20,8 @@ class minhaclasse {
  }
 
  
- function updateDB($SQLquery){
-  $db = $this->criaDB();
+ function usaDB($SQLquery){
+  $db = $this->connDB();
   try {
     // Prepare statement
     $stmt = $db->prepare($SQLquery);
