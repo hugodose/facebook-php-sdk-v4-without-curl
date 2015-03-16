@@ -12,7 +12,7 @@
   $retorno = (new minhaclasse())->updateDB("INSERT INTO person (FNAME, LNAME) VALUES ('oi','oi2')" );
 
  
-  $retorno = (new minhaclasse())->selectDB('SELECT * from person');
+  $retorno = (new minhaclasse())->updateDB('SELECT * from person');
   foreach($retorno as $row) {
   echo "<div>" . $row['FNAME'] . " " . $row['LNAME'] . " " . $row['Id'] . "</div>";
   }
