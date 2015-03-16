@@ -38,11 +38,11 @@ $db = null;
 }
 
 
-function selectDB(){
+function selectDB($SQLquery){
 $db = $this->criaDB();
 try {
   // Show existing guestbook entries.
-  foreach($db->query('SELECT * from person') as $row) {
+  foreach($db->query($SQLquery) as $row) {
   echo "<div>" . $row['FNAME'] . " " . $row['LNAME'] . "</div>";
   }
 } catch (PDOException $ex) {
