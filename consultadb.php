@@ -35,10 +35,15 @@ class minhaclasse {
     echo $SQLquery . ': ';
     echo $stmt->rowCount() . " rows successfully <br>";
   } catch(PDOException $e) {
-    echo $SQLquery . "<br>" . $e->getMessage();
-    var_dump($e->getMessage());
-    var_dump($db->errorInfo());
     echo "An error occurred in reading or writing to db.";
+    echo $SQLquery . "<br>" . $e->getMessage();
+    echo "<br>" ;
+    echo "<br>" ;
+    var_dump($e->getMessage());
+    echo "<br>" ;
+    echo "<br>" ;
+    var_dump($db->errorInfo());
+    echo "<br>" ;
   }
   $db = null;
   return $stmt;
