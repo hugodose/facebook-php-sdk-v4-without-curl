@@ -19,6 +19,9 @@
   $retorno = (new minhaclasse())->usaDB("INSERT INTO person (FNAME, LNAME) VALUES ('$varum','$vardois')" );
   echo '<br>';
   $retorno = (new minhaclasse())->usaDB("$sqltodo");
+  foreach($retorno as $row) {
+  echo "<div>" . $row[0] . " " . $row[1] . " " . $row[2] . "</div>";
+  }
   echo '<br>';
  
   $retorno = (new minhaclasse())->usaDB('SELECT * from person');
