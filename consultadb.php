@@ -30,8 +30,9 @@ class minhaclasse {
     // echo a message to say the UPDATE succeeded
     echo $SQLquery . ': ';
     echo $stmt->rowCount() . " rows successfully <br>";
+    echo $e->getMessage();
   } catch(PDOException $e) {
-    echo $sql . "<br>" . $e->getMessage();
+    echo $SQLquery . "<br>" . $e->getMessage();
     echo "An error occurred in reading or writing to db.";
   }
   $db = null;
