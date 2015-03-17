@@ -7,8 +7,11 @@ class minhaclasse {
   // Connect from App Engine.
     try{
       $db = new pdo('mysql:unix_socket=/cloudsql/hazel-proxy-88217:jogo;dbname=MinhaDB', 'root', '');
+      $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
       return $db;
     }catch(PDOException $ex){
+      var_dump($e->getMessage());
       die(json_encode(
           array('outcome' => false, 'message' => 'Unable to connect.')
           )
@@ -25,14 +28,16 @@ class minhaclasse {
   try {
     // Prepare statement
     $stmt = $db->prepare($SQLquery);
+    $stmt->bindValue(1, $id, PDO::PARAM_INT);
     // execute the query
     $stmt->execute();
     // echo a message to say the UPDATE succeeded
     echo $SQLquery . ': ';
     echo $stmt->rowCount() . " rows successfully <br>";
-    echo $e->getMessage();
   } catch(PDOException $e) {
     echo $SQLquery . "<br>" . $e->getMessage();
+    var_dump($e->getMessage());
+    var_dump($db->errorInfo());
     echo "An error occurred in reading or writing to db.";
   }
   $db = null;
