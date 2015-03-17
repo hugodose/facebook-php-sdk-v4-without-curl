@@ -4,6 +4,6 @@
   echo $date;
   
   $my_datetime='2013-10-23 15:47:10';
-  echo date('d-m-Y H:i:s',strtotime("$my_datetime BRT"));
+  echo date('d-m-Y H:i:s BRT',strtotime("$my_datetime BRT"));
 
 ?>
