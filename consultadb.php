@@ -35,7 +35,7 @@ class minhaclasse {
     echo $SQLquery . ': ';
     echo $stmt->rowCount() . " rows successfully <br>";
   } catch(PDOException $e) {
-    echo "An error occurred in reading or writing to db.";
+    echo "An error occurred in reading or writing to db. <br>";
     echo $SQLquery . "<br>" . $e->getMessage();
     echo "<br>" ;
     echo "<br>" ;
