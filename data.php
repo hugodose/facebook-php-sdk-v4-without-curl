@@ -90,7 +90,7 @@ function get_final_url($url){
 
 
 	
-$rez = get_all_redirects('http://daerils.gtrends.hop.clickbank.net/');
+$rez = get_all_redirects('https://www.facebook.com/ellytran.cadie/photos/a.713508958730364.1073741838.712297768851483/794672760613983/?type=1');
 print_r($rez);
 
 ?>
