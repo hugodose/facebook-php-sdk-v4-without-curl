@@ -22,13 +22,14 @@ use Facebook\FacebookSession;
 use Facebook\FacebookRedirectLoginHelper;
 use Facebook\FacebookRequest;
 use Facebook\FacebookResponse;
-use Facebook\FacebookServerException;
 use Facebook\FacebookSDKException;
 use Facebook\FacebookRequestException;
 use Facebook\FacebookAuthorizationException;
 use Facebook\GraphObject;
 use Facebook\GraphUser;
 use Facebook\FacebookPermissionException;
+use Facebook\FacebookServerException;
+
 
 echo 'Hello!2 ';
 echo 'CONSULTA: ';
