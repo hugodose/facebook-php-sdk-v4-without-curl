@@ -17,16 +17,13 @@
  <?php
  require_once($_SERVER['DOCUMENT_ROOT'].'/consultadb.php');
 
-if(isset($_GET("Submit1")))
-{   
+if(isset($_GET("Submit1"))){   
         echo "Submit1";
 }
-if(isset($_GET["B1"]))
-{
+if(isset($_GET["B1"])){
         echo "B1";
 } 
-if(isset($_GET["B2"]))
-{
+if(isset($_GET["B2"])){
         echo "B2"; 
 }
 
