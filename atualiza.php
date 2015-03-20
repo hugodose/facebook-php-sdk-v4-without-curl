@@ -6,11 +6,7 @@
   <input type="Submit" name="Load" value="Carrega"/>
   </form>
   <br>
-  <form action="" method="POST">
-  <div><textarea name="Time1" rows="1" cols="20"></textarea></div>
-  <div><textarea name="Time2" rows="1" cols="20"></textarea></div>
-  <div><textarea name="DataJogo" rows="1" cols="20"></textarea></div>
-  <input type="Submit" name="Input" value="Envia"/>
+
   <br>
   </form>
   
@@ -27,7 +23,7 @@
      echo "<textarea name='Time1' rows='1' cols='20'>" . $row[0] . "</textarea>";
      echo "<textarea name='Time2' rows='1' cols='20'>" . $row[1] . "</textarea>";
      echo "<textarea name='DataJogo' rows='1' cols='20'>" . $row[2] . "</textarea>";
-     echo "<input type='submit' value='submit2'>";
+     echo "<input type='submit' name='Input' value='Envia'>";
      echo "</div>"; 
      echo "</form>";
    }
