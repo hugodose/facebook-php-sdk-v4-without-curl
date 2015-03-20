@@ -2,11 +2,11 @@
  <body>
   <h2>Resultados</h2>
   <br>
-  <form action="/atualiza.php" method="POST">
+  <form action="" method="POST">
   <input type="Submit" name="Load" value="Carrega"/>
   </form>
   <br>
-  <form action="/atualiza.php" method="POST">
+  <form action="" method="POST">
   <div><textarea name="Time1" rows="1" cols="20"></textarea></div>
   <div><textarea name="Time2" rows="1" cols="20"></textarea></div>
   <div><textarea name="DataJogo" rows="1" cols="20"></textarea></div>
