@@ -13,4 +13,6 @@ handlers:
   script: rescript.php
 - url: /data.php
   script: data.php
+- url: /atualiza.php
+  script: atualiza.php
 
