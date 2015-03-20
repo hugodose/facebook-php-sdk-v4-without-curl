@@ -51,6 +51,9 @@
    $retorno = (new minhaclasse())->usaDB("$sql");
    $sql = "UPDATE Apostas SET Pnl=0 WHERE Time1='$Time1' AND Time2='$Time2' AND DataJogo='$DataJogo' AND Escolha<>Resultado";
    $retorno = (new minhaclasse())->usaDB("$sql");
+   $sql = "SELECT userid, sum(pnl) from Apostas GROUP BY userid";
+   $retorno = (new minhaclasse())->usaDB("$sql");
+   
    
  }
   
