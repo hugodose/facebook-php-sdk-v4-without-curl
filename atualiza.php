@@ -35,17 +35,13 @@
 
  if (isset($_POST['Input'])) {
  
-   echo $_POST['Time1'];
-   echo " ";
-   echo $_POST['Time2'];
-   echo " ";
-   echo $_POST['DataJogo'];
-   echo " ";
-   echo $_POST['Resultado'];
-   echo "<br>";
+   $Time1 = $_POST['Time1'];
+   $Time2 = $_POST['Time2'];
+   $DataJogo =  $_POST['DataJogo'];
+   $Resultado =  $_POST['Resultado'];
+   
  
-   //$sql = "UPDATE Jogos SET Resultado=$_POST['Resultado'] WHERE Time1=$_POST['Time1'] AND Time2=$_POST['Time2'] AND DataJogo = $_POST['DataJogo'] ";
-   $sql = "UPDATE Jogos SET Resultado=$_POST['Resultado'] WHERE Time1='Cuiaba'";
+   $sql = "UPDATE Jogos SET Resultado='$Resultado' WHERE Time1='$Time1' AND Time2='$Time2' AND DataJogo='$DataJogo'";
    $retorno = (new minhaclasse())->usaDB("$sql");
  }
   
