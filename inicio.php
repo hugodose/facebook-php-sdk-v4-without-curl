@@ -100,12 +100,12 @@ if ( isset( $session ) ) {
   } //iterate through friends graph
   
   
-   $pagefeed = (new FacebookRequest( $session, 'GET', '/ellytran.cadie/feed' ))->execute()->getGraphObject()->asArray();
-   echo '<pre>' . print_r( $pagefeed, 1 ) . '</pre>';
-   foreach ($pagefeed['data'] as $key => $value) {
-   echo '<img class="friendthumb" src = "',$value->link,'"/>';
-   echo " - ", $value->message,'<br>';
-   } //iterate through friends graph
+  // $pagefeed = (new FacebookRequest( $session, 'GET', '/ellytran.cadie/feed' ))->execute()->getGraphObject()->asArray();
+  // echo '<pre>' . print_r( $pagefeed, 1 ) . '</pre>';
+  // foreach ($pagefeed['data'] as $key => $value) {
+  // echo '<img class="friendthumb" src = "',$value->link,'"/>';
+  // echo " - ", $value->message,'<br>';
+  // } //iterate through friends graph
   
   
   
