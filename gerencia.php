@@ -37,7 +37,7 @@
   <form action="/gerencia.php" method="post">
     <div><textarea name="name" rows="1" cols="20"></textarea></div>
     <div><textarea name="content" rows="1" cols="20"></textarea></div>
-    <div><textarea name="sql" rows="1" cols="20"></textarea></div>
+    <div><textarea name="sql" rows="5" cols="100"></textarea></div>
     <div><input type="submit" value="Input"></div>
   </form>
   </body>
