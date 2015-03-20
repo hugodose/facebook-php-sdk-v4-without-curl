@@ -2,7 +2,9 @@
  <body>
   <h2>Resultados</h2>
   <br>
+  <form action="/atualiza.php" method="POST">
   <input type="Submit" name="Load" value="Carrega"/>
+  </form>
   <br>
   <form action="/atualiza.php" method="POST">
   <div><textarea name="Time1" rows="1" cols="20"></textarea></div>
