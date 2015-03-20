@@ -28,12 +28,12 @@ class minhaclasse {
   try {
     // Prepare statement
     $stmt = $db->prepare($SQLquery);
-    $stmt->bindValue(1, $id, PDO::PARAM_INT);
+    //$stmt->bindValue(1, $id, PDO::PARAM_INT);
     // execute the query
     $stmt->execute();
     // echo a message to say the UPDATE succeeded
-    echo $SQLquery . ': ';
-    echo $stmt->rowCount() . " rows successfully <br>";
+    echo $SQLquery . ' : ';
+    echo $stmt->rowCount() . " rows<br><br>";
   } catch(PDOException $e) {
     echo "An error occurred in reading or writing to db. <br>";
     echo $SQLquery . "<br>" . $e->getMessage();
