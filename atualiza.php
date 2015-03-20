@@ -44,7 +44,8 @@
    echo $_POST['Resultado'];
    echo "<br>";
  
-   $sql = "UPDATE Jogos SET Resultado=$_POST['Resultado'] WHERE Time1=$_POST['Time1'] AND Time2=$_POST['Time2'] AND DataJogo = $_POST['DataJogo'] ";
+   //$sql = "UPDATE Jogos SET Resultado=$_POST['Resultado'] WHERE Time1=$_POST['Time1'] AND Time2=$_POST['Time2'] AND DataJogo = $_POST['DataJogo'] ";
+   $sql = "UPDATE Jogos SET Resultado=$_POST['Resultado'] WHERE Time1='Cuiaba'";
    $retorno = (new minhaclasse())->usaDB("$sql");
  }
   
