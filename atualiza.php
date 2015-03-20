@@ -9,10 +9,12 @@
  $retorno = (new minhaclasse())->usaDB("$sql");
  foreach($retorno as $row) {
  echo "<form action='' method='POST'>";
- echo "<div><textarea name='Time1' rows='1' cols='20'>" . $row[0] . "</textarea></div>";
- echo "<div><textarea name='Time2' rows='1' cols='20'>" . $row[1] . "</textarea></div>";
- echo "<div><textarea name='DataJogo' rows='1' cols='20'>" . $row[2] . "</textarea></div>";
- echo "<div><input type='submit' value='submit'></div>";
+ echo "<div>"; 
+ echo "<textarea name='Time1' rows='1' cols='20'>" . $row[0] . "</textarea>";
+ echo "<textarea name='Time2' rows='1' cols='20'>" . $row[1] . "</textarea>";
+ echo "<textarea name='DataJogo' rows='1' cols='20'>" . $row[2] . "</textarea>";
+ echo "<input type='submit' value='submit'>";
+ echo "</div>"; 
  echo "</form>";
  }
  echo '<br>';
