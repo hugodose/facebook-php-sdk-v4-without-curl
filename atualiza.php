@@ -1,44 +1,33 @@
 <html>
  <body>
-  <h2>Entries</h2>
-  <?php
-  require_once($_SERVER['DOCUMENT_ROOT'].'/consultadb.php');
+  <h2>Resultados</h2>
+  
+ <?php
+ require_once($_SERVER['DOCUMENT_ROOT'].'/consultadb.php');
+
+ $sql = 'SELECT Time1, Time2, DataJogo from Jogos WHERE Resultado = '''
+ $retorno = (new minhaclasse())->usaDB("$sql");
+ foreach($retorno as $row) {
+ echo "<form action="" method="POST">";
+ echo "<div><textarea name="Time1" rows="1" cols="20">" . $row[0] . "</textarea></div>";
+ echo "<div><textarea name="Time2" rows="1" cols="20">" . $row[1] . "</textarea></div>";
+ echo "<div><textarea name="DataJogo" rows="1" cols="20">" . $row[2] . "</textarea></div>";
+ echo "<div><input type="submit" value="submit"></div>";
+ echo "</form>";
+ }
+ echo '<br>';
  
-  $varum = $_POST['name'];
-  $vardois = $_POST['content'];
-  $sqltodo = $_POST['sql'];
-  
-  //$sqltodo = "INSERT INTO person (FNAME, LNAME) VALUES ('um','dois')";
-  //$sqltodo = "DELETE from person WHERE ID > 4";
-  
-  
-  echo $sqltodo;
-  //funciona: $retorno = (new minhaclasse())->usaDB('ALTER TABLE person add column Id INT NOT NULL AUTO_INCREMENT FIRST, ADD primary KEY Id(Id)');
-  //funciona: $retorno = (new minhaclasse())->usaDB("UPDATE person SET FNAME='91560115454240194', LNAME='ze9b7a69cc961d012592996b2dd540e3a' LIMIT 1" );
-  echo '<br>'; 
-  //$retorno = (new minhaclasse())->usaDB("INSERT INTO person (FNAME, LNAME) VALUES ('$varum','$vardois')" );
-  echo '<br>';
-  $retorno = (new minhaclasse())->usaDB("$sqltodo");
-  foreach($retorno as $row) {
-  echo "<div>" . $row[0] . " | " . $row[1] . " | " . $row[2] . " | " . $row[3] . " | " . $row[4] . " | " . $row[5] . " | " . $row[6] . " | " . $row[7] . " | " . $row[8] . "</div>";
-  }
-  echo '<br>';
+
+ if (isset($_POST['submit'])===true) {
  
-  //$retorno = (new minhaclasse())->usaDB('SELECT * from person');
-  //foreach($retorno as $row) {
-  //echo "<div>" . $row['FNAME'] . " " . $row['LNAME'] . " " . $row['Id'] . "</div>";
-  //}
+ echo $_POST['Time1'];
+ echo $_POST['Time2'];
+ echo $_POST['Data'];
+  
+ }
+  
+  
+ ?>
 
-  ?>
-
-
-
-  <h2>Input</h2>
-  <form action="/gerencia.php" method="post">
-    <div><textarea name="name" rows="1" cols="20"></textarea></div>
-    <div><textarea name="content" rows="1" cols="20"></textarea></div>
-    <div><textarea name="sql" rows="1" cols="20"></textarea></div>
-    <div><input type="submit" value="Input"></div>
-  </form>
   </body>
 </html>
