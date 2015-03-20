@@ -43,6 +43,13 @@
  
    $sql = "UPDATE Jogos SET Resultado='$Resultado' WHERE Time1='$Time1' AND Time2='$Time2' AND DataJogo='$DataJogo'";
    $retorno = (new minhaclasse())->usaDB("$sql");
+   
+   $sql = "UPDATE Apostas SET Resultado='$Resultado' WHERE Time1='$Time1' AND Time2='$Time2' AND DataJogo='$DataJogo'";
+   $retorno = (new minhaclasse())->usaDB("$sql");
+   
+   $sql = "UPDATE Apostas SET Pnl=(Notional * Odds) WHERE Time1='$Time1' AND Time2='$Time2' AND DataJogo='$DataJogo' AND Escolha=Resultado";
+   $retorno = (new minhaclasse())->usaDB("$sql");
+   
  }
   
   
