@@ -65,6 +65,7 @@
       
       date_default_timezone_set('Europe/London');
       $date = date('Y-m-d H:i:s');
+      echo $date;
       $userid = '12001';
       
       $sql = "INSERT INTO Apostas (data, userid, campeonato, time1, time2, datajogo, notional, escolha, odds) VALUES ($date, $userid, $Campeonato, $Time1, $Time2, $DataJogo, $Notional, $Escolha, $odds)";
