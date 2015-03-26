@@ -57,9 +57,9 @@
    foreach($retorno as $row) {
       $odds = $row[$Escolha];
    }
-   echo $odds;
+   echo $odds . '<br>';
    
-   if ($odds = $_POST[$Escolha]){
+   if ($odds == $_POST[$Escolha]){
       echo $odds . ' = ' . $_POST[$Escolha];
    }
  
