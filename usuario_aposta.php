@@ -61,6 +61,23 @@
    
    if ($odds == $_POST[$Escolha]){
       echo $odds . ' = ' . $_POST[$Escolha];
+      
+      
+      date_default_timezone_set('Europe/London');
+      $date = date('d-m-Y H:i:s');
+      $userid = '12001';
+      
+      $sql = "INSERT INTO Apostas (data, userid, campeonato, time1, time2, datajogo, notional, escolha, odds) VALUES ($date, $userid, $Campeonato, $Time1, $Time2, $DataJogo, $Notional, $Escolha, $odds);
+      $retorno = (new minhaclasse())->usaDB("$sql");
+
+      $sql = "SELECT * from Apostas WHERE userid = $userid";
+      $retorno = (new minhaclasse())->usaDB("$sql");
+      foreach($retorno as $row) {
+        echo "<div>" . $row[0] . " | " . $row[1] . " | " . $row[2] . " | " . $row[3] . " | " . $row[4] . " | " . $row[5] . " | " . $row[6] . " | " . $row[7] . " | " . $row[8] . " | " . $row[9] . " | " . $row[10] . " | " . $row[11] . " | " . $row[12] . "</div>";
+    }
+    else{
+      echo "Odds invalido: " . $odds . '<>' . $row[$Escolha];
+    }  
    }
  
  }
