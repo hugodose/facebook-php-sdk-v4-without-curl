@@ -53,7 +53,7 @@
    
    $sql = "SELECT $Escolha from Jogos WHERE Time1='$Time1' AND Time2='$Time2' AND DataJogo='$DataJogo'";
    $retorno = (new minhaclasse())->usaDB("$sql");
-   var_dump($retorno); 
+   echo '<pre>' . print_r( $retorno, 1 ) . '</pre>'; 
  
    
    
