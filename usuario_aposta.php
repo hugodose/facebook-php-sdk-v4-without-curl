@@ -53,9 +53,10 @@
    
    $sql = "SELECT $Escolha from Jogos WHERE Time1='$Time1' AND Time2='$Time2' AND DataJogo='$DataJogo'";
    $retorno = (new minhaclasse())->usaDB("$sql");
-   $odds = $obj->$retorno;
-   echo $odds[0];
-   
+   foreach($retorno as $row) {
+      $odds = $row[$Escolha];
+   }
+   echo $odds;
    
  }
   
