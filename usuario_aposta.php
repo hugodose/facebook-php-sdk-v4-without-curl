@@ -29,8 +29,8 @@
      echo "<textarea name='Empate' rows='1' cols='20'>" . $row[5] . "</textarea>";
      echo "<textarea name='Fora' rows='1' cols='20'>" . $row[6] . "</textarea>";
      echo "<textarea name='Resultado' rows='1' cols='20'>" . $row[7] . "</textarea>";
-     echo "<textarea name='Notional' rows='1' cols='20'>" notional "</textarea>";
-     echo "<textarea name='Escolha' rows='1' cols='20'>" escolha "</textarea>";
+     echo "<textarea name='Notional' rows='1' cols='20'> ..notional.. </textarea>";
+     echo "<textarea name='Escolha' rows='1' cols='20'> ..escolha.. </textarea>";
      echo "<input type='submit' name='Input' value='Envia'>";
      echo "</div>"; 
      echo "</form>";
