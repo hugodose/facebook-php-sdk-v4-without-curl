@@ -63,10 +63,10 @@
    echo $date . '<br>';
    
    if ($date < $_POST['DataJogo']){
-     echo 'Hora Atual: ' . $date . ' | Hora do Jogo: ' . $DataJogo . ' | Aposta Aberta' ;
+     echo 'Hora Atual: ' . $date . ' | Hora do Jogo: ' . $DataJogo . ' | Aposta Aberta <br>' ;
 
      if ($odds == $_POST[$Escolha]){
-        echo $odds . ' = ' . $_POST[$Escolha];
+        echo $odds . ' = ' . $_POST[$Escolha] . '<br>';
         $userid = '12001';
       
         $sql = "INSERT INTO Apostas (data, userid, campeonato, time1, time2, datajogo, notional, escolha, odds) VALUES ('$date', '$userid', '$Campeonato', '$Time1', '$Time2', '$DataJogo', $Notional, '$Escolha', $odds)";
@@ -81,7 +81,7 @@
         echo "Odds invalido: " . $odds . '<>' . $row[$Escolha];
      }  
    } else {
-     echo 'Hora Atual: ' . $date . ' | Hora do Jogo: ' . $DataJogo . ' | Aposta Fechada' ;
+     echo 'Hora Atual: ' . $date . ' | Hora do Jogo: ' . $DataJogo . ' | Aposta Fechada <br>' ;
    }
 
  }
