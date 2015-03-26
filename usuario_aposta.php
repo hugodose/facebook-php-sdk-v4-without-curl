@@ -45,12 +45,13 @@
    $Time1 = $_POST['Time1'];
    $Time2 = $_POST['Time2'];
    $DataJogo =  $_POST['DataJogo'];
-   $Casa=  $_POST['Casa'];
+   $Casa =  $_POST['Casa'];
    $Empate =  $_POST['Empate'];
    $Fora =  $_POST['Fora'];
    $Notional =  $_POST['Notional'];
    $Escolha =  $_POST['Escolha'];
    
+   //Confirma Odds na tablea Jogos
    $sql = "SELECT $Escolha from Jogos WHERE Time1='$Time1' AND Time2='$Time2' AND DataJogo='$DataJogo'";
    $retorno = (new minhaclasse())->usaDB("$sql");
    foreach($retorno as $row) {
@@ -58,6 +59,10 @@
    }
    echo $odds;
    
+   if $odss = $_POST[$Escolha]{
+      echo $odds . " = " . $_POST[$Escolha];
+   }
+ 
  }
   
   
