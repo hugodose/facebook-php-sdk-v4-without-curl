@@ -60,7 +60,8 @@
    echo $odds;
    
    if $odds = $_POST[$Escolha]{
-      echo ' ' . $odds . ' = ' . $_POST[$Escolha] . ' ';
+      echo $odds;
+      echo $_POST[$Escolha];
    }
  
  }
