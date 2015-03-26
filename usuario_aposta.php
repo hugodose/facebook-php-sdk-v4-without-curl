@@ -67,7 +67,7 @@
       $date = date('d-m-Y H:i:s');
       $userid = '12001';
       
-      $sql = "INSERT INTO Apostas (data, userid, campeonato, time1, time2, datajogo, notional, escolha, odds) VALUES ($date, $userid, $Campeonato, $Time1, $Time2, $DataJogo, $Notional, $Escolha, $odds);
+      $sql = "INSERT INTO Apostas (data, userid, campeonato, time1, time2, datajogo, notional, escolha, odds) VALUES ($date, $userid, $Campeonato, $Time1, $Time2, $DataJogo, $Notional, $Escolha, $odds)";
       $retorno = (new minhaclasse())->usaDB("$sql");
 
       $sql = "SELECT * from Apostas WHERE userid = $userid";
