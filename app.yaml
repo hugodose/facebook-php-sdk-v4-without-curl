@@ -17,4 +17,8 @@ handlers:
   script: atualiza.php
 - url: /usuario_aposta.php
   script: usuario_aposta.php
+- url: /get-data.php
+  script: get-data.php
+- url: /javascript.php
+  script: javascript.php
 
