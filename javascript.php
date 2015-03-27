@@ -10,7 +10,7 @@ function Consulta () {
         //This is where you handle what to do with the response.
         //The actual data is found on this.responseText
         document.getElementById('meutexto').value = this.responseText;
-        alert(this.responseText); 
+        //alert(this.responseText); 
     };
     oReq.open("get", "get-data.php", true);
     //                               ^ Don't block the rest of the execution.
