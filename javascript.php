@@ -5,6 +5,8 @@
 <div id="tabelaphp3"></div>
 <div id="tabelaphp4"></div>
 
+
+
 <script>
     //function reqListener () {
     //  console.log(this.responseText);
@@ -32,4 +34,35 @@ function Consulta () {
     //                                 continue.
     oReq.send();
 }
+</script>
+
+
+<form id="my_form">
+    Start date: <br/> <input name="idate" id="firstdate" type="text" /><br />
+    End date: <br /> <input name="fdate" id="seconddate" type="text" /><br />
+    <input id="submit_form" type="submit" value="Submit">
+</form>
+<div id="update_div"></div>
+
+<script>
+var submit_button = $('#submit_button');
+
+submit_button.click(function() {
+
+    var start_date = $('firstdate').val();
+    var end_date = $('seconddate').val();
+
+    var data = 'start_date=' + start_date + '&end_date=' + end_date;
+
+    var update_div = $('#update_div');
+
+    $.ajax({
+        type: 'GET',
+        url: 'proccess_form.php',
+        data: data,   
+        success:function(html){
+           update_div.html(html);
+        }
+    });
+});
 </script>
