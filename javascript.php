@@ -66,7 +66,8 @@ function Consulta () {
             function getstring() {
                 var form     = document.forms['Test'];
                 var firstname = form.firstname.value;
-                squery = 'firstname=' + escape(firstname);  // NOTE: no '?' before querystring
+                var secondname = form.secondname.value;
+                squery = 'firstname=' + escape(firstname) + 'secondname=' + escape(secondname);  // NOTE: no '?' before querystring
                 return squery;
             }
 
@@ -79,7 +80,8 @@ function Consulta () {
             <form name="Test">
 
               This pages does a post without a page refresh. the update div will be filled in below the text entry area in DIV=sentback
-                <p>First Name: <input name="firstname" type="text">  
+                <p>First Name: <input name="firstname" type="text"> 
+                <p>Second Name: <input name="secondname" type="text"> 
               <input value="Go" type="button" onclick='JavaScript:xmlhttpPost("proccess_form.php")'></p>
               <div id="sentback"></div>
             </form>
