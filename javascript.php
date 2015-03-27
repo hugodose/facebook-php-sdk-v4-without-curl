@@ -37,32 +37,50 @@ function Consulta () {
 </script>
 
 
-<form id="my_form">
-    Start date: <br/> <input name="idate" id="firstdate" type="text" /><br />
-    End date: <br /> <input name="fdate" id="seconddate" type="text" /><br />
-    <input id="submit_form" type="submit" value="Submit">
-</form>
-<div id="update_div"></div>
 
-<script>
-var submit_button = $('#submit_button');
 
-submit_button.click(function() {
 
-    var start_date = $('firstdate').val();
-    var end_date = $('seconddate').val();
+            <title>Ajax Test</title>
+            <script language="Javascript">
+            function xmlhttpPost(strURL) {
+                var xmlHttpReq = false;
+                var self = this;
+                // Mozilla/Safari
+                if (window.XMLHttpRequest) {
+                    self.xmlHttpReq = new XMLHttpRequest();
+                }
+                // IE
+                else if (window.ActiveXObject) {
+                    self.xmlHttpReq = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                self.xmlHttpReq.open('POST', strURL, true);
+                self.xmlHttpReq.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                self.xmlHttpReq.onreadystatechange = function() {
+                    if (self.xmlHttpReq.readyState == 4) {
+                        updatepage(self.xmlHttpReq.responseText);
+                    }
+                }
+                self.xmlHttpReq.send(getstring());
+            }
 
-    var data = 'start_date=' + start_date + '&end_date=' + end_date;
+            function getstring() {
+                var form     = document.forms['Test'];
+                var firstname = form.firstname.value;
+                squery = 'firstname=' + escape(firstname);  // NOTE: no '?' before querystring
+                return squery;
+            }
 
-    var update_div = $('#update_div');
+            function updatepage(str){
+                document.getElementById("sentback").innerHTML = str;
+            }
+            </script>
+            </head>
+            <body>
+            <form name="Test">
 
-    $.ajax({
-        type: 'GET',
-        url: 'proccess_form.php',
-        data: data,   
-        success:function(html){
-           update_div.html(html);
-        }
-    });
-});
-</script>
+              This pages does a post without a page refresh. the update div will be filled in below the text entry area in DIV=sentback
+                <p>First Name: <input name="firstname" type="text">  
+              <input value="Go" type="button" onclick='JavaScript:xmlhttpPost("proccess_form.php")'></p>
+              <div id="sentback"></div>
+            </form>
+
