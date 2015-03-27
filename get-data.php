@@ -1,3 +1,3 @@
 <?php
-echo json_encode('ola');
+echo json_encode(ola);
 ?>
