@@ -21,4 +21,6 @@ handlers:
   script: get-data.php
 - url: /javascript.php
   script: javascript.php
+- url: /proccess_form.php
+  script: proccess_form.php
 
