@@ -1,5 +1,6 @@
 <input type="button" id="meubotao" value="Clique aqui" onclick="Consulta();" />
 <input type="text" id="meutexto" value="..." />
+<div id="tabelaphp"></div>
 
 echo "<form action='zzzzz.php' method='POST'>";
 echo "<div>";
@@ -22,6 +23,7 @@ function Consulta () {
         //This is where you handle what to do with the response.
         //The actual data is found on this.responseText
         document.getElementById('meutexto').value = this.responseText[0];
+        document.getElementById('tabelaphp').innerHTML=xmlhttp.responseText;
         //alert(this.responseText); 
     };
     oReq.open("get", "get-data.php", true);
