@@ -67,7 +67,7 @@ function Consulta () {
                 var form     = document.forms['Test'];
                 var firstname = form.firstname.value;
                 var secondname = form.secondname.value;
-                squery = 'firstname=' + escape(firstname) + 'secondname=' + escape(secondname);  // NOTE: no '?' before querystring
+                squery = 'firstname=' + escape(firstname) + '&secondname=' + escape(secondname);  // NOTE: no '?' before querystring
                 return squery;
             }
 
