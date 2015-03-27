@@ -1,17 +1,9 @@
 <input type="button" id="meubotao" value="Clique aqui" onclick="Consulta();" />
 <input type="text" id="meutexto" value="..." />
-<div id="tabelaphp"></div>
-
-echo "<form action='zzzzz.php' method='POST'>";
-echo "<div>";
-echo "<textarea name='Time1' rows='1' cols='20'>" . $row[0] . "</textarea>";
-echo "<textarea name='Time2' rows='1' cols='20'>" . $row[1] . "</textarea>";
-echo "<textarea name='DataJogo' rows='1' cols='20'>" . $row[2] . "</textarea>";
-echo "<textarea name='Resultado' rows='1' cols='20'>" . $row[3] . "</textarea>";
-echo "<input type='submit' name='Input' value='Envia'>";
-echo "</div>";
-echo "</form>";
-
+<div id="tabelaphp1"></div>
+<div id="tabelaphp2"></div>
+<div id="tabelaphp3"></div>
+<div id="tabelaphp4"></div>
 
 <script>
     //function reqListener () {
@@ -22,10 +14,20 @@ function Consulta () {
     oReq.onload = function() {
         //This is where you handle what to do with the response.
         //The actual data is found on this.responseText
-        document.getElementById('meutexto').value = this.responseText[0];
-        document.getElementById('tabelaphp').innerHTML=xmlhttp.responseText;
+        //document.getElementById('meutexto').value = this.responseText[0];
+        document.getElementById('tabelaphp1').innerHTML=this.responseText;
+        document.getElementById('tabelaphp2').innerHTML=oReq.responseText;
         //alert(this.responseText); 
     };
+    oReq.onreadystatechange=function(){
+        if (oReq.readyState==4 && oReq.status==200) //ready
+        {
+            document.getElementById('tabelaphp3').innerHTML=this.responseText;
+            document.getElementById('tabelaphp4').innerHTML=oReq.responseText;
+            
+
+        }
+    }
     oReq.open("get", "get-data.php", true);
     //                               ^ Don't block the rest of the execution.
     //                                 Don't wait until the request finishes to 
