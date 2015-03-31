@@ -62,7 +62,7 @@ echo '<br> Hello!4 <br>';
 
 
 // web: $helper = new FacebookRedirectLoginHelper( 'http://hazel-proxy-88217.appspot.com/' );
-$helper = new FacebookCanvasLoginHelper( 'http://hazel-proxy-88217.appspot.com/' );
+$helper = new FacebookCanvasLoginHelper();
 try {
   //web: $session = $helper->getSessionFromRedirect();
   $session = $helper->getSession();
