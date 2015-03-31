@@ -74,9 +74,9 @@ echo 'Aposta Gol é um aplicativo gratuito';
 //consulta de jogos
             <title>Jogos</title>
             <script language="Javascript">
-            function xmlhttpPost(strURL, varqq){
+            function xmlhttpPost(strURL){
                 console.log(strURL);
-                console.log(formname);
+                //console.log(varqq);
                 var xmlHttpReq = false;
                 var self = this;
                 // Mozilla/Safari
@@ -130,7 +130,7 @@ echo 'Aposta Gol é um aplicativo gratuito';
      
      //<input value="Go" type="button" onclick='JavaScript:xmlhttpPost("div_enviaapostas.php")'>
      
-     echo "<input value='Go' type='button' onclick='JavaScript:xmlhttpPost('div_enviaapostas.php','29')'>";
+     echo "<input value='Go' type='button' onclick='JavaScript:xmlhttpPost('div_enviaapostas.php')'>";
      echo "</div>"; 
      echo "</form>";
      }
