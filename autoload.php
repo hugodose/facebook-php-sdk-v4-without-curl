@@ -11,6 +11,6 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/src/Facebook/GraphObject.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/src/Facebook/FacebookPermissionException.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/src/Facebook/GraphUser.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/src/Facebook/FacebookServerException.php');
-
+require_once($_SERVER['DOCUMENT_ROOT'].'/src/Facebook/FacebookCanvasLoginHelper.php');
 
 ?>
