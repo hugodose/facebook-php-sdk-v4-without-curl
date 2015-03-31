@@ -35,10 +35,9 @@ try {
   echo '// When validation fails or other local issues';
 }
 
-// see if we have a session
 if ( isset( $session ) ) {
   $pessoal = (new FacebookRequest( $session, 'GET', '/me' ))->execute()->getGraphObject()->asArray();
-  echo '<pre>' . print_r( $pessoal, 1 ) . '</pre>';
+  //echo '<pre>' . print_r( $pessoal, 1 ) . '</pre>';
   echo "<img src='https://graph.facebook.com/".$pessoal['id']."/picture?type=normal'/>";
   echo "Nome: ", $pessoal['name'],'<br>';
   echo "ID: ", $pessoal['id'],'<br>';
@@ -50,11 +49,11 @@ if ( isset( $session ) ) {
   //   echo " - ", $value->name,'<br>';
   //} //iterate through friends graph
   $amigos = (new FacebookRequest( $session, 'GET', '/me/friends' ))->execute()->getGraphObject()->asArray();
-  echo '<pre>' . print_r( $amigos, 1 ) . '</pre>';
+  //echo '<pre>' . print_r( $amigos, 1 ) . '</pre>';
   foreach ($amigos['data'] as $key => $value) {
      echo "<img src='https://graph.facebook.com/".$value->id."/picture?type=normal'/>";
      echo " - ", $value->name,'<br>';
-  } //iterate through friends graph
+  } 
 } else {
     echo '<br> $session NAO existe <br>';
     $login_params = array(
@@ -70,8 +69,54 @@ if ( isset( $session ) ) {
     <?php
 }
 
+//consulta de jogos
+            <title>Jogos</title>
+            <script language="Javascript">
+            function xmlhttpPost(strURL) {
+                var xmlHttpReq = false;
+                var self = this;
+                // Mozilla/Safari
+                if (window.XMLHttpRequest) {
+                    self.xmlHttpReq = new XMLHttpRequest();
+                }
+                // IE
+                else if (window.ActiveXObject) {
+                    self.xmlHttpReq = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                self.xmlHttpReq.open('POST', strURL, true);
+                self.xmlHttpReq.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                self.xmlHttpReq.onreadystatechange = function() {
+                    if (self.xmlHttpReq.readyState == 4) {
+                        updatepage(self.xmlHttpReq.responseText);
+                    }
+                }
+                self.xmlHttpReq.send(getstring());
+            }
 
+            function getstring() {
+                var form     = document.forms['Test'];
+                var firstname = form.firstname.value;
+                var secondname = form.secondname.value;
+                squery = 'firstname=' + escape(firstname) + '&secondname=' + escape(secondname);  // NOTE: no '?' before querystring
+                return squery;
+            }
 
-echo 'Hello!5 ';
+            function updatepage(str){
+                document.getElementById("sentback").innerHTML = str;
+            }
+            </script>
+            </head>
+            <body>
+            <form name="Test">
+
+              This pages does a post without a page refresh. the update div will be filled in below the text entry area in DIV=sentback
+                <p>First Name: <input name="firstname" type="text"> 
+                <p>Second Name: <input name="secondname" type="text"> 
+              <input value="Go" type="button" onclick='JavaScript:xmlhttpPost("proccess_form.php")'></p>
+              <div id="sentback"></div>
+            </form>
+//fim da consulta de jogos
+
+echo 'Aposta Gol é um aplicativo gratuito';
 
 ?>
