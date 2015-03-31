@@ -39,7 +39,7 @@ try {
 if ( isset( $session ) ) {
   $pessoal = (new FacebookRequest( $session, 'GET', '/me' ))->execute()->getGraphObject()->asArray();
   echo '<pre>' . print_r( $pessoal, 1 ) . '</pre>';
-  echo "<img src='https://graph.facebook.com/".$pessoal['id']."/picture'/>"; 
+  echo "<img src='https://graph.facebook.com/".$pessoal['id']."/picture?type=large'/>"; 
   echo "Nome: ", $pessoal['name'],'<br>';
   echo "ID: ", $pessoal['id'],'<br>';
   $foto = (new FacebookRequest( $session, 'GET', '/me/picture?type=normal' ))->execute()->getGraphObject()->asArray();
