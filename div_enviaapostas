@@ -1,5 +1,4 @@
-
-//input
+<?php
 
    $Campeonato = $_POST['Campeonato'];
    $Time1 = $_POST['Time1'];
