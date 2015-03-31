@@ -111,8 +111,9 @@ echo 'Aposta Gol é um aplicativo gratuito';
 <?php
    $sql = "SELECT Campeonato, Time1, Time2, DataJogo, Casa, Empate, Fora, Resultado from Jogos";
    $retorno = (new minhaclasse())->usaDB("$sql");
+   $formname = 0;
    foreach($retorno as $row) {
-     $formname = $row[1] . $row[2] . $row[3];
+     $formname = $formname + 1;
      echo "<form name=$formname>";
      echo "<div>"; 
      echo "<textarea name='Campeonato' rows='1' cols='20'>" . $row[0] . "</textarea>";
