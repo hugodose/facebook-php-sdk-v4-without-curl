@@ -76,6 +76,7 @@ echo 'Aposta Gol é um aplicativo gratuito';
             <script language="Javascript">
             function xmlhttpPost(strURL, formname) {
                 console.log(strURL);
+                console.log(formname);
                 var xmlHttpReq = false;
                 var self = this;
                 // Mozilla/Safari
@@ -93,12 +94,12 @@ echo 'Aposta Gol é um aplicativo gratuito';
                         updatepage(self.xmlHttpReq.responseText);
                     }
                 }
-                self.xmlHttpReq.send(getstring(formname));
+                self.xmlHttpReq.send(getstring());
                 console.log();
             }
 
-            function getstring(formname) {
-                var form     = document.forms[formname];
+            function getstring() {
+                var form     = document.forms['29'];
                 squery = 'Campeonato=' + escape(form.Campeonato.value) + '&Time1=' + escape(form.Time1.value) + '&Time2=' + escape(form.Time2.value) + '&DataJogo=' + escape(form.DataJogo.value) + '&Casa=' + escape(form.Casa.value) + '&Empate=' + escape(form.Empate.value) + '&Fora=' + escape(form.Fora.value) + '&Notional=' + escape(form.Notional.value) + '&Escolha=' + escape(form.Escolha.value);
                 console.log(squery);      
                 return squery;
