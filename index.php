@@ -96,10 +96,16 @@ echo 'Aposta Gol é um aplicativo gratuito';
             }
 
             function getstring() {
-                var form     = document.forms['Test'];
-                var firstname = form.firstname.value;
-                var secondname = form.secondname.value;
-                squery = 'firstname=' + escape(firstname) + '&secondname=' + escape(secondname);  // NOTE: no '?' before querystring
+                var form     = document.forms['Jogos'];
+                squery = 'Campeonato=' + escape(form.Campeonato.value) 
+                      + '&Time1=' + escape(form.Time1.value) 
+                      + '&Time2=' + escape(form.Time2.value)
+                      + '&DataJogo=' + escape(form.DataJogo.value)
+                      + '&Casa=' + escape(form.Casa.value)
+                      + '&Empate=' + escape(form.Empate.value)
+                      + '&Fora=' + escape(form.Fora.value)
+                      + '&Notional=' + escape(form.Notional.value)
+                      + '&Escolha=' + escape(form.Escolha.value);
                 return squery;
             }
 
@@ -107,16 +113,29 @@ echo 'Aposta Gol é um aplicativo gratuito';
                 document.getElementById("sentback").innerHTML = str;
             }
             </script>
-            </head>
-            <body>
-            <form name="Test">
+<?php
+   $sql = "SELECT Campeonato, Time1, Time2, DataJogo, Casa, Empate, Fora, Resultado from Jogos";
+   $retorno = (new minhaclasse())->usaDB("$sql");
+   foreach($retorno as $row) {
+     echo "<form name='Jogos'>";
+     echo "<div>"; 
+     echo "<textarea name='Campeonato' rows='1' cols='20'>" . $row[0] . "</textarea>";
+     echo "<textarea name='Time1' rows='1' cols='20'>" . $row[1] . "</textarea>";
+     echo "<textarea name='Time2' rows='1' cols='20'>" . $row[2] . "</textarea>";
+     echo "<textarea name='DataJogo' rows='1' cols='20'>" . $row[3] . "</textarea>";
+     echo "<textarea name='Casa' rows='1' cols='20'>" . $row[4] . "</textarea>";
+     echo "<textarea name='Empate' rows='1' cols='20'>" . $row[5] . "</textarea>";
+     echo "<textarea name='Fora' rows='1' cols='20'>" . $row[6] . "</textarea>";
+     echo "<textarea name='Resultado' rows='1' cols='20'>" . $row[7] . "</textarea>";
+     echo "<textarea name='Notional' rows='1' cols='20'> ..notional.. </textarea>";
+     echo "<textarea name='Escolha' rows='1' cols='20'> ..escolha.. </textarea>";
+     echo "<input value='Go' type='button' onclick='JavaScript:xmlhttpPost('div_enviaapostas.php')'>";
+     echo "</div>"; 
+     echo "</form>";
+     echo "<div id='sentback'></div>";
+   }
+?>
 
-              This pages does a post without a page refresh. the update div will be filled in below the text entry area in DIV=sentback
-                <p>First Name: <input name="firstname" type="text"> 
-                <p>Second Name: <input name="secondname" type="text"> 
-              <input value="Go" type="button" onclick='JavaScript:xmlhttpPost("div_jogos.php")'></p>
-              <div id="sentback"></div>
-            </form>
 //fim da consulta de jogos
 
 
