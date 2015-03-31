@@ -5,7 +5,7 @@
    $sql = "SELECT Campeonato, Time1, Time2, DataJogo, Casa, Empate, Fora, Resultado from Jogos";
    $retorno = (new minhaclasse())->usaDB("$sql");
    foreach($retorno as $row) {
-     echo "<form action='' method='POST'>";
+     echo "<form action='div_enviaapostas.php' method='POST'>";
      echo "<div>"; 
      echo "<textarea name='Campeonato' rows='1' cols='20'>" . $row[0] . "</textarea>";
      echo "<textarea name='Time1' rows='1' cols='20'>" . $row[1] . "</textarea>";
