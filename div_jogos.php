@@ -1,8 +1,7 @@
 <?php
  require_once($_SERVER['DOCUMENT_ROOT'].'/consultadb.php');
 
- if (isset($_POST['Load'])) {
-   //$sql = "SELECT Time1, Time2, DataJogo from Jogos WHERE Resultado = ''";
+
    $sql = "SELECT Campeonato, Time1, Time2, DataJogo, Casa, Empate, Fora, Resultado from Jogos";
    $retorno = (new minhaclasse())->usaDB("$sql");
    foreach($retorno as $row) {
@@ -22,10 +21,8 @@
      echo "</div>"; 
      echo "</form>";
    }
- echo '<br>';
- }
  
-
+//input
  if (isset($_POST['Input'])) {
  
    $Campeonato = $_POST['Campeonato'];
