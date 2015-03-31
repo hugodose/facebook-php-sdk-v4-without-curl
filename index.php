@@ -127,7 +127,8 @@ echo 'Aposta Gol é um aplicativo gratuito';
      ?>
      <input value="Go" type="button" onclick='JavaScript:xmlhttpPost("div_enviaapostas.php")'>
      <?php
-     echo '<input value="Go" type="button" onclick="JavaScript:xmlhttpPost("div_enviaapostas.php")">';
+     $Javatxt = 'JavaScript:xmlhttpPost("div_enviaapostas.php")';
+     echo '<input value="Go" type="button" onclick="' . $Javatxt . '")">';
      echo "</div>"; 
      echo "</form>";
      }
