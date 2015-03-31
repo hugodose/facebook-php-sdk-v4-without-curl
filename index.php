@@ -52,7 +52,7 @@ if ( isset( $session ) ) {
   $amigos = (new FacebookRequest( $session, 'GET', '/me/friends' ))->execute()->getGraphObject()->asArray();
   echo '<pre>' . print_r( $amigos, 1 ) . '</pre>';
   foreach ($amigos['data'] as $key => $value) {
-     echo '<img class="friendthumb" src = "',$value->id,'"/>';
+     echo "<img src='https://graph.facebook.com/".$value->id."/picture?type=normal'/>";
      echo " - ", $value->name,'<br>';
   } //iterate through friends graph
 } else {
