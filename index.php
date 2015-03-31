@@ -71,45 +71,71 @@ if ( isset( $session ) ) {
 echo 'Aposta Gol é um aplicativo gratuito';
 
 ?>
-//consulta de jogos
-            <title>Jogos</title>
-            <script language="Javascript">
-            function xmlhttpPost(strURL, formID){
-                console.log(formID);
-                //console.log(varqq);
-                var xmlHttpReq = false;
-                var self = this;
-                // Mozilla/Safari
-                if (window.XMLHttpRequest) {
-                    self.xmlHttpReq = new XMLHttpRequest();
-                }
-                // IE
-                else if (window.ActiveXObject) {
-                    self.xmlHttpReq = new ActiveXObject("Microsoft.XMLHTTP");
-                }
-                self.xmlHttpReq.open('POST', strURL, true);
-                self.xmlHttpReq.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-                self.xmlHttpReq.onreadystatechange = function() {
-                    if (self.xmlHttpReq.readyState == 4) {
-                        updatepage(self.xmlHttpReq.responseText);
-                    }
-                }
-                self.xmlHttpReq.send(getstring(formID));
-            }
+<!-- #########   INICIO MINHAS APOSTAS   #########    -->
+<script language="Javascript">
+  function xmlhttpPost('div_minhasapostas.php'){
+      var xmlHttpReq = false;
+      var self = this;
+      // Mozilla/Safari
+      if (window.XMLHttpRequest) {
+        self.xmlHttpReq = new XMLHttpRequest();
+      }
+      // IE
+      else if (window.ActiveXObject) {
+          self.xmlHttpReq = new ActiveXObject("Microsoft.XMLHTTP");
+      }
+      self.xmlHttpReq.open('POST', strURL, true);
+      self.xmlHttpReq.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+      self.xmlHttpReq.onreadystatechange = function() {
+        if (self.xmlHttpReq.readyState == 4) {
+              updatepage(self.xmlHttpReq.responseText);
+        }
+      }
+      self.xmlHttpReq.send();
+  }
 
-            function getstring(formID) {
-                console.log(formID);
-                var form = document.forms[formID];
-                squery = 'Campeonato=' + escape(form.Campeonato.value) + '&Time1=' + escape(form.Time1.value) + '&Time2=' + escape(form.Time2.value) + '&DataJogo=' + escape(form.DataJogo.value) + '&Casa=' + escape(form.Casa.value) + '&Empate=' + escape(form.Empate.value) + '&Fora=' + escape(form.Fora.value) + '&Notional=' + escape(form.Notional.value) + '&Escolha=' + escape(form.Escolha.value);
-                console.log(squery);      
-                return squery;
-            }
+  function updatepage(str){
+      document.getElementById("minhasapostas").innerHTML = str;
+  }
+</script>
+<div id='minhasapostas'></div>
+<!-- #########   FIM MINHAS APOSTAS   #########    -->
+<!-- #########   INICIO JOGOS   #########    -->
+<script language="Javascript">
+  function xmlhttpPost(strURL, formID){
+      var xmlHttpReq = false;
+      var self = this;
+      // Mozilla/Safari
+      if (window.XMLHttpRequest) {
+        self.xmlHttpReq = new XMLHttpRequest();
+      }
+      // IE
+      else if (window.ActiveXObject) {
+          self.xmlHttpReq = new ActiveXObject("Microsoft.XMLHTTP");
+      }
+      self.xmlHttpReq.open('POST', strURL, true);
+      self.xmlHttpReq.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+      self.xmlHttpReq.onreadystatechange = function() {
+        if (self.xmlHttpReq.readyState == 4) {
+              updatepage(self.xmlHttpReq.responseText);
+        }
+      }
+      self.xmlHttpReq.send(getstring(formID));
+  }
 
-            function updatepage(str){
-                document.getElementById("sentback").innerHTML = str;
-            }
-            </script>
+  function getstring(formID) {
+     var form = document.forms[formID];
+          squery = 'Campeonato=' + escape(form.Campeonato.value) + '&Time1=' + escape(form.Time1.value) + '&Time2=' + escape(form.Time2.value) + '&DataJogo=' + escape(form.DataJogo.value) + '&Casa=' + escape(form.Casa.value) + '&Empate=' + escape(form.Empate.value) + '&Fora=' + escape(form.Fora.value) + '&Notional=' + escape(form.Notional.value) + '&Escolha=' + escape(form.Escolha.value);
+          return squery;
+     }
+
+  function updatepage(str){
+      document.getElementById("sentback").innerHTML = str;
+  }
+</script>
+            
 <?php
+   echo "<div id='sentback'></div>";
    $sql = "SELECT Id, Campeonato, Time1, Time2, DataJogo, Casa, Empate, Fora, Resultado from Jogos";
    $retorno = (new minhaclasse())->usaDB("$sql");
    foreach($retorno as $row) {
@@ -130,9 +156,8 @@ echo 'Aposta Gol é um aplicativo gratuito';
      echo "</div>"; 
      echo "</form>";
      }
-     echo "<div id='sentback'></div>";
-   
 ?>
-//fim da consulta de jogos
+<!-- #########   FIM JOGOS   #########    -->
+
 
 
