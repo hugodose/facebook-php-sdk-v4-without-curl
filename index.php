@@ -75,6 +75,7 @@ echo 'Aposta Gol é um aplicativo gratuito';
             <title>Jogos</title>
             <script language="Javascript">
             function xmlhttpPost(strURL) {
+                console.log(strURL);
                 var xmlHttpReq = false;
                 var self = this;
                 // Mozilla/Safari
