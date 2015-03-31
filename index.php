@@ -74,7 +74,7 @@ echo 'Aposta Gol é um aplicativo gratuito';
 //consulta de jogos
             <title>Jogos</title>
             <script language="Javascript">
-            function xmlhttpPost(strURL, formname) {
+            function xmlhttpPost(strURL, formname ) {
                 console.log(strURL);
                 console.log(formname);
                 var xmlHttpReq = false;
@@ -115,7 +115,7 @@ echo 'Aposta Gol é um aplicativo gratuito';
    $formname = 0;
    foreach($retorno as $row) {
      $formname = $formname + 1;
-     echo "<form name='$formname'>";
+     echo "<form name='29'>";
      echo "<div>"; 
      echo "<textarea name='Campeonato' rows='1' cols='20'>" . $row[0] . "</textarea>";
      echo "<textarea name='Time1' rows='1' cols='20'>" . $row[1] . "</textarea>";
