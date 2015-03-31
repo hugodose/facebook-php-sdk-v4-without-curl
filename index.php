@@ -114,7 +114,7 @@ echo 'Aposta Gol é um aplicativo gratuito';
               This pages does a post without a page refresh. the update div will be filled in below the text entry area in DIV=sentback
                 <p>First Name: <input name="firstname" type="text"> 
                 <p>Second Name: <input name="secondname" type="text"> 
-              <input value="Go" type="button" onclick='JavaScript:xmlhttpPost("usuario_aposta.php")'></p>
+              <input value="Go" type="button" onclick='JavaScript:xmlhttpPost("div_jogos.php")'></p>
               <div id="sentback"></div>
             </form>
 //fim da consulta de jogos
