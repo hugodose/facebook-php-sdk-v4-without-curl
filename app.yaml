@@ -7,6 +7,8 @@ handlers:
   script: index.php
 - url: /div_jogos.php
   script: div_jogos.php 
+- url: /div_enviaapostas.php
+  script: div_enviaapostas.php 
   
 - url: /inicio.php
   script: inicio.php  
