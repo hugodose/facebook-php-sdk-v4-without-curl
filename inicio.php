@@ -60,10 +60,12 @@ FacebookSession::setDefaultApplication($appID,$appSecret);
 echo '<br> Hello!4 <br>';
 
 
-// login helper with redirect_uri
-$helper = new FacebookRedirectLoginHelper( 'http://hazel-proxy-88217.appspot.com/' );
+
+// web: $helper = new FacebookRedirectLoginHelper( 'http://hazel-proxy-88217.appspot.com/' );
+$helper = new FacebookCanvasLoginHelper( 'http://hazel-proxy-88217.appspot.com/' );
 try {
-  $session = $helper->getSessionFromRedirect();
+  //web: $session = $helper->getSessionFromRedirect();
+  $session = $helper->getSession();
   echo 'Try: <br> ';
   print_r($session);
   echo '<br>';
