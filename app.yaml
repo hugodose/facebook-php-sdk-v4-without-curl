@@ -5,6 +5,9 @@ api_version: 1
 handlers:
 - url: /
   script: index.php
+- url: /div_jogos.php
+  script: div_jogos.php 
+  
 - url: /inicio.php
   script: inicio.php  
 - url: /consultadb.php
