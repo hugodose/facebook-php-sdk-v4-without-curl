@@ -1,4 +1,5 @@
 <?php
+require_once($_SERVER['DOCUMENT_ROOT'].'/consultadb.php');
 
    $Campeonato = $_POST['Campeonato'];
    $Time1 = $_POST['Time1'];
@@ -9,6 +10,7 @@
    $Fora =  $_POST['Fora'];
    $Notional =  $_POST['Notional'];
    $Escolha =  $_POST['Escolha'];
+   echo $Escolha . '<br>';
    
    //Valida Horario e Odds na tablea Jogos
    $sql = "SELECT $Escolha from Jogos WHERE Time1='$Time1' AND Time2='$Time2' AND DataJogo='$DataJogo'";
