@@ -1,5 +1,5 @@
 <?php
-session_start();
+session_start(); //nao pode ter nada acima dessa linha
 header('Content-Type: text/html; charset=utf-8');
 
 
