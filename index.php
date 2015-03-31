@@ -95,11 +95,10 @@ echo 'Aposta Gol é um aplicativo gratuito';
                     }
                 }
                 self.xmlHttpReq.send(getstring());
-                console.log();
             }
 
             function getstring() {
-                var form     = document.forms['29'];
+                var form     = document.forms['Jogos'];
                 squery = 'Campeonato=' + escape(form.Campeonato.value) + '&Time1=' + escape(form.Time1.value) + '&Time2=' + escape(form.Time2.value) + '&DataJogo=' + escape(form.DataJogo.value) + '&Casa=' + escape(form.Casa.value) + '&Empate=' + escape(form.Empate.value) + '&Fora=' + escape(form.Fora.value) + '&Notional=' + escape(form.Notional.value) + '&Escolha=' + escape(form.Escolha.value);
                 console.log(squery);      
                 return squery;
@@ -112,10 +111,8 @@ echo 'Aposta Gol é um aplicativo gratuito';
 <?php
    $sql = "SELECT Campeonato, Time1, Time2, DataJogo, Casa, Empate, Fora, Resultado from Jogos";
    $retorno = (new minhaclasse())->usaDB("$sql");
-   $formname = 0;
    foreach($retorno as $row) {
-     $formname = $formname + 1;
-     echo "<form name='29'>";
+     echo "<form name='Jogos'>";
      echo "<div>"; 
      echo "<textarea name='Campeonato' rows='1' cols='20'>" . $row[0] . "</textarea>";
      echo "<textarea name='Time1' rows='1' cols='20'>" . $row[1] . "</textarea>";
