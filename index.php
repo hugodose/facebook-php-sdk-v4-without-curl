@@ -124,9 +124,9 @@ echo 'Aposta Gol é um aplicativo gratuito';
      echo "<textarea name='Resultado' rows='1' cols='20'>" . $row[7] . "</textarea>";
      echo "<textarea name='Notional' rows='1' cols='20'> ..notional.. </textarea>";
      echo "<textarea name='Escolha' rows='1' cols='20'> ..escolha.. </textarea>";
-     //?>
+     
      //<input value="Go" type="button" onclick='JavaScript:xmlhttpPost("div_enviaapostas.php")'>
-     //<?php
+     
      echo "<input value='Go' type='button' onclick='JavaScript:xmlhttpPost('div_enviaapostas.php')'>";
      echo "</div>"; 
      echo "</form>";
