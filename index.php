@@ -74,7 +74,7 @@ echo 'Aposta Gol é um aplicativo gratuito';
 //consulta de jogos
             <title>Jogos</title>
             <script language="Javascript">
-            function xmlhttpPost(strURL) {
+            function xmlhttpPost(strURL, formname) {
                 console.log(strURL);
                 var xmlHttpReq = false;
                 var self = this;
@@ -93,12 +93,12 @@ echo 'Aposta Gol é um aplicativo gratuito';
                         updatepage(self.xmlHttpReq.responseText);
                     }
                 }
-                self.xmlHttpReq.send(getstring());
+                self.xmlHttpReq.send(getstring(formname));
                 console.log();
             }
 
-            function getstring() {
-                var form     = document.forms['Jogos'];
+            function getstring(formname) {
+                var form     = document.forms[formname];
                 squery = 'Campeonato=' + escape(form.Campeonato.value) + '&Time1=' + escape(form.Time1.value) + '&Time2=' + escape(form.Time2.value) + '&DataJogo=' + escape(form.DataJogo.value) + '&Casa=' + escape(form.Casa.value) + '&Empate=' + escape(form.Empate.value) + '&Fora=' + escape(form.Fora.value) + '&Notional=' + escape(form.Notional.value) + '&Escolha=' + escape(form.Escolha.value);
                 console.log(squery);      
                 return squery;
@@ -112,7 +112,8 @@ echo 'Aposta Gol é um aplicativo gratuito';
    $sql = "SELECT Campeonato, Time1, Time2, DataJogo, Casa, Empate, Fora, Resultado from Jogos";
    $retorno = (new minhaclasse())->usaDB("$sql");
    foreach($retorno as $row) {
-     echo "<form name='Jogos'>";
+     $formname = $row[1] . $row[2] . $row[3];
+     echo "<form name=$formname>";
      echo "<div>"; 
      echo "<textarea name='Campeonato' rows='1' cols='20'>" . $row[0] . "</textarea>";
      echo "<textarea name='Time1' rows='1' cols='20'>" . $row[1] . "</textarea>";
@@ -127,7 +128,7 @@ echo 'Aposta Gol é um aplicativo gratuito';
      
      //<input value="Go" type="button" onclick='JavaScript:xmlhttpPost("div_enviaapostas.php")'>
      
-     echo "<input value='Go' type='button' onclick='JavaScript:xmlhttpPost('div_enviaapostas.php')'>";
+     echo "<input value='Go' type='button' onclick='JavaScript:xmlhttpPost('div_enviaapostas.php',$formname)'>";
      echo "</div>"; 
      echo "</form>";
      }
