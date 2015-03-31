@@ -39,7 +39,7 @@ try {
 if ( isset( $session ) ) {
   $pessoal = (new FacebookRequest( $session, 'GET', '/me' ))->execute()->getGraphObject()->asArray();
   echo '<pre>' . print_r( $pessoal, 1 ) . '</pre>';
-  foreach ($pessoal['backingData:protected'] as $key => $value) {
+  foreach ($pessoal as $key => $value) {
      //echo '<img class="friendthumb" src = "',$value->picture->data->url,'"/>';
      echo "Nome: ", $value->name,'<br>';
      echo "ID: ", $value->id,'<br>';
