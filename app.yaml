@@ -5,8 +5,8 @@ api_version: 1
 handlers:
 - url: /
   script: index.php
-- url: /div_jogos.php
-  script: div_jogos.php 
+- url: /div_minhasapostas.php
+  script: div_minhasapostas.php 
 - url: /div_enviaapostas.php
   script: div_enviaapostas.php 
   
