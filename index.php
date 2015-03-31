@@ -37,11 +37,9 @@ try {
 
 // see if we have a session
 if ( isset( $session ) ) {
-  $request = new FacebookRequest( $session, 'GET', '/me' );
-  $response = $request->execute();
-  $graphObject = $response->getGraphObject();
-  echo '<pre>' . print_r( $graphObject, 1 ) . '</pre>';
-  foreach ($graphObject['backingData:protected'] as $key => $value) {
+  $pessoal = new FacebookRequest( $session, 'GET', '/me' )->execute()->getGraphObject()->asArray();
+  echo '<pre>' . print_r( $pessoal, 1 ) . '</pre>';
+  foreach ($pessoal['backingData:protected'] as $key => $value) {
      //echo '<img class="friendthumb" src = "',$value->picture->data->url,'"/>';
      echo "Nome: ", $value->name,'<br>';
      echo "ID: ", $value->id,'<br>';
