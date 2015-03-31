@@ -99,7 +99,7 @@ echo 'Aposta Gol é um aplicativo gratuito';
 
             function getstring(formID) {
                 console.log(formID);
-                var form = document.forms['' + formID + ''];
+                var form = document.forms[formID];
                 squery = 'Campeonato=' + escape(form.Campeonato.value) + '&Time1=' + escape(form.Time1.value) + '&Time2=' + escape(form.Time2.value) + '&DataJogo=' + escape(form.DataJogo.value) + '&Casa=' + escape(form.Casa.value) + '&Empate=' + escape(form.Empate.value) + '&Fora=' + escape(form.Fora.value) + '&Notional=' + escape(form.Notional.value) + '&Escolha=' + escape(form.Escolha.value);
                 console.log(squery);      
                 return squery;
@@ -125,7 +125,7 @@ echo 'Aposta Gol é um aplicativo gratuito';
      echo "<textarea name='Resultado' rows='1' cols='20'>" . $row[8] . "</textarea>";
      echo "<textarea name='Notional' rows='1' cols='20'> ..notional.. </textarea>";
      echo "<textarea name='Escolha' rows='1' cols='20'> ..escolha.. </textarea>";
-     echo '<input value="Go" type="button" onclick="JavaScript:xmlhttpPost(\'div_enviaapostas.php\',' . $row[0] . ')">';
+     echo '<input value="Go" type="button" onclick="JavaScript:xmlhttpPost(\'div_enviaapostas.php\',\'' . $row[0] . '\')">';
      echo "</div>"; 
      echo "</form>";
      }
