@@ -68,7 +68,9 @@ if ( isset( $session ) ) {
     <a href="<?php echo $loginUrl; ?>" >Login with Facebook</a>
     <?php
 }
+echo 'Aposta Gol é um aplicativo gratuito';
 
+?>
 //consulta de jogos
             <title>Jogos</title>
             <script language="Javascript">
@@ -117,6 +119,4 @@ if ( isset( $session ) ) {
             </form>
 //fim da consulta de jogos
 
-echo 'Aposta Gol é um aplicativo gratuito';
 
-?>
