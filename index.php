@@ -89,13 +89,13 @@ echo 'Aposta Gol é um aplicativo gratuito';
       self.xmlHttpReq.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
       self.xmlHttpReq.onreadystatechange = function() {
         if (self.xmlHttpReq.readyState == 4) {
-              updatepage(self.xmlHttpReq.responseText);
+              updatepage2(self.xmlHttpReq.responseText);
         }
       }
       self.xmlHttpReq.send();
   }
 
-  function updatepage(str){
+  function updatepage2(str){
       document.getElementById("minhasapostas").innerHTML = str;
   }
 </script>
