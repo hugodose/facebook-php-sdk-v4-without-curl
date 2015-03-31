@@ -1,7 +1,7 @@
 <?php
 require_once($_SERVER['DOCUMENT_ROOT'].'/consultadb.php');
   $FBid = '12001';
-  $sql = "SELECT id, data, campeonato, time1, time2, datajogo, notional, escolha, odds, resultado, pnl from Apostas WHERE id = '$FBid'";
+  $sql = "SELECT id, data, campeonato, time1, time2, datajogo, notional, escolha, odds, resultado, pnl from Apostas WHERE userid = '$FBid'";
   $retorno = (new minhaclasse())->usaDB("$sql");
   foreach($retorno as $row) {
      $formname = 'Aposta' . $row[0]; 
