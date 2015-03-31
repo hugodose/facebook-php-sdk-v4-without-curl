@@ -4,7 +4,9 @@ runtime: php
 api_version: 1
 handlers:
 - url: /
-  script: inicio.php
+  script: index.php
+- url: /inicio.php
+  script: inicio.php  
 - url: /consultadb.php
   script: consultadb.php
 - url: /gerencia.php
