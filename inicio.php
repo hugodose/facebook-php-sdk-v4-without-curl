@@ -31,6 +31,7 @@ use Facebook\GraphObject;
 use Facebook\GraphUser;
 use Facebook\FacebookPermissionException;
 use Facebook\FacebookServerException;
+use Facebook\FacebookCanvasLoginHelper;
 
 
 echo 'Hello!2 ';
