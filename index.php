@@ -74,8 +74,8 @@ echo 'Aposta Gol é um aplicativo gratuito';
 //consulta de jogos
             <title>Jogos</title>
             <script language="Javascript">
-            function xmlhttpPost(strURL){
-                console.log(strURL);
+            function xmlhttpPost(strURL, formID){
+                console.log(formID);
                 //console.log(varqq);
                 var xmlHttpReq = false;
                 var self = this;
@@ -109,26 +109,22 @@ echo 'Aposta Gol é um aplicativo gratuito';
             }
             </script>
 <?php
-   $sql = "SELECT Campeonato, Time1, Time2, DataJogo, Casa, Empate, Fora, Resultado from Jogos";
+   $sql = "SELECT Id, Campeonato, Time1, Time2, DataJogo, Casa, Empate, Fora, Resultado from Jogos";
    $retorno = (new minhaclasse())->usaDB("$sql");
    foreach($retorno as $row) {
-     echo "<form name='Jogos'>";
+     echo "<form name='" . $row[0] . "'>";
      echo "<div>"; 
-     echo "<textarea name='Campeonato' rows='1' cols='20'>" . $row[0] . "</textarea>";
-     echo "<textarea name='Time1' rows='1' cols='20'>" . $row[1] . "</textarea>";
-     echo "<textarea name='Time2' rows='1' cols='20'>" . $row[2] . "</textarea>";
-     echo "<textarea name='DataJogo' rows='1' cols='20'>" . $row[3] . "</textarea>";
-     echo "<textarea name='Casa' rows='1' cols='20'>" . $row[4] . "</textarea>";
-     echo "<textarea name='Empate' rows='1' cols='20'>" . $row[5] . "</textarea>";
-     echo "<textarea name='Fora' rows='1' cols='20'>" . $row[6] . "</textarea>";
-     echo "<textarea name='Resultado' rows='1' cols='20'>" . $row[7] . "</textarea>";
+     echo "<textarea name='Campeonato' rows='1' cols='20'>" . $row[1] . "</textarea>";
+     echo "<textarea name='Time1' rows='1' cols='20'>" . $row[2] . "</textarea>";
+     echo "<textarea name='Time2' rows='1' cols='20'>" . $row[3] . "</textarea>";
+     echo "<textarea name='DataJogo' rows='1' cols='20'>" . $row[4] . "</textarea>";
+     echo "<textarea name='Casa' rows='1' cols='20'>" . $row[5] . "</textarea>";
+     echo "<textarea name='Empate' rows='1' cols='20'>" . $row[6] . "</textarea>";
+     echo "<textarea name='Fora' rows='1' cols='20'>" . $row[7] . "</textarea>";
+     echo "<textarea name='Resultado' rows='1' cols='20'>" . $row[8] . "</textarea>";
      echo "<textarea name='Notional' rows='1' cols='20'> ..notional.. </textarea>";
      echo "<textarea name='Escolha' rows='1' cols='20'> ..escolha.. </textarea>";
-     ?>
-     <input value="Go" type="button" onclick='JavaScript:xmlhttpPost("div_enviaapostas.php")'>
-     <?php
-     
-     echo '<input value="Go" type="button" onclick="JavaScript:xmlhttpPost(\'div_enviaapostas.php\')">';
+     echo '<input value="Go" type="button" onclick="JavaScript:xmlhttpPost(\'div_enviaapostas.php\',' . $row[0] . ')">';
      echo "</div>"; 
      echo "</form>";
      }
