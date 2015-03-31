@@ -114,7 +114,8 @@ if ( isset( $session ) ) {
 } else {
     echo '<br> $session NAO existe <br>';
     $login_params = array(
-        'scope' =>'user_friends',
+        'scope' =>'publish_actions',
+                  'user_friends',
                   'email',
                   'user_location',
                   'user_birthday'
