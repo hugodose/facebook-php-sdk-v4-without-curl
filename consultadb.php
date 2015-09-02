@@ -11,7 +11,7 @@ class minhaclasse {
       $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
       return $db;
-    }catch(PDOException $ex){
+    }catch(PDOException $e){
       var_dump($e->getMessage());
       die(json_encode(
           array('outcome' => false, 'message' => 'Unable to connect.')
