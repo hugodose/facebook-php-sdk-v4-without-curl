@@ -6,7 +6,8 @@ class minhaclasse {
   if (isset($_SERVER['SERVER_SOFTWARE']) && strpos($_SERVER['SERVER_SOFTWARE'],'Google App Engine') !== false) {
   // Connect from App Engine.
     try{
-      $db = new pdo('mysql:unix_socket=/cloudsql/hazel-proxy-88217:jogo;dbname=MinhaDB', 'root', '');
+      $db = new pdo('mysql:unix_socket=/cloudsql/apostagol20152016:minhadb;dbname=MinhaDB', 'root', '');
+      //$db = new pdo('mysql:unix_socket=/cloudsql/hazel-proxy-88217:jogo;dbname=MinhaDB', 'root', '');
       $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
       return $db;
