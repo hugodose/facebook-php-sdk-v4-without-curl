@@ -26,13 +26,13 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/consultadb.php');
    
    date_default_timezone_set('Europe/London');
    $date = date('Y-m-d H:i:s');
-   echo $date . '<br>';
+   //echo $date . '<br>';
    
    if ($date < $_POST['DataJogo']){
      echo 'Hora Atual: ' . $date . ' | Hora do Jogo: ' . $DataJogo . ' | Janela de Apostas Aberta <br>' ;
 
      if ($odds == $_POST[$Escolha]){
-        echo $odds . ' = ' . $_POST[$Escolha] . '<br>';
+        echo "Odds valido: " .$odds . ' = ' . $_POST[$Escolha] . '<br><br>';
         //$userid = '12001';
       
         $sql = "INSERT INTO Apostas (data, userid, campeonato, time1, time2, datajogo, notional, escolha, odds) VALUES ('$date', '$userid', '$Campeonato', '$Time1', '$Time2', '$DataJogo', $Notional, '$Escolha', $odds)";
@@ -44,10 +44,10 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/consultadb.php');
         //    echo "<div>" . $row[0] . " | " . $row[1] . " | " . $row[2] . " | " . $row[3] . " | " . $row[4] . " | " . $row[5] . " | " . $row[6] . " | " . $row[7] . " | " . $row[8] . " | " . $row[9] . " | " . $row[10] . " | " . $row[11] . " | " . $row[12] . "</div>";
         //}
      } else {
-        echo "Odds invalido: " . $odds . '<>' . $row[$Escolha];
+        echo "Odds invalido: " . $odds . '<>' . $row[$Escolha] . '<br><br>';
      }  
    } else {
-     echo 'Hora Atual: ' . $date . ' | Hora do Jogo: ' . $DataJogo . ' | Janela de Apostas Fechada <br>' ;
+     echo 'Hora Atual: ' . $date . ' | Hora do Jogo: ' . $DataJogo . ' | Janela de Apostas Fechada <br><br>' ;
    }
 
 ?>
