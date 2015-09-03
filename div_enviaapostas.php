@@ -10,6 +10,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/consultadb.php');
    $Fora =  $_POST['Fora'];
    $Notional =  $_POST['Notional'];
    $Escolha =  $_POST['Escolha'];
+   $userid = $_POST['FBid'];
    echo $Escolha . '<br>';
    
    //Valida Horario e Odds na tablea Jogos
@@ -28,7 +29,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/consultadb.php');
 
      if ($odds == $_POST[$Escolha]){
         echo $odds . ' = ' . $_POST[$Escolha] . '<br>';
-        $userid = '12001';
+        //$userid = '12001';
       
         $sql = "INSERT INTO Apostas (data, userid, campeonato, time1, time2, datajogo, notional, escolha, odds) VALUES ('$date', '$userid', '$Campeonato', '$Time1', '$Time2', '$DataJogo', $Notional, '$Escolha', $odds)";
         $retorno = (new minhaclasse())->usaDB("$sql");
