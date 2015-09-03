@@ -33,6 +33,7 @@ try {
   echo '// When Facebook returns an error';
 } catch( Exception $ex ) {
   echo '// When validation fails or other local issues';
+  echo $ex->getMessage();
 }
 
 if ( isset( $session ) ) {
