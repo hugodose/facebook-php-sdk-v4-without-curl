@@ -141,7 +141,7 @@ echo 'Aposta Gol é um aplicativo gratuito';
               updatepage2(self.xmlHttpReq.responseText);
         }
       }
-      self.xmlHttpReq.send('FBid='8888);
+      self.xmlHttpReq.send('FBid=8888');
   }
 
   function updatepage2(str){
