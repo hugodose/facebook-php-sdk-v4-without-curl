@@ -202,15 +202,15 @@ if ( isset( $session ) ) {
      echo "<div>"; 
      
      echo "<input type='text' size='20' name='Campeonato' value='" . $row[1] . "'></input>";
-     echo "<input type='text' name='Time1' value='" . $row[2] . "'></input>";
-     echo "<input type='text' name='Time2' value='" . $row[3] . "'></input>";
-     echo "<input type='text' name='DataJogo' value='" . $row[4] . "'></input>";
-     echo "<input type='text' name='Casa' value='" . $row[5] . "'></input>";
-     echo "<input type='text' name='Empate' value='" . $row[6] . "'></input>";
-     echo "<input type='text' name='Fora' value='" . $row[7] . "'></input>";
-     echo "<input type='text' name='Resultado' value='" . $row[8] . "'></input>";
+     echo "<input type='text' size='18' name='Time1' value='" . $row[2] . "'></input>";
+     echo "<input type='text' size='18' name='Time2' value='" . $row[3] . "'></input>";
+     echo "<input type='text' size='20' name='DataJogo' value='" . $row[4] . "'></input>";
+     echo "<input type='text' size='4' name='Casa' value='" . $row[5] . "'></input>";
+     echo "<input type='text' size='4' name='Empate' value='" . $row[6] . "'></input>";
+     echo "<input type='text' size='4' name='Fora' value='" . $row[7] . "'></input>";
+     echo "<input type='text' size='6' name='Resultado' value='" . $row[8] . "'></input>";
      echo "<input type='text' size='4' name='Notional' value='.$.'></input>";
-     echo "<input type='text' size='7' name='Escolha' value='escolha'></input>";
+     echo "<input type='text' size='6' name='Escolha' value='escolha'></input>";
   
      
      //echo "<textarea name='Campeonato' rows='1' cols='20'>" . $row[1] . "</textarea>";
