@@ -1,4 +1,5 @@
 <?php
+session_start(); //nao pode ter nada acima dessa linha
 require_once($_SERVER['DOCUMENT_ROOT'].'/consultadb.php');
 
 
