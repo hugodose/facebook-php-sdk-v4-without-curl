@@ -201,8 +201,8 @@ if ( isset( $session ) ) {
      echo "<form name='" . $formname . "'>";
      echo "<div>"; 
      
-     echo "<input type='text' name='Campeonato'>" . $row[1] . "</textarea>";
-     echo "<input type='text' name='Time1'>" . $row[2] . "</textarea>";
+     echo "<input type='text' name='Campeonato'>" . $row[1] . "</input>";
+     echo "<input type='text' name='Time1'>" . $row[2] . "</input>";
      //echo "<input type='text' name='Time3' value=". $row[2] . " >";
      
      //echo "<textarea name='Campeonato' rows='1' cols='20'>" . $row[1] . "</textarea>";
