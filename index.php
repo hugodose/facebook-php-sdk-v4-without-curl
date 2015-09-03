@@ -33,8 +33,8 @@ try {
 } catch( FacebookRequestException $ex ) {
   echo '// When Facebook returns an error';
 } catch( Exception $ex ) {
-  //echo '// When validation fails or other local issues';
-  //echo $ex->getMessage();
+  echo '// When validation fails or other local issues<br>';
+  echo $ex->getMessage();
 }
 
 if ( isset( $session ) ) {
@@ -116,9 +116,12 @@ if ( isset( $session ) ) {
     <a href="<?php echo $loginUrl; ?>" >Login with Facebook</a>
     <?php
     */
-
+    
+    
+} //fecha os NAO TEM SESSION
 echo 'Aposta Gol é um aplicativo gratuito';
 
+if ( isset( $session ) ) {
 ?>
 <!-- #########   INICIO MINHAS APOSTAS   #########    -->
 <script language="Javascript">
@@ -210,7 +213,7 @@ echo 'Aposta Gol é um aplicativo gratuito';
      }
      
      
-} //fecha os NAO TEM SESSION
+} // fecha IS SESSION
 ?>
 <!-- #########   FIM JOGOS   #########    -->
 
