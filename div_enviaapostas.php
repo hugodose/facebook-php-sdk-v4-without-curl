@@ -12,7 +12,8 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/consultadb.php');
    $Fora =  $_POST['Fora'];
    $Notional =  $_POST['Notional'];
    $Escolha =  $_POST['Escolha'];
-   $userid = $_POST['FBid'];
+   //$userid = $_POST['FBid'];
+   $userid = $_SESSION['FBid'];
    echo $Escolha . '<br>';
    
    //Valida Horario e Odds na tablea Jogos
