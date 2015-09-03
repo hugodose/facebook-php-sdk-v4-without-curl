@@ -1,10 +1,7 @@
 <?php
 require_once($_SERVER['DOCUMENT_ROOT'].'/consultadb.php');
 
-require_once( 'autoload.php' );
-use Facebook\FacebookRequest;
-$pessoal = (new FacebookRequest( $session, 'GET', '/me' ))->execute()->getGraphObject()->asArray();
-$userid = $pessoal['id'];
+
 
    $Campeonato = $_POST['Campeonato'];
    $Time1 = $_POST['Time1'];
@@ -15,7 +12,7 @@ $userid = $pessoal['id'];
    $Fora =  $_POST['Fora'];
    $Notional =  $_POST['Notional'];
    $Escolha =  $_POST['Escolha'];
-   //$userid = $_POST['FBid'];
+   $userid = $_POST['FBid'];
    echo $Escolha . '<br>';
    
    //Valida Horario e Odds na tablea Jogos
