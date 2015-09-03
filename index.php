@@ -76,8 +76,9 @@ if ( isset( $session ) ) {
     FB.login(function(response) {
       if (response.authResponse) {
         //alert('You are logged in & cookie set!');
-        window.location.replace("https://apps.facebook.com/1560115454240194/");
-        window.location.href = "https://apps.facebook.com/1560115454240194/";
+        //window.location.replace("https://apps.facebook.com/1560115454240194/");
+        //window.location.href = "https://apps.facebook.com/1560115454240194/";
+        top.location.href="https://apps.facebook.com/1560115454240194/"
         // Now you can redirect the user or do an AJAX request to
         // a PHP script that grabs the signed request from the cookie.
       } else {
