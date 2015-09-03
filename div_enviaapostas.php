@@ -1,6 +1,7 @@
 <?php
 require_once($_SERVER['DOCUMENT_ROOT'].'/consultadb.php');
 
+require_once( 'autoload.php' );
 use Facebook\FacebookRequest;
 $pessoal = (new FacebookRequest( $session, 'GET', '/me' ))->execute()->getGraphObject()->asArray();
 $userid = $pessoal['id'];
