@@ -16,7 +16,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/consultadb.php');
      echo "<input type='text' size='18' name='Time2' value='" . $row[4] . "'></input>";
      echo "<input type='text' size='20' name='DataJogo' value='" . $row[5] . "'></input>";
      echo "<input type='text' size='4' name='Notional' value='" . $row[6] . "'></input>";
-     echo "<input type='text' size='4' name='Escolha' value='" . $row[7] . "'></input>";
+     echo "<input type='text' size='6' name='Escolha' value='" . $row[7] . "'></input>";
      echo "<input type='text' size='4' name='Odds' value='" . $row[8] . "'></input>";
      echo "<input type='text' size='6' name='Resultado' value='" . $row[9] . "'></input>";
      echo "<input type='text' size='6' name='Pnl' value='" . $row[10] . "'></input>";
