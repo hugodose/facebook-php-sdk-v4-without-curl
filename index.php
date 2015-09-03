@@ -42,7 +42,7 @@ if ( isset( $session ) ) {
   //echo '<pre>' . print_r( $pessoal, 1 ) . '</pre>';
   echo "<img src='https://graph.facebook.com/".$pessoal['id']."/picture?type=normal'/>";
   echo "Nome: ", $pessoal['name'],'<br>';
-  echo "ID: ", $pessoal['id'],'<br>';
+  echo "<h1 id='FBid'>", $pessoal['id'],'</h1><br>';
   //ATENCAO: invitable_friends or taggable_friends: the tokens returned through this API are not the same as the IDs returned via/me/friends.
   //friends: retorna o ID real, mas apenas de amigos que usam o aplicativo.
   //$taggable = (new FacebookRequest( $session, 'GET', '/me/invitable_friends' ))->execute()->getGraphObject()->asArray();
@@ -141,7 +141,8 @@ echo 'Aposta Gol é um aplicativo gratuito';
               updatepage2(self.xmlHttpReq.responseText);
         }
       }
-      self.xmlHttpReq.send('FBid=8888');
+      input_FBid = document.getElementById("FBid").innerHTML;
+      self.xmlHttpReq.send('FBid='+input_FBid);
   }
 
   function updatepage2(str){
