@@ -65,8 +65,8 @@ if ( isset( $session ) ) {
                   'user_birthday'
             );
             //'publish_actions',
-    //$helperWEB = new FacebookRedirectLoginHelper( 'http://apostagol20152016.appspot.com/' );        
-    $loginUrl = $helper->getLoginUrl($login_params);
+           
+    $loginUrl = $helper->getLoginUrl($login_params);  //apenas para web
     ?>
     <a href="<?php echo $loginUrl; ?>" >Login with Facebook</a>
     <?php
