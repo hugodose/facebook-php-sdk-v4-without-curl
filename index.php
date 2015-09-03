@@ -24,20 +24,12 @@ foreach($retorno as $row) {
 
 FacebookSession::setDefaultApplication($appID,$appSecret);
 
-//
-$helper1 = new FacebookSession();
-$accessToken = $helper1->getToken();
-//echo '<h3>Signed Request</h3>';
-//var_dump($helper1->getSignedRequest());
-echo '<h3>Access Token</h3>';
-var_dump($accessToken->getValue());
-//
 
-// web: $helper = new FacebookRedirectLoginHelper( 'http://hazel-proxy-88217.appspot.com/' );
-$helper = new FacebookCanvasLoginHelper();
+$helper = new FacebookRedirectLoginHelper( 'http://apostagol20152016.appspot.com/' );
+//canvas: $helper = new FacebookCanvasLoginHelper();
 try {
-  //web: $session = $helper->getSessionFromRedirect();
-  $session = $helper->getSession();
+  $session = $helper->getSessionFromRedirect();
+  //canvas: $session = $helper->getSession();
 } catch( FacebookRequestException $ex ) {
   echo '// When Facebook returns an error';
 } catch( Exception $ex ) {
@@ -73,6 +65,7 @@ if ( isset( $session ) ) {
                   'user_birthday'
             );
             //'publish_actions',
+    //$helperWEB = new FacebookRedirectLoginHelper( 'http://apostagol20152016.appspot.com/' );        
     $loginUrl = $helper->getLoginUrl($login_params);
     ?>
     <a href="<?php echo $loginUrl; ?>" >Login with Facebook</a>
