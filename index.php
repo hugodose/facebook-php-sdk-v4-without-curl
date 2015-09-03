@@ -200,7 +200,11 @@ if ( isset( $session ) ) {
      $formname = 'Jogo' . $row[0]; 
      echo "<form name='" . $formname . "'>";
      echo "<div>"; 
-     echo "<input type='text' name=". $row[1] . " >";
+     
+     echo "<input type='text' name='". $row[1] . "'>";
+     echo "<input type='text' name=". $row[2] . " >";
+     echo "<input type='text' name='Time3' value=". $row[2] . " >";
+     
      //echo "<textarea name='Campeonato' rows='1' cols='20'>" . $row[1] . "</textarea>";
      echo "<textarea name='Time1' rows='1' cols='20'>" . $row[2] . "</textarea>";
      echo "<textarea name='Time2' rows='1' cols='20'>" . $row[3] . "</textarea>";
