@@ -76,7 +76,14 @@ if ( isset( $session ) ) {
     FB.login(function(response) {
       if (response.authResponse) {
         //alert('You are logged in & cookie set!');
-        location.reload(); 
+        $.ajax({
+                url: '/gerencia.php',
+                type: 'POST',
+                dataType: "json",
+                data: {
+                       name: 'oi',
+                      },
+              });
         // Now you can redirect the user or do an AJAX request to
         // a PHP script that grabs the signed request from the cookie.
       } else {
