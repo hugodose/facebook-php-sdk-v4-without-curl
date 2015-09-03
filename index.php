@@ -25,11 +25,11 @@ foreach($retorno as $row) {
 FacebookSession::setDefaultApplication($appID,$appSecret);
 
 
-$helper = new FacebookRedirectLoginHelper( 'http://apostagol20152016.appspot.com/' );
-//canvas: $helper = new FacebookCanvasLoginHelper();
+//web $helper = new FacebookRedirectLoginHelper( 'http://apostagol20152016.appspot.com/' );
+$helper = new FacebookCanvasLoginHelper();
 try {
-  $session = $helper->getSessionFromRedirect();
-  //canvas: $session = $helper->getSession();
+  //web $session = $helper->getSessionFromRedirect();
+  $session = $helper->getSession();
 } catch( FacebookRequestException $ex ) {
   echo '// When Facebook returns an error';
 } catch( Exception $ex ) {
