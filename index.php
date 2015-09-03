@@ -24,6 +24,15 @@ foreach($retorno as $row) {
 
 FacebookSession::setDefaultApplication($appID,$appSecret);
 
+//
+$helper1 = new FacebookSession();
+$accessToken = $helper1->getToken();
+echo '<h3>Signed Request</h3>';
+var_dump($helper1->getSignedRequest());
+echo '<h3>Access Token</h3>';
+var_dump($accessToken->getValue());
+//
+
 // web: $helper = new FacebookRedirectLoginHelper( 'http://hazel-proxy-88217.appspot.com/' );
 $helper = new FacebookCanvasLoginHelper();
 try {
