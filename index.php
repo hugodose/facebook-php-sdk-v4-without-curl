@@ -110,10 +110,11 @@ if ( isset( $session ) ) {
             
             
            
-    $loginUrl = $helper->getLoginUrl($login_params);  //apenas para web
+    /*$loginUrl = $helper->getLoginUrl($login_params);  //apenas para web
     ?>
     <a href="<?php echo $loginUrl; ?>" >Login with Facebook</a>
     <?php
+    */
 }
 echo 'Aposta Gol é um aplicativo gratuito';
 
