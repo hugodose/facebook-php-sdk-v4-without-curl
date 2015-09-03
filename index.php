@@ -203,18 +203,26 @@ if ( isset( $session ) ) {
      
      echo "<input type='text' name='Campeonato' value='" . $row[1] . "'></input>";
      echo "<input type='text' name='Time1' value='" . $row[2] . "'></input>";
-     //echo "<input type='text' name='Time3' value=". $row[2] . " >";
+     echo "<input type='text' name='Time2' value='" . $row[3] . "'></input>";
+     echo "<input type='text' name='DataJogo' value='" . $row[4] . "'></input>";
+     echo "<input type='text' name='Casa' value='" . $row[5] . "'></input>";
+     echo "<input type='text' name='Empate' value='" . $row[6] . "'></input>";
+     echo "<input type='text' name='Fora' value='" . $row[7] . "'></input>";
+     echo "<input type='text' name='Resultado' value='" . $row[8] . "'></input>";
+     echo "<input type='text' name='Notional' value='.$.'></input>";
+     echo "<input type='text' name='Escolha' value='escolha'></input>";
+  
      
      //echo "<textarea name='Campeonato' rows='1' cols='20'>" . $row[1] . "</textarea>";
      //echo "<textarea name='Time1' rows='1' cols='20'>" . $row[2] . "</textarea>";
-     echo "<textarea name='Time2' rows='1' cols='20'>" . $row[3] . "</textarea>";
-     echo "<textarea name='DataJogo' rows='1' cols='20'>" . $row[4] . "</textarea>";
-     echo "<textarea name='Casa' rows='1' cols='5'>" . $row[5] . "</textarea>";
-     echo "<textarea name='Empate' rows='1' cols='5'>" . $row[6] . "</textarea>";
-     echo "<textarea name='Fora' rows='1' cols='5'>" . $row[7] . "</textarea>";
-     echo "<textarea name='Resultado' rows='1' cols='10'>" . $row[8] . "</textarea>";
-     echo "<textarea name='Notional' rows='1' cols='5'> .$. </textarea>";
-     echo "<textarea name='Escolha' rows='1' cols='10'> ..escolha.. </textarea>";
+     //echo "<textarea name='Time2' rows='1' cols='20'>" . $row[3] . "</textarea>";
+     //echo "<textarea name='DataJogo' rows='1' cols='20'>" . $row[4] . "</textarea>";
+     //echo "<textarea name='Casa' rows='1' cols='5'>" . $row[5] . "</textarea>";
+     //echo "<textarea name='Empate' rows='1' cols='5'>" . $row[6] . "</textarea>";
+     //echo "<textarea name='Fora' rows='1' cols='5'>" . $row[7] . "</textarea>";
+     //echo "<textarea name='Resultado' rows='1' cols='10'>" . $row[8] . "</textarea>";
+     //echo "<textarea name='Notional' rows='1' cols='5'> .$. </textarea>";
+     //echo "<textarea name='Escolha' rows='1' cols='10'> ..escolha.. </textarea>";
      echo '<input value="Go" type="button" onclick="JavaScript:xmlhttpPost(\'div_enviaapostas.php\',\'' . $formname . '\')">';
      echo "</div>"; 
      echo "</form>";
