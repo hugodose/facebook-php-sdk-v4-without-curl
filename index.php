@@ -124,6 +124,47 @@ echo 'Aposta Gol é um aplicativo gratuito';
 
 if ( isset( $session ) ) {
 ?>
+<body onload="xmlhttpPost2('div_minhasapostas.php')">
+<!-- #########   INICIO CAIXA   #########   
+<script language="Javascript">
+   
+  function xmlhttpPost2(strURL){
+      var xmlHttpReq = false;
+      var self = this;
+      // Mozilla/Safari
+      if (window.XMLHttpRequest) {
+        self.xmlHttpReq = new XMLHttpRequest();
+      }
+      // IE
+      else if (window.ActiveXObject) {
+          self.xmlHttpReq = new ActiveXObject("Microsoft.XMLHTTP");
+      }
+      self.xmlHttpReq.open('POST', strURL, true);
+      self.xmlHttpReq.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+      self.xmlHttpReq.onreadystatechange = function() {
+        if (self.xmlHttpReq.readyState == 4) {
+              updatepage2(self.xmlHttpReq.responseText);
+        }
+      }
+      //input_FBid = document.getElementById("FBid").innerHTML;
+      //self.xmlHttpReq.send('FBid='+input_FBid);
+      self.xmlHttpReq.send();
+  }
+
+  function updatepage2(str){
+      document.getElementById("minhasapostas").innerHTML = str;
+  }
+</script>
+<body onload="xmlhttpPost2('div_caixa.php')">
+<div id='caixa'></div>
+ #########   FIM CAIXA   #########    -->
+
+
+
+
+
+
+
 <!-- #########   INICIO MINHAS APOSTAS   #########    -->
 <script language="Javascript">
    
@@ -154,7 +195,7 @@ if ( isset( $session ) ) {
       document.getElementById("minhasapostas").innerHTML = str;
   }
 </script>
-<body onload="xmlhttpPost2('div_minhasapostas.php')">
+<!--  <body onload="xmlhttpPost2('div_minhasapostas.php')">  -->
 <div id='minhasapostas'></div>
 <!-- #########   FIM MINHAS APOSTAS   #########    -->
 <!-- #########   INICIO JOGOS   #########    -->
