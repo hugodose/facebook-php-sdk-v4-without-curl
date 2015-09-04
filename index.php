@@ -129,9 +129,9 @@ if ( isset( $session ) ) {
 <script language="Javascript">
   function Inicia(){
 
-    xmlhttpPostGERAL('div_caixa.php','','caixa');
+    xmlhttpPostCAIXA('div_caixa.php','caixa');
   } 
-  function xmlhttpPostGERAL(strURL, formID, divretorno){
+  function xmlhttpPostCAIXA(strURL, divretorno){
       var xmlHttpReq = false;
       var self = this;
       // Mozilla/Safari
@@ -146,7 +146,7 @@ if ( isset( $session ) ) {
       self.xmlHttpReq.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
       self.xmlHttpReq.onreadystatechange = function() {
         if (self.xmlHttpReq.readyState == 4) {
-              updatepageGERAL(self.xmlHttpReq.responseText, divretorno);
+              updatepageCAIXA(self.xmlHttpReq.responseText, divretorno);
         }
       }
       //input_FBid = document.getElementById("FBid").innerHTML;
@@ -154,7 +154,7 @@ if ( isset( $session ) ) {
       self.xmlHttpReq.send();
   }
 
-  function updatepageGERAL(str, divretorno){
+  function updatepageCAIXA(str, divretorno){
       document.getElementById(divretorno).innerHTML = str;
       xmlhttpPost2('div_minhasapostas.php');
   }
