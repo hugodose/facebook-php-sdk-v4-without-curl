@@ -125,10 +125,9 @@ echo 'Aposta Gol é um aplicativo gratuito';
 if ( isset( $session ) ) {
 ?>
 <body onload="Inicia()">
-<!-- #########   INICIO CAIXA   #########   xmlhttpPost2('div_minhasapostas.php'); xmlhttpPostGERAL('div_caixa.php','','caixa')  -->
+<!-- #########   INICIO CAIXA   ######### -->
 <script language="Javascript">
   function Inicia(){
-
     xmlhttpPostCAIXA('div_caixa.php','caixa');
   } 
   function xmlhttpPostCAIXA(strURL, divretorno){
@@ -149,11 +148,8 @@ if ( isset( $session ) ) {
               updatepageCAIXA(self.xmlHttpReq.responseText, divretorno);
         }
       }
-      //input_FBid = document.getElementById("FBid").innerHTML;
-      //self.xmlHttpReq.send('FBid='+input_FBid);
       self.xmlHttpReq.send();
   }
-
   function updatepageCAIXA(str, divretorno){
       document.getElementById(divretorno).innerHTML = str;
       xmlhttpPost2('div_minhasapostas.php');
@@ -161,13 +157,6 @@ if ( isset( $session ) ) {
 </script>
 <div id='caixa'></div>
 <!--  #########   FIM CAIXA   #########    -->
-
-
-
-
-
-
-
 <!-- #########   INICIO MINHAS APOSTAS   #########    -->
 <script language="Javascript">
    
@@ -189,16 +178,12 @@ if ( isset( $session ) ) {
               updatepage2(self.xmlHttpReq.responseText);
         }
       }
-      //input_FBid = document.getElementById("FBid").innerHTML;
-      //self.xmlHttpReq.send('FBid='+input_FBid);
       self.xmlHttpReq.send();
   }
-
   function updatepage2(str){
       document.getElementById("minhasapostas").innerHTML = str;
   }
 </script>
-<!--  <body onload="xmlhttpPost2('div_minhasapostas.php')">  -->
 <div id='minhasapostas'></div>
 <!-- #########   FIM MINHAS APOSTAS   #########    -->
 <!-- #########   INICIO JOGOS   #########    -->
