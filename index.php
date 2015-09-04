@@ -125,7 +125,7 @@ echo 'Aposta Gol é um aplicativo gratuito';
 
 if ( isset( $session ) ) {
   
-  $sql = "SELECT id from Clientes WHERE userid = '$FBid";
+  $sql = "SELECT id from Clientes WHERE userid = '$FBid'";
   $retorno = (new minhaclasse())->usaDB("$sql");
   echo $retorno;
   if ( isset($retorno)){
