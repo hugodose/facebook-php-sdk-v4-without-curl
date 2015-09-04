@@ -128,7 +128,7 @@ if ( isset( $session ) ) {
 <!-- #########   INICIO CAIXA   #########   xmlhttpPost2('div_minhasapostas.php'); xmlhttpPostGERAL('div_caixa.php','','caixa')  -->
 <script language="Javascript">
   function Inicia(){
-    xmlhttpPost2('div_minhasapostas.php');
+
     xmlhttpPostGERAL('div_caixa.php','','caixa');
   } 
   function xmlhttpPostGERAL(strURL, formID, divretorno){
@@ -156,6 +156,7 @@ if ( isset( $session ) ) {
 
   function updatepageGERAL(str, divretorno){
       document.getElementById(divretorno).innerHTML = str;
+      xmlhttpPost2('div_minhasapostas.php');
   }
 </script>
 <div id='caixa'></div>
