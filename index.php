@@ -121,21 +121,21 @@ if ( isset( $session ) ) {
     
     
 } //fecha os NAO TEM SESSION
-echo 'Aposta Gol é um aplicativo gratuito';
+echo 'Aposta Gol é um aplicativo gratuito<br>';
 
 if ( isset( $session ) ) {
   
-  $sql = "SELECT FOUND_ROWS() from Clientes WHERE userid = '$FBid'";
+  $sql = "SELECT count(*) FROM Clientes WHERE userid = '$FBid'";
   $retorno = (new minhaclasse())->usaDB("$sql");
   foreach($retorno as $row) {
       echo $row[1];
    }
-  if ( is_null($retorno)){
+  if ( ($retorno)!= 1){
     date_default_timezone_set('Europe/London');
     $date = date('Y-m-d H:i:s');
     $sql = "INSERT INTO Clientes (data, userid, nome, email, caixa) VALUES ('$date', '$FBid', 'Fulano Ciclano da Silva', 'emaildofulano.ciclano@dominio.com', 10000)";
     $retorno = (new minhaclasse())->usaDB("$sql");
-    echo 'Novo Cliente cadastrado';
+    echo 'Novo Cliente cadastrado<br>';
   }
   
 ?>
