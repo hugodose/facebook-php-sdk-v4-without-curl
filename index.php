@@ -232,7 +232,7 @@ if ( isset( $session ) ) {
 
   function updatepage(str){
       document.getElementById("sentback").innerHTML = str;
-      xmlhttpPost2('div_minhasapostas.php'); // reload minhas apostas
+      xmlhttpPostCAIXA('div_caixa.php','caixa'); // reload caixa
   }
 </script>
             
