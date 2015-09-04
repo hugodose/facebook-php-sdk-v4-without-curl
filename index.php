@@ -43,7 +43,8 @@ if ( isset( $session ) ) {
   echo "<img src='https://graph.facebook.com/".$pessoal['id']."/picture?type=normal'/>";
   echo "Nome: ", $pessoal['name'],'<br>';
   echo "<h1 id='FBid'>", $pessoal['id'],'</h1><br>';
-  $_SESSION['FBid'] = $pessoal['id'];
+  $FBid = $pessoal['id'];
+  $_SESSION['FBid'] = $FBid;
   //ATENCAO: invitable_friends or taggable_friends: the tokens returned through this API are not the same as the IDs returned via/me/friends.
   //friends: retorna o ID real, mas apenas de amigos que usam o aplicativo.
   //$taggable = (new FacebookRequest( $session, 'GET', '/me/invitable_friends' ))->execute()->getGraphObject()->asArray();
@@ -124,13 +125,13 @@ echo 'Aposta Gol é um aplicativo gratuito';
 
 if ( isset( $session ) ) {
   
-  $sql = "SELECT id from Clientes WHERE userid = '$pessoal['id']'";
+  $sql = "SELECT id from Clientes WHERE userid = '$FBid";
   $retorno = (new minhaclasse())->usaDB("$sql");
   echo $retorno;
   if ( isset($retorno)){
     date_default_timezone_set('Europe/London');
     $date = date('Y-m-d H:i:s');
-    $sql = "INSERT INTO Clientes (data, userid, nome, email, caixa) VALUES ('$date', '$pessoal['id']', 'Fulano Ciclano da Silva', 'emaildofulano.ciclano@dominio.com', 10000)";
+    $sql = "INSERT INTO Clientes (data, userid, nome, email, caixa) VALUES ('$date', '$FBid', 'Fulano Ciclano da Silva', 'emaildofulano.ciclano@dominio.com', 10000)";
     $retorno = (new minhaclasse())->usaDB("$sql");
   }
   
