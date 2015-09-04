@@ -124,13 +124,13 @@ echo 'Aposta Gol é um aplicativo gratuito';
 
 if ( isset( $session ) ) {
   
-  $sql = "SELECT id from Clientes WHERE userid = '$FBid'";
+  $sql = "SELECT id from Clientes WHERE userid = '$pessoal['id']'";
   $retorno = (new minhaclasse())->usaDB("$sql");
   echo $retorno;
   if ( isset($retorno)){
     date_default_timezone_set('Europe/London');
     $date = date('Y-m-d H:i:s');
-    $sql = "INSERT INTO Clientes (data, userid, nome, email, caixa) VALUES ('$date', '$FBid', 'Fulano Ciclano da Silva', 'emaildofulano.ciclano@dominio.com', 10000)";
+    $sql = "INSERT INTO Clientes (data, userid, nome, email, caixa) VALUES ('$date', '$pessoal['id']', 'Fulano Ciclano da Silva', 'emaildofulano.ciclano@dominio.com', 10000)";
     $retorno = (new minhaclasse())->usaDB("$sql");
   }
   
