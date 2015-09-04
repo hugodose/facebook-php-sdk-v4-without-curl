@@ -51,7 +51,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/consultadb.php');
         
         
         } else {
-           echo "Caixa insuficiente"
+           echo "Caixa insuficiente";
         }
         
 
