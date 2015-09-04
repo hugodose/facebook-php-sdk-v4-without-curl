@@ -35,15 +35,6 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/consultadb.php');
         echo "Odds valido: " .$odds . ' = ' . $_POST[$Escolha] . '<br><br>';
         //$userid = '12001';
 
-        $sql = "SELECT Caixa from Clientes WHERE userid='$userid'";
-        $retorno = (new minhaclasse())->usaDB("$sql");
-        foreach($retorno as $row) {
-          $Caixa = $row[0];
-        }
-        if ($Caixa >= $Notional){
-      
-        $sql = "INSERT INTO Apostas (data, userid, campeonato, time1, time2, datajogo, notional, escolha, odds) VALUES ('$date', '$userid', '$Campeonato', '$Time1', '$Time2', '$DataJogo', $Notional, '$Escolha', $odds)";
-        $retorno = (new minhaclasse())->usaDB("$sql");
         
         $CaixaInicial = 10000;
   
@@ -67,6 +58,23 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/consultadb.php');
   
         $sql = "UPDATE Clientes SET Caixa = $CaixaInicial - $Margem + $Pnl , Margem = $Margem, Pnl = $Pnl, Risco = $Risco WHERE userid = '$userid'";
         $retorno = (new minhaclasse())->usaDB("$sql");
+
+
+
+
+
+
+
+        $sql = "SELECT Caixa from Clientes WHERE userid='$userid'";
+        $retorno = (new minhaclasse())->usaDB("$sql");
+        foreach($retorno as $row) {
+          $Caixa = $row[0];
+        }
+        if ($Caixa >= $Notional){
+      
+        $sql = "INSERT INTO Apostas (data, userid, campeonato, time1, time2, datajogo, notional, escolha, odds) VALUES ('$date', '$userid', '$Campeonato', '$Time1', '$Time2', '$DataJogo', $Notional, '$Escolha', $odds)";
+        $retorno = (new minhaclasse())->usaDB("$sql");
+
         
         
         } else {
