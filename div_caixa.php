@@ -11,7 +11,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/consultadb.php');
      $formname = 'Caixa'; 
      echo "<form name='" . $formname . "'>";
      echo "<div>"; 
-     echo "<input type='text' size='20' name='Ativos' value='" . $row[0] . "'></input>";
+     echo "<input type='text' size='20' name='Ativos' value='" . $row[0]+$row[1] . "'></input>";
      echo "<input type='text' size='20' name='Caixa' value='" . $row[0] . "'></input>";
      echo "<input type='text' size='20' name='Margem' value='" . $row[1] . "'></input>";
      echo "<input type='text' size='18' name='Retorno' value='" . $row[2] . "'></input>";
