@@ -45,10 +45,27 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/consultadb.php');
         $sql = "INSERT INTO Apostas (data, userid, campeonato, time1, time2, datajogo, notional, escolha, odds) VALUES ('$date', '$userid', '$Campeonato', '$Time1', '$Time2', '$DataJogo', $Notional, '$Escolha', $odds)";
         $retorno = (new minhaclasse())->usaDB("$sql");
         
-        
-        
-        
-        $sql = "UPDATE Clientes SET Caixa = $Caixa - $Notional WHERE userid = '$userid'";
+        $CaixaInicial = 10000;
+  
+        $sql = "SELECT Sum(Notional) FROM Apostas WHERE userid = '$FBid'  AND Pnl IS NULL ";
+        $retorno = (new minhaclasse())->usaDB("$sql");
+        foreach($retorno as $row) {
+            $Margem = $row[0];
+        }
+  
+        $sql = "SELECT Sum(Notional) FROM Apostas WHERE userid = '$FBid' AND Pnl IS NOT NULL";
+        $retorno = (new minhaclasse())->usaDB("$sql");
+        foreach($retorno as $row) {
+           $Risco = $row[0];
+        } 
+   
+        $sql = "SELECT Sum(PnL) FROM Apostas WHERE userid = '$FBid'";
+        $retorno = (new minhaclasse())->usaDB("$sql");
+        foreach($retorno as $row) {
+           $Pnl = $row[0];
+        }
+  
+        $sql = "UPDATE Clientes SET Caixa = $CaixaInicial - $Margem + $Pnl , Margem = $Margem, Pnl = $Pnl, Risco = $Risco WHERE userid = '$userid'";
         $retorno = (new minhaclasse())->usaDB("$sql");
         
         
