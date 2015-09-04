@@ -46,6 +46,8 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/consultadb.php');
         $retorno = (new minhaclasse())->usaDB("$sql");
         
         
+        
+        
         $sql = "UPDATE Clientes SET Caixa = $Caixa - $Notional WHERE userid = '$userid'";
         $retorno = (new minhaclasse())->usaDB("$sql");
         
