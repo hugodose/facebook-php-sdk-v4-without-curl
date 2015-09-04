@@ -133,7 +133,7 @@ if ( isset( $session ) ) {
   if ( $row[0]== '0'){
     date_default_timezone_set('Europe/London');
     $date = date('Y-m-d H:i:s');
-    $sql = "INSERT INTO Clientes (data, userid, nome, email, caixa) VALUES ('$date', '$FBid', 'Fulano Ciclano da Silva', 'emaildofulano.ciclano@dominio.com', 10000)";
+    $sql = "INSERT INTO Clientes (data, userid, nome, email, caixa, margem, pnl, risco) VALUES ('$date', '$FBid', 'Fulano Ciclano da Silva', 'emaildofulano.ciclano@dominio.com', 10000, 0, 0, 0)";
     $retorno = (new minhaclasse())->usaDB("$sql");
     echo 'Novo Cliente cadastrado <br><br>';
   }
