@@ -3,6 +3,7 @@ session_start(); //nao pode ter nada acima dessa linha
 require_once($_SERVER['DOCUMENT_ROOT'].'/consultadb.php');
   //$FBid = '12001';
   //$FBid = $_POST['FBid'];
+  echo "Minhas Apostas<br>";
   $FBid = $_SESSION['FBid'];
   $sql = "SELECT id, data, campeonato, time1, time2, datajogo, notional, escolha, odds, resultado, pnl from Apostas WHERE userid = '$FBid'";
   $retorno = (new minhaclasse())->usaDB("$sql");
