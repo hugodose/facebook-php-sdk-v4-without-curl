@@ -128,9 +128,9 @@ if ( isset( $session ) ) {
   $sql = "SELECT count(*) FROM Clientes WHERE userid = '$FBid'";
   $retorno = (new minhaclasse())->usaDB("$sql");
   foreach($retorno as $row) {
-      echo $row[0];
-   }
-  if ( $row[0]== 0){
+    echo "<div>" . $row[0] . "</div>";
+  }
+  if ( $row[0]== '0'){
     date_default_timezone_set('Europe/London');
     $date = date('Y-m-d H:i:s');
     $sql = "INSERT INTO Clientes (data, userid, nome, email, caixa) VALUES ('$date', '$FBid', 'Fulano Ciclano da Silva', 'emaildofulano.ciclano@dominio.com', 10000)";
