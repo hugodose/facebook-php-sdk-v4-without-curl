@@ -124,11 +124,11 @@ echo 'Aposta Gol é um aplicativo gratuito';
 
 if ( isset( $session ) ) {
 ?>
-<body onload="xmlhttpPost2('div_minhasapostas.php')">
-<!-- #########   INICIO CAIXA   #########   
+<body onload="xmlhttpPost2('div_minhasapostas.php'), xmlhttpPostGERAL('div_caixa.php','','caixa')">
+<!-- #########   INICIO CAIXA   #########   -->
 <script language="Javascript">
    
-  function xmlhttpPost2(strURL){
+  function xmlhttpPostGERAL(strURL, formID, divretorno){
       var xmlHttpReq = false;
       var self = this;
       // Mozilla/Safari
@@ -143,7 +143,7 @@ if ( isset( $session ) ) {
       self.xmlHttpReq.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
       self.xmlHttpReq.onreadystatechange = function() {
         if (self.xmlHttpReq.readyState == 4) {
-              updatepage2(self.xmlHttpReq.responseText);
+              updatepageGERAL(self.xmlHttpReq.responseText, divretorno);
         }
       }
       //input_FBid = document.getElementById("FBid").innerHTML;
@@ -151,13 +151,12 @@ if ( isset( $session ) ) {
       self.xmlHttpReq.send();
   }
 
-  function updatepage2(str){
-      document.getElementById("minhasapostas").innerHTML = str;
+  function updatepageGERAL(str, divretorno){
+      document.getElementById(divretorno).innerHTML = str;
   }
 </script>
-<body onload="xmlhttpPost2('div_caixa.php')">
 <div id='caixa'></div>
- #########   FIM CAIXA   #########    -->
+<!--  #########   FIM CAIXA   #########    -->
 
 
 
