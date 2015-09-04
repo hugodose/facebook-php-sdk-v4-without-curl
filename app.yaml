@@ -9,6 +9,8 @@ handlers:
   script: div_minhasapostas.php 
 - url: /div_enviaapostas.php
   script: div_enviaapostas.php 
+- url: /div_caixa.php
+  script: div_caixa.php 
   
 - url: /inicio.php
   script: inicio.php  
