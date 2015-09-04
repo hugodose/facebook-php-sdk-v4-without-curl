@@ -34,15 +34,27 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/consultadb.php');
      if ($odds == $_POST[$Escolha]){
         echo "Odds valido: " .$odds . ' = ' . $_POST[$Escolha] . '<br><br>';
         //$userid = '12001';
+
+        $sql = "SELECT Caixa from Clientes WHERE userid='$userid'";
+        $retorno = (new minhaclasse())->usaDB("$sql");
+        foreach($retorno as $row) {
+          $Caixa = $row[0];
+        }
+        if ($Caixa >= $Notional){
       
         $sql = "INSERT INTO Apostas (data, userid, campeonato, time1, time2, datajogo, notional, escolha, odds) VALUES ('$date', '$userid', '$Campeonato', '$Time1', '$Time2', '$DataJogo', $Notional, '$Escolha', $odds)";
         $retorno = (new minhaclasse())->usaDB("$sql");
+        
+        
+        $sql = "UPDATE Clientes SET Caixa = $Caixa - $Notional WHERE userid = '$userid'";
+        $retorno = (new minhaclasse())->usaDB("$sql");
+        
+        
+        } else {
+           echo "Caixa insuficiente"
+        }
+        
 
-        //$sql = "SELECT * from Apostas WHERE userid = $userid";
-        //$retorno = (new minhaclasse())->usaDB("$sql");
-        //foreach($retorno as $row) {
-        //    echo "<div>" . $row[0] . " | " . $row[1] . " | " . $row[2] . " | " . $row[3] . " | " . $row[4] . " | " . $row[5] . " | " . $row[6] . " | " . $row[7] . " | " . $row[8] . " | " . $row[9] . " | " . $row[10] . " | " . $row[11] . " | " . $row[12] . "</div>";
-        //}
      } else {
         echo "Odds invalido: " . $odds . '<>' . $_POST[$Escolha] . '<br><br>';
      }  
