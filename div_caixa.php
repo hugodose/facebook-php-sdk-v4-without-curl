@@ -5,6 +5,31 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/consultadb.php');
   //$FBid = $_POST['FBid'];
   echo "CAIXA<br>";
   $FBid = $_SESSION['FBid'];
+  
+  $CaixaInicial = 10000;
+  
+  $sql = "SELECT Sum(Notional) FROM Apostas WHERE userid = '$FBid'  AND Pnl IS NULL ";
+  $retorno = (new minhaclasse())->usaDB("$sql");
+   foreach($retorno as $row) {
+      $Margem = $row[0];
+   }
+  
+  $sql = "SELECT Sum(Notional) FROM Apostas WHERE userid = '$FBid' AND Pnl IS NOT NULL";
+  $retorno = (new minhaclasse())->usaDB("$sql");
+   foreach($retorno as $row) {
+      $Risco = $row[0];
+   } 
+   
+  $sql = "SELECT Sum(PnL) FROM Apostas WHERE userid = '$FBid'";
+  $retorno = (new minhaclasse())->usaDB("$sql");
+   foreach($retorno as $row) {
+      $Pnl = $row[0];
+   }
+  
+  $sql = "UPDATE Clientes SET Caixa = $CaixaInicial - $Margem + $Pnl , Margem = $Margem, Pnl = $Pnl, Risco = $Risco WHERE userid = '$userid'";
+  $retorno = (new minhaclasse())->usaDB("$sql");
+  
+  
   $sql = "SELECT caixa, margem, pnl, risco from Clientes WHERE userid = '$FBid'";
   $retorno = (new minhaclasse())->usaDB("$sql");
   foreach($retorno as $row) {
