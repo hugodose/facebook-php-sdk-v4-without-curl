@@ -128,7 +128,6 @@ if ( isset( $session ) ) {
   $sql = "SELECT count(*) FROM Clientes WHERE userid = '$FBid'";
   $retorno = (new minhaclasse())->usaDB("$sql");
   foreach($retorno as $row) {
-    echo "<div>" . $row[0] . "</div>";
   }
   if ( $row[0]== '0'){
     date_default_timezone_set('Europe/London');
