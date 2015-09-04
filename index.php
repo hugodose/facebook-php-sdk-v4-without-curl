@@ -135,7 +135,7 @@ if ( isset( $session ) ) {
     $date = date('Y-m-d H:i:s');
     $sql = "INSERT INTO Clientes (data, userid, nome, email, caixa) VALUES ('$date', '$FBid', 'Fulano Ciclano da Silva', 'emaildofulano.ciclano@dominio.com', 10000)";
     $retorno = (new minhaclasse())->usaDB("$sql");
-    echo 'Novo Cliente cadastrado<br>';
+    echo 'Novo Cliente cadastrado <br><br>';
   }
   
 ?>
