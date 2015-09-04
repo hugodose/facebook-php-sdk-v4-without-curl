@@ -42,18 +42,27 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/consultadb.php');
         $retorno = (new minhaclasse())->usaDB("$sql");
         foreach($retorno as $row) {
             $Margem = $row[0];
+            if (empty($Margem)){
+               $Margem = 0;
+            }
         }
   
         $sql = "SELECT Sum(Notional) FROM Apostas WHERE userid = '$userid' AND Pnl IS NOT NULL";
         $retorno = (new minhaclasse())->usaDB("$sql");
         foreach($retorno as $row) {
            $Risco = $row[0];
+           if (empty($Risco)){
+               $Risco = 0;
+           }
         } 
    
         $sql = "SELECT Sum(PnL) FROM Apostas WHERE userid = '$userid'";
         $retorno = (new minhaclasse())->usaDB("$sql");
         foreach($retorno as $row) {
            $Pnl = $row[0];
+           if (empty($Pnl)){
+               $Pnl = 0;
+           }
         }
   
         $sql = "UPDATE Clientes SET Caixa = $CaixaInicial - $Margem + $Pnl , Margem = $Margem, Pnl = $Pnl, Risco = $Risco WHERE userid = '$userid'";
