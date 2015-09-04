@@ -65,7 +65,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/consultadb.php');
            $Pnl = $row[0];
         }
   
-        $sql = "UPDATE Clientes SET Caixa = $CaixaInicial - $Margem + $Pnl , Margem = $Margem, Pnl = $Pnl, Risco = $Risco WHERE userid = '$userid'";
+        $sql = "UPDATE Clientes SET Caixa = $CaixaInicial - $Margem + $Pnl , Margem = $Margem, Pnl = $Pnl, Risco = $Risco WHERE userid = '$FBid'";
         $retorno = (new minhaclasse())->usaDB("$sql");
         
         
