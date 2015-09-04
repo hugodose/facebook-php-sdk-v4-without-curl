@@ -124,8 +124,8 @@ echo 'Aposta Gol é um aplicativo gratuito';
 
 if ( isset( $session ) ) {
 ?>
-<body onload="xmlhttpPost2('div_minhasapostas.php'); xmlhttpPostGERAL('div_caixa.php','','caixa')">
-<!-- #########   INICIO CAIXA   #########   -->
+<body onload="xmlhttpPost2('div_minhasapostas.php')">
+<!-- #########   INICIO CAIXA   #########   ; xmlhttpPostGERAL('div_caixa.php','','caixa')  -->
 <script language="Javascript">
    
   function xmlhttpPostGERAL(strURL, formID, divretorno){
