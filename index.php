@@ -127,6 +127,9 @@ if ( isset( $session ) ) {
   
   $sql = "SELECT id from Clientes WHERE userid = '$FBid'";
   $retorno = (new minhaclasse())->usaDB("$sql");
+  foreach($retorno as $row) {
+      echo $row[1];
+   }
   if ( is_null($retorno)){
     date_default_timezone_set('Europe/London');
     $date = date('Y-m-d H:i:s');
