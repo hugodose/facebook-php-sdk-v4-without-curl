@@ -38,22 +38,27 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/consultadb.php');
   $sql = "UPDATE Clientes SET Caixa = $CaixaInicial - $Margem + $Pnl , Margem = $Margem, Pnl = $Pnl, Risco = $Risco WHERE userid = '$userid'";
   $retorno = (new minhaclasse())->usaDB("$sql");
   
-  
+  $formname = 'Caixa'; 
+  echo "<form name='" . $formname . "'>";
+  echo "<div>";
+  echo "<input type='text' size='20' name='Ativos' value='Ativos'></input>";
+  echo "<input type='text' size='20' name='Caixa' value='Caixa'></input>";
+  echo "<input type='text' size='20' name='Margem' value='Margem'></input>";
+  echo "<input type='text' size='18' name='Retorno' value='Lucro'></input>";
+  echo "<input type='text' size='18' name='Risco' value='Risco'></input>";
+  echo "<input type='text' size='20' name='Retorno/Risco' value='Lucro/Risco'></input>";
   $sql = "SELECT caixa, margem, pnl, risco from Clientes WHERE userid = '$userid'";
   $retorno = (new minhaclasse())->usaDB("$sql");
   foreach($retorno as $row) {
-     $formname = 'Caixa'; 
      $Ativos = $row[0] + $row[1];
-     echo "<form name='" . $formname . "'>";
-     echo "<div>"; 
      echo "<input type='text' size='20' name='Ativos' value='" . $Ativos . "'></input>";
      echo "<input type='text' size='20' name='Caixa' value='" . $row[0] . "'></input>";
      echo "<input type='text' size='20' name='Margem' value='" . $row[1] . "'></input>";
      echo "<input type='text' size='18' name='Retorno' value='" . $row[2] . "'></input>";
      echo "<input type='text' size='18' name='Risco' value='" . $row[3] . "'></input>";
      echo "<input type='text' size='20' name='Retorno/Risco' value='" . $row[2]/$row[3]*100 . "%'></input>";
-     echo "</div>"; 
-     echo "</form>";
   }
+  echo "</div>"; 
+  echo "</form>";
 echo '<br>';
 ?>
