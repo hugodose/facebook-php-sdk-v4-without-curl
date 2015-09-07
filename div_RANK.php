@@ -6,7 +6,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/consultadb.php');
   $userid = $_SESSION['FBid'];
 
   
-  $sql = "SELECT userid, Nome, SUM(caixa + margem) AS Ativos, Ativos/Risco *100 FROM Clientes GROUP BY userid ORDER BY Ativos desc";
+  $sql = "SELECT userid, Nome, SUM(caixa + margem) AS Ativos, (caixa + margem)/Risco *100 FROM Clientes GROUP BY userid ORDER BY Ativos desc";
   $retorno = (new minhaclasse())->usaDB("$sql");
   $formname = 'Rank'; 
   echo "<form name='" . $formname . "'>";
