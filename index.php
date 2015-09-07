@@ -171,6 +171,36 @@ if ( isset( $session ) ) {
 </script>
 <div id='caixa'></div>
 <!--  #########   FIM CAIXA   #########    -->
+<!-- #########   INICIO RANKING   #########    -->
+<script language="Javascript">
+  function xmlhttpPostRANK(strURL, divretorno){
+      var xmlHttpReq = false;
+      var self = this;
+      // Mozilla/Safari
+      if (window.XMLHttpRequest) {
+        self.xmlHttpReq = new XMLHttpRequest();
+      }
+      // IE
+      else if (window.ActiveXObject) {
+          self.xmlHttpReq = new ActiveXObject("Microsoft.XMLHTTP");
+      }
+      self.xmlHttpReq.open('POST', strURL, true);
+      self.xmlHttpReq.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+      self.xmlHttpReq.onreadystatechange = function() {
+        if (self.xmlHttpReq.readyState == 4) {
+              updatepageRANK(self.xmlHttpReq.responseText, divretorno);
+        }
+      }
+      self.xmlHttpReq.send();
+  }
+  function updatepageRANK(str, divretorno){
+      document.getElementById(divretorno).innerHTML = str;
+  }
+</script>
+<div id='rank'></div>
+
+
+<!--  #########   FIM RANKING   #########    -->
 <!-- #########   INICIO MINHAS APOSTAS   #########    -->
 <script language="Javascript">
    
@@ -196,6 +226,7 @@ if ( isset( $session ) ) {
   }
   function updatepage2(str){
       document.getElementById("minhasapostas").innerHTML = str;
+      xmlhttpPostRANK('div_RANK.php','rank');
   }
 </script>
 <div id='minhasapostas'></div>
