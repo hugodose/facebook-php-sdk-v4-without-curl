@@ -47,6 +47,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/consultadb.php');
   echo "<input type='text' size='18' name='Retorno' value='Lucro'></input>";
   echo "<input type='text' size='18' name='Risco' value='Risco'></input>";
   echo "<input type='text' size='20' name='Retorno/Risco' value='Lucro/Risco'></input>";
+  echo "<br>";
   $sql = "SELECT caixa, margem, pnl, risco from Clientes WHERE userid = '$userid'";
   $retorno = (new minhaclasse())->usaDB("$sql");
   foreach($retorno as $row) {
@@ -56,7 +57,8 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/consultadb.php');
      echo "<input type='text' size='20' name='Margem' value='" . $row[1] . "'></input>";
      echo "<input type='text' size='18' name='Retorno' value='" . $row[2] . "'></input>";
      echo "<input type='text' size='18' name='Risco' value='" . $row[3] . "'></input>";
-     echo "<input type='text' size='20' name='Retorno/Risco' value='" . $row[2]/$row[3]*100 . "%'></input>";
+     echo "<input type='text' size='20' name='Retorno/Risco' value='" . round($row[2]/$row[3]*100) . "%'></input>";
+     echo "<br>";
   }
   echo "</div>"; 
   echo "</form>";
