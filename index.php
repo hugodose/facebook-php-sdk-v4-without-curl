@@ -69,9 +69,6 @@ if ( isset( $session ) ) {
             //'publish_actions',
 ?>
 <html>
-<head>
-<script src="jquery-1.11.3.min.js"></script>
-</head> 
 <body>
 
 <p><a href="#" onClick="logInWithFacebook()">Log In with the JavaScript SDK</a></p>
@@ -238,39 +235,6 @@ if ( isset( $session ) ) {
       xmlhttpPostCAIXA('div_caixa.php','caixa'); // reload caixa
   }
 </script>  
-
-<script src="jquery-1.11.3.min.js">
-var $rows = document.querySelectorAll("#table tr");
-document.getElementById("search").addEventListener("keyup", function(e) {
-
-  var val = '^(?=.*\\b' + e.target.value.trim().split(/\s+/).join('\\b)(?=.*\\b') + ').*$';
-  var reg = RegExp(val, 'i');
-
-  Array.prototype.forEach.call($rows, function(row) {
-    var text = row.textContent.replace(/\s+/g, ' ');
-    row.style.display = reg.test(text) ? 'table-row' : 'none';
-  });
-
-}); 
-</script>
-
-
-<input type="text" id="search" placeholder="Type to search">
-<table id="table">
-   <tr>
-      <td>Apple</td>
-      <td>Green</td>
-   </tr>
-   <tr>
-      <td>Grapes</td>
-      <td>Green</td>
-   </tr>
-   <tr>
-      <td>Orange</td>
-      <td>Orange</td>
-   </tr>
-</table>
-
 
             
 <?php
