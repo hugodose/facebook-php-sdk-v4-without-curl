@@ -12,7 +12,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/consultadb.php');
      $formname = 'Rank'; 
      echo "<form name='" . $formname . "'>";
      echo "<div>"; 
-     echo "<img src='https://graph.facebook.com/".$row[0]."/picture?type=normal'/>";
+     echo "<img src='https://graph.facebook.com/".$row[0]."/picture?type=small'/>";
      echo "<input type='text' size='20' name='UserID' value='" . $row[1] . "'></input>";
      echo "<input type='text' size='20' name='Ativos' value='" . $row[2] . "'></input>";
      echo "</div>"; 
