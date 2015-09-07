@@ -40,9 +40,9 @@ try {
 if ( isset( $session ) ) {
   $pessoal = (new FacebookRequest( $session, 'GET', '/me' ))->execute()->getGraphObject()->asArray();
   //echo '<pre>' . print_r( $pessoal, 1 ) . '</pre>';
-  echo "<img src='https://graph.facebook.com/".$pessoal['id']."/picture?type=normal'/>";
-  echo "Nome: ", $pessoal['name'],'<br>';
-  echo "<h1 id='FBid'>", $pessoal['id'],'</h1><br>';
+  echo "<img src='https://graph.facebook.com/".$pessoal['id']."/picture?type=small'/>";
+  echo "", $pessoal['name'],'<br>';
+  //echo "<h1 id='FBid'>", $pessoal['id'],'</h1><br>';
   $FBid = $pessoal['id'];
   $_SESSION['FBid'] = $FBid;
   //ATENCAO: invitable_friends or taggable_friends: the tokens returned through this API are not the same as the IDs returned via/me/friends.
@@ -53,10 +53,9 @@ if ( isset( $session ) ) {
   //   echo " - ", $value->name,'<br>';
   //} //iterate through friends graph
   $amigos = (new FacebookRequest( $session, 'GET', '/me/friends' ))->execute()->getGraphObject()->asArray();
-  //echo '<pre>' . print_r( $amigos, 1 ) . '</pre>';
   foreach ($amigos['data'] as $key => $value) {
-     echo "<img src='https://graph.facebook.com/".$value->id."/picture?type=normal'/>";
-     echo " - ", $value->name,'<br>';
+     //echo "<img src='https://graph.facebook.com/".$value->id."/picture?type=small'/>";
+     //echo " - ", $value->name,'<br>';
   } 
 } else {
     echo '<br> $session NAO existe <br>';
@@ -121,7 +120,7 @@ if ( isset( $session ) ) {
     
     
 } //fecha os NAO TEM SESSION
-echo 'Aposta Gol é um aplicativo gratuito<br>';
+echo 'Aposta Gol é um aplicativo gratuito<br>Todas as apostas sao com dinheiro de brincadeira.<br><br>';
 
 if ( isset( $session ) ) {
   
