@@ -237,18 +237,18 @@ if ( isset( $session ) ) {
 </script>  
 
 <script language="Javascript">  
-var $rows = $('#table tr');
-$('#search').keyup(function() {
-    
-    var val = '^(?=.*\\b' + $.trim($(this).val()).split(/\s+/).join('\\b)(?=.*\\b') + ').*$',
-        reg = RegExp(val, 'i'),
-        text;
-    
-    $rows.show().filter(function() {
-        text = $(this).text().replace(/\s+/g, ' ');
-        return !reg.test(text);
-    }).hide();
-});  
+var $rows = document.querySelectorAll("#table tr");
+document.getElementById("search").addEventListener("keyup", function(e) {
+
+  var val = '^(?=.*\\b' + e.target.value.trim().split(/\s+/).join('\\b)(?=.*\\b') + ').*$';
+  var reg = RegExp(val, 'i');
+
+  Array.prototype.forEach.call($rows, function(row) {
+    var text = row.textContent.replace(/\s+/g, ' ');
+    row.style.display = reg.test(text) ? 'table-row' : 'none';
+  });
+
+}); 
 </script>
 
 
