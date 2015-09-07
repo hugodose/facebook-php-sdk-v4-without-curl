@@ -270,7 +270,7 @@ if ( isset( $session ) ) {
             
 <?php
    echo "<div id='sentback'></div>";
-   $sql = "SELECT Id, Campeonato, Time1, Time2, DataJogo, Casa, Empate, Fora, Resultado from Jogos";
+   $sql = "SELECT Id, Campeonato, Time1, Time2, DataJogo, Casa, Empate, Fora, Resultado FROM Jogos WHERE Resultado IS NULL";
    $retorno = (new minhaclasse())->usaDB("$sql");
    foreach($retorno as $row) {
      $formname = 'Jogo' . $row[0]; 
