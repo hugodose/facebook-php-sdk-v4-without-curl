@@ -69,6 +69,9 @@ if ( isset( $session ) ) {
             //'publish_actions',
 ?>
 <html>
+<head>
+<script src="jquery-1.11.3.min.js"></script>
+</head> 
 <body>
 
 <p><a href="#" onClick="logInWithFacebook()">Log In with the JavaScript SDK</a></p>
@@ -236,7 +239,7 @@ if ( isset( $session ) ) {
   }
 </script>  
 
-<script language="Javascript">  
+<script src="jquery-1.11.3.min.js">
 var $rows = document.querySelectorAll("#table tr");
 document.getElementById("search").addEventListener("keyup", function(e) {
 
