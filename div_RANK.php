@@ -8,6 +8,13 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/consultadb.php');
   
   $sql = "SELECT userid, Nome, SUM(caixa + margem) AS Ativos FROM Clientes GROUP BY userid ORDER BY Ativos desc";
   $retorno = (new minhaclasse())->usaDB("$sql");
+  foreach ($retorno as $key => $value) {
+     echo "<img src='https://graph.facebook.com/".$value->userid."/picture?type=normal'/>";
+     echo " - ", $value->Nome,'';
+     echo " - ", $value->Ativos,'<br>';
+  } 
+  
+  
   foreach($retorno as $row) {
      $formname = 'Rank'; 
      echo "<form name='" . $formname . "'>";
