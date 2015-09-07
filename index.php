@@ -271,7 +271,7 @@ if ( isset( $session ) ) {
 <?php
    echo "<div id='sentback'></div>";
    echo "<br>Proximos Jogos<br>";
-   $sql = "SELECT Id, Campeonato, Time1, Time2, DataJogo, Casa, Empate, Fora, Resultado FROM Jogos WHERE Resultado IS NULL";
+   $sql = "SELECT Id, Campeonato, Time1, Time2, DataJogo, Casa, Empate, Fora, Resultado FROM Jogos WHERE Resultado IS NULL ORDER BY datajogo";
    $retorno = (new minhaclasse())->usaDB("$sql");
    foreach($retorno as $row) {
      $formname = 'Jogo' . $row[0]; 
