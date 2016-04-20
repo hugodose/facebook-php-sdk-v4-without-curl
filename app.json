@@ -1,0 +1,15 @@
+{
+  "name": "facebook-php-sdk-v4-without-c",
+  "scripts": {
+  },
+  "env": {
+  },
+  "formation": {
+  },
+  "addons": [
+
+  ],
+  "buildpacks": [
+
+  ]
+}
